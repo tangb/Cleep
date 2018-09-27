@@ -1,0 +1,136 @@
+{
+    "update": 1533575385,
+    "list": {
+        "audio": {
+            "description": "Configure audio on your device",
+            "category": "APPLICATION",
+            "deps": [],
+            "author": "Cleep",
+            "version": "1.0.0",
+            "tags": [
+                "audio",
+                "sound"
+            ],
+            "country": "",
+            "urls": {
+                "info": "https://github.com/tangb/raspiot/wiki/Audio",
+                "bugs": null,
+                "site": null,
+                "help": null
+            },
+            "price": 0,
+            "icon": "speaker",
+            "download": null,
+            "sha256": null,
+            "certified": true,
+            "note": -1
+        },
+        "cleepbus": {
+            "description": "Enables communications between all your Cleep devices through your home network",
+            "category": "APPLICATION",
+            "deps": [],
+            "author": "Cleep",
+            "version": "1.0.0",
+            "tags": [
+                "bus",
+                "communication"
+            ],
+            "country": "",
+            "urls": {
+                "info": "https://github.com/tangb/Raspiot/wiki/Cleepbus",
+                "bugs": null,
+                "site": null,
+                "help": null
+            },
+            "price": 0,
+            "icon": "video-input-antenna",
+            "download": null,
+            "sha256": null,
+            "certified": true,
+            "note": -1
+        },
+        "network": {
+            "description": "Configure how your device connect to your network",
+            "category": "APPLICATION",
+            "deps": [],
+            "author": "Cleep",
+            "version": "1.0.0",
+            "tags": [
+                "wireless",
+                "wifi",
+                "ethernet"
+            ],
+            "country": "",
+            "urls": {
+                "info": "https://github.com/tangb/raspiot/wiki/Network",
+                "bugs": null,
+                "site": null,
+                "help": null
+            },
+            "price": 0,
+            "icon": "video-input-antenna",
+            "download": null,
+            "sha256": null,
+            "certified": true,
+            "note": -1
+        },
+        "system": {
+            "description": "Helps updating, controlling and monitoring the device",
+            "category": "APPLICATION",
+            "deps": [],
+            "author": "Cleep",
+            "version": "1.0.0",
+            "tags": [
+                "troubleshoot",
+                "hostname",
+                "events",
+                "monitoring",
+                "update",
+                "log"
+            ],
+            "country": "",
+            "urls": {
+                "info": null,
+                "bugs": null,
+                "site": null,
+                "help": null
+            },
+            "price": 0,
+            "icon": "heart-pulse",
+            "download": null,
+            "sha256": null,
+            "certified": true,
+            "note": -1
+        },
+        "parameters": {
+            "description": "Configure generic parameters of your device",
+            "category": "APPLICATION",
+            "author": "Cleep",
+            "country": null,
+            "price": 0,
+            "tags": [
+                "configuration",
+                "lang",
+                "time",
+                "lang"
+            ],
+            "deps": [],
+            "version": "1.0.0",
+            "urls": {
+                "info": null,
+                "bugs": null,
+                "site": null,
+                "help": null
+            },
+            "icon": "settings",
+            "download": null,
+            "sha256": null,
+            "certified": true,
+            "note": 0
+        },
+        "developer": {"category": "APPLICATION", "description": "Helps you to develop on CleepOS.", "tags": ["developer", "python", "cleepos", "module"], "country": null, "price": 0, "author": "Cleep", "changelog": "", "deps": [], "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-developer", "bugs": "https://github.com/tangb/cleepmod-developer/issues", "site": null, "help": "https://github.com/tangb/cleepmod-developer/wiki"}, "icon": "worker", "certified": true, "note": 0,
+            "download": "https://github.com/tangb/cleepmod-developer/releases/download/v1.0.0/cleepmod_developer_1.0.0.zip",
+            "sha256": "346cf6c984d408394370794606cae341379538931fc9f1064b6510b24cf68157"
+        }
+    }
+}
