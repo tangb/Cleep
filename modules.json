@@ -130,7 +130,7 @@
         },
         "developer": {"category": "APPLICATION", "description": "Helps you to develop on CleepOS.", "tags": ["developer", "python", "cleepos", "module"], "country": null, "price": 0, "author": "Cleep", "changelog": "", "deps": [], "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-developer", "bugs": "https://github.com/tangb/cleepmod-developer/issues", "site": null, "help": "https://github.com/tangb/cleepmod-developer/wiki"}, "icon": "worker", "certified": true, "note": 0,
             "download": "https://github.com/tangb/cleepmod-developer/releases/download/v1.0.0/cleepmod_developer_1.0.0.zip",
-            "sha256": "346cf6c984d408394370794606cae341379538931fc9f1064b6510b24cf68157"
+            "sha256": "322d87d03fe7749a6c172479751850c2690d89e2f28bc20fd1a4adf329aa1fb3"
         }
     }
 }
