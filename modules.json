@@ -1,5 +1,5 @@
 {
-    "update": 1538685893,
+    "update": 1538938461,
     "list": {
         "audio": {
             "description": "Configure audio on your device",
@@ -130,7 +130,7 @@
         },
         "developer": {"category": "APPLICATION", "description": "Helps you to develop on CleepOS.", "tags": ["developer", "python", "cleepos", "module"], "country": null, "price": 0, "author": "Cleep", "changelog": "", "deps": [], "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-developer", "bugs": "https://github.com/tangb/cleepmod-developer/issues", "site": null, "help": "https://github.com/tangb/cleepmod-developer/wiki"}, "icon": "worker", "certified": true, "note": 0,
             "download": "https://github.com/tangb/cleepmod-developer/releases/download/v1.0.0/cleepmod_developer_1.0.0.zip",
-            "sha256": "889f31d0e4dda7acae154ca565df0048c2713e6cca04cd9f89565abb3ce3ed74"
+            "sha256": "74f3e7e98cecf37571585d9941a579ee5555b0729c365c666cd885e0d623c634"
         }
     }
 }
