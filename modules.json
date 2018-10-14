@@ -1,30 +1,30 @@
 {
-    "update": 1539199179,
+    "update": 1539545751,
     "list": {
-        "audio": {"category": "APPLICATION", "description": "Configure audio on your device", "tags": ["audio", "sound"], "country": null, "price": 0, "author": "Cleep", "changelog": "First official release", "deps": [], "longdescription": "Application that helps you to configure audio on your device", "version": "1.0.0", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "speaker",
+        "audio": {"category": "APPLICATION", "description": "Configure audio on your device", "tags": ["audio", "sound"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure audio on your device", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "speaker",
             "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-audio/releases/download/v1.0.0/cleepmod_audio_1.0.0.zip",
-            "sha256": "c913711887f8c8e25df1403b633b4ac53739f183a3bc7be3ef734fdca52d2083"
+            "download": "https://github.com/tangb/cleepmod-audio/releases/download/v1.0.0/cleepmod_audio_1.0.1.zip",
+            "sha256": "92505a218cd9382745156706606b94b81a3936ada27b6cbad7f981630e173aab"
         },
-        "cleepbus": {"category": "APPLICATION", "description": "Enables communications between all your Cleep devices through your home network", "tags": ["bus", "communication"], "country": null, "price": 0, "author": "Cleep", "changelog": "First official release", "deps": [], "longdescription": "Application that enables communication between devices", "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-cleepbus/wiki/CleepBus-module", "bugs": "https://github.com/tangb/cleepmod-cleepbus/issues", "site": null, "help": null}, "icon": "bus",
+        "cleepbus": {"category": "APPLICATION", "description": "Enables communications between all your Cleep devices through your home network", "tags": ["bus", "communication"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that enables communication between devices", "version": "1.0.1", "urls": {"info": "https://github.com/tangb/cleepmod-cleepbus/wiki/CleepBus-module", "bugs": "https://github.com/tangb/cleepmod-cleepbus/issues", "site": null, "help": null}, "icon": "bus",
             "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-cleepbus/releases/download/v1.0.0/cleepmod_cleepbus_1.0.0.zip",
-            "sha256": "071a0143d6958d3bd652f51cc17d6be4142fc78075899e03f1143fbcfc2391e2"
+            "download": "https://github.com/tangb/cleepmod-cleepbus/releases/download/v1.0.0/cleepmod_cleepbus_1.0.1.zip",
+            "sha256": "b5e8f817f925f28fe0f7bb9a8d5ab3fc5c346d096b922c3ab9ae5f1e669f43f0"
         },
-        "network": {"category": "APPLICATION", "description": "Configure how your device connect to your network", "tags": ["wireless", "wifi", "ethernet"], "country": null, "price": 0, "author": "Cleep", "changelog": "First official release", "deps": [], "longdescription": "Application that helps you to configure device network connection", "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-network/wiki", "bugs": "https://github.com/tangb/cleepmod-network/issues", "site": null, "help": "https://github.com/tangb/cleepmod-network/wiki/Help"}, "icon": "ethernet",
+        "network": {"category": "APPLICATION", "description": "Configure how your device connect to your network", "tags": ["wireless", "wifi", "ethernet"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure device network connection", "version": "1.0.1", "urls": {"info": "https://github.com/tangb/cleepmod-network/wiki", "bugs": "https://github.com/tangb/cleepmod-network/issues", "site": null, "help": "https://github.com/tangb/cleepmod-network/wiki/Help"}, "icon": "ethernet",
             "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-network/releases/download/v1.0.0/cleepmod_network_1.0.0.zip",
-            "sha256": "2a7f9c541bbc65030165d10911de20f3d221b6671410640cd6ab01b1af658e01"
+            "download": "https://github.com/tangb/cleepmod-network/releases/download/v1.0.0/cleepmod_network_1.0.1.zip",
+            "sha256": "f42dcf4060051cfb7d75fff4db0302866165fefa536cfa3c956550e5239d7687"
         },
-        "parameters": {"category": "APPLICATION", "description": "Configure generic parameters of your device", "tags": ["configuration", "date", "time", "locale", "lang"], "country": null, "price": 0, "author": "Cleep", "changelog": "First official release", "deps": [], "longdescription": "Application that helps you to configure generic parameters of your device", "version": "1.0.0", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "settings",
+        "parameters": {"category": "APPLICATION", "description": "Configure generic parameters of your device", "tags": ["configuration", "date", "time", "locale", "lang"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure generic parameters of your device", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "settings",
             "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-parameters/releases/download/v1.0.0/cleepmod_parameters_1.0.0.zip",
-            "sha256": "da92a69197141a40a900c97bbd9be36e4bdce817bab9c707adac521e741ceb64"
+            "download": "https://github.com/tangb/cleepmod-parameters/releases/download/v1.0.0/cleepmod_parameters_1.0.1.zip",
+            "sha256": "424c3a818a9ff58a7dfc53eabefdbc6b8d76bf6d7db8b6f67521a803cd583746"
         },
-        "system": {"category": "APPLICATION", "description": "Helps updating, controlling and monitoring the device", "tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"], "country": "", "price": 0, "author": "Cleep", "changelog": "First official release", "deps": [], "longdescription": "Application to help you to configure your system", "version": "1.0.0", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "heart-pulse",
+        "system": {"category": "APPLICATION", "description": "Helps updating, controlling and monitoring the device", "tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"], "country": "", "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application to help you to configure your system", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "heart-pulse",
             "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.0/cleepmod_system_1.0.0.zip",
-            "sha256": "2c58810566213d8c79aea5e5b958d3f480189ec2448047eee99dba786f046b9e"
+            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.0/cleepmod_system_1.0.1.zip",
+            "sha256": "4b4e79d67ee382da5e1728790ec3d401f862a69ca6c359bae91cc3faacc4b426"
         },
         "developer": {"category": "APPLICATION", "description": "Helps you to develop on CleepOS.", "tags": ["developer", "python", "cleepos", "module", "angularjs"], "country": null, "price": 0, "author": "Cleep", "changelog": "First official release.", "deps": [], "longdescription": "Developer module helps you to develop on CleepOS installing and preconfiguring remote sync tools. It also provides a full page that helps you to check and build your own module.<br/>This module will provide the official way to publish your module on CleepOS market.<br/><br/>Lot of resources are available on developer module wiki, have a look and start enjoying CleepOS!", "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-developer", "bugs": "https://github.com/tangb/cleepmod-developer/issues", "site": null, "help": "https://github.com/tangb/cleepmod-developer/wiki"}, "icon": "worker", 
             "certified": true, "note": 0,
