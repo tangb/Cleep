@@ -1,5 +1,5 @@
 {
-    "update": 1539545751,
+    "update": 1544474703,
     "list": {
         "audio": {"category": "APPLICATION", "description": "Configure audio on your device", "tags": ["audio", "sound"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure audio on your device", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "speaker",
             "certified": true, "note": -1,
@@ -30,6 +30,11 @@
             "certified": true, "note": 0,
             "download": "https://github.com/tangb/cleepmod-developer/releases/download/v1.0.0/cleepmod_developer_1.0.0.zip",
             "sha256": "b6890059ff0ccba570abb6ffc104c13497d557b82d0358096eae6b4213070722"
+        },
+        "smtp": {"category": "SERVICE", "description": "Sends you alerts by email.", "tags": ["email", "smtp", "alert"], "country": null, "price": 0, "author": "Cleep", "changelog": "First working release. Handles Google Gmail, Yahoo! mail and own email provider properly.", "deps": [], "longdescription": "This module allows your device to send alert by email and other events that occured and should be noticed by your device.<br>This module implements natively connectors to Google Gmail, Yahoo! mail and your own email server.", "version": "1.0.0", "urls": {"info": "https://github.com/tangb/cleepmod-smtp", "bugs": "https://github.com/tangb/cleepmod-smtp/issues", "site": null, "help": "https://github.com/tangb/cleepmod-smtp/wiki"}, "icon": "email",
+            "certified": true, "note": 0,
+            "download": "https://github.com/tangb/cleepmod-smtp/releases/download/1.0.0/cleepmod_smtp_1.0.0.zip",
+            "sha256": "87aa1ebf8e56eb38d332c4060a3df68c448559bc70be185f2c290e8c76935cf7"
         }
     }
 }
