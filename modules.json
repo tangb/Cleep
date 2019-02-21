@@ -1,5 +1,5 @@
 {
-    "update": 1550353353,
+    "update": 1550775099,
     "list": {
         "audio": {"category": "APPLICATION", "description": "Configure audio on your device", "tags": ["audio", "sound"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure audio on your device", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "speaker",
             "certified": true, "note": -1,
@@ -23,8 +23,10 @@
         },
         "system": {"category": "APPLICATION", "description": "Helps updating, controlling and monitoring the device", "tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"], "country": "", "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application to help you to configure your system", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "heart-pulse",
             "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.1/cleepmod_system_1.0.1.zip",
-            "sha256": "4b4e79d67ee382da5e1728790ec3d401f862a69ca6c359bae91cc3faacc4b426"
+            "version": "1.0.2",
+            "changelog": "<ul><li>Check only released CleepOs version during update check</li><li>Improve CleepOs update adding specific dialog with changes and new version available</li><li>Disable by default auto application and CleepOs update</li><li>Some other small improvements</li></ul>",
+            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.2/cleepmod_system_1.0.2.zip",
+            "sha256": "7f9bc69cbbb66985394314bc947a503a1188541e84141ecd990bda9e5fb17cf5"
         },
         "developer": {"category": "APPLICATION", "description": "Helps you to develop on CleepOS.", "tags": ["developer", "python", "cleepos", "module", "angularjs"], "country": null, "price": 0, "author": "Cleep", "deps": [], "longdescription": "Developer module helps you to develop on CleepOS installing and preconfiguring remote sync tools. It also provides a full page that helps you to check and build your own module.<br/>This module will provide the official way to publish your module on CleepOS market.<br/><br/>Lot of resources are available on developer module wiki, have a look and start enjoying CleepOS!", "urls": {"info": "https://github.com/tangb/cleepmod-developer", "bugs": "https://github.com/tangb/cleepmod-developer/issues", "site": null, "help": "https://github.com/tangb/cleepmod-developer/wiki"}, "icon": "worker", 
             "certified": true, "note": 0,
