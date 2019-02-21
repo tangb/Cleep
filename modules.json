@@ -21,7 +21,7 @@
             "download": "https://github.com/tangb/cleepmod-parameters/releases/download/v1.0.1/cleepmod_parameters_1.0.1.zip",
             "sha256": "424c3a818a9ff58a7dfc53eabefdbc6b8d76bf6d7db8b6f67521a803cd583746"
         },
-        "system": {"category": "APPLICATION", "description": "Helps updating, controlling and monitoring the device", "tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"], "country": "", "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application to help you to configure your system", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "heart-pulse",
+        "system": {"category": "APPLICATION", "description": "Helps updating, controlling and monitoring the device", "tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"], "country": "", "price": 0, "author": "Cleep", "deps": [], "longdescription": "Application to help you to configure your system", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "heart-pulse",
             "certified": true, "note": -1,
             "version": "1.0.2",
             "changelog": "<ul><li>Check only released CleepOs version during update check</li><li>Improve CleepOs update adding specific dialog with changes and new version available</li><li>Disable by default auto application and CleepOs update</li><li>Some other small improvements</li></ul>",
