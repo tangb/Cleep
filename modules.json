@@ -1,52 +1,189 @@
 {
-    "update": 1550775099,
-    "list": {
-        "audio": {"category": "APPLICATION", "description": "Configure audio on your device", "tags": ["audio", "sound"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure audio on your device", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "speaker",
-            "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-audio/releases/download/v1.0.1/cleepmod_audio_1.0.1.zip",
-            "sha256": "92505a218cd9382745156706606b94b81a3936ada27b6cbad7f981630e173aab"
-        },
-        "cleepbus": {"category": "APPLICATION", "description": "Enables communications between all your Cleep devices through your home network", "tags": ["bus", "communication"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that enables communication between devices", "version": "1.0.1", "urls": {"info": "https://github.com/tangb/cleepmod-cleepbus/wiki/CleepBus-module", "bugs": "https://github.com/tangb/cleepmod-cleepbus/issues", "site": null, "help": null}, "icon": "bus",
-            "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-cleepbus/releases/download/v1.0.1/cleepmod_cleepbus_1.0.1.zip",
-            "sha256": "b5e8f817f925f28fe0f7bb9a8d5ab3fc5c346d096b922c3ab9ae5f1e669f43f0"
-        },
-        "network": {"category": "APPLICATION", "description": "Configure how your device connect to your network", "tags": ["wireless", "wifi", "ethernet"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure device network connection", "version": "1.0.1", "urls": {"info": "https://github.com/tangb/cleepmod-network/wiki", "bugs": "https://github.com/tangb/cleepmod-network/issues", "site": null, "help": "https://github.com/tangb/cleepmod-network/wiki/Help"}, "icon": "ethernet",
-            "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-network/releases/download/v1.0.1/cleepmod_network_1.0.1.zip",
-            "sha256": "f42dcf4060051cfb7d75fff4db0302866165fefa536cfa3c956550e5239d7687"
-        },
-        "parameters": {"category": "APPLICATION", "description": "Configure generic parameters of your device", "tags": ["configuration", "date", "time", "locale", "lang"], "country": null, "price": 0, "author": "Cleep", "changelog": "Fix small issues", "deps": [], "longdescription": "Application that helps you to configure generic parameters of your device", "version": "1.0.1", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "settings",
-            "certified": true, "note": -1,
-            "download": "https://github.com/tangb/cleepmod-parameters/releases/download/v1.0.1/cleepmod_parameters_1.0.1.zip",
-            "sha256": "424c3a818a9ff58a7dfc53eabefdbc6b8d76bf6d7db8b6f67521a803cd583746"
-        },
-        "system": {"category": "APPLICATION", "description": "Helps updating, controlling and monitoring the device", "tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"], "country": "", "price": 0, "author": "Cleep", "deps": [], "longdescription": "Application to help you to configure your system", "urls": {"info": null, "bugs": null, "site": null, "help": null}, "icon": "heart-pulse",
-            "certified": true, "note": -1,
-            "version": "1.0.2",
-            "changelog": "<ul><li>Check only released CleepOs version during update check</li><li>Improve CleepOs update adding specific dialog with changes and new version available</li><li>Disable by default auto application and CleepOs update</li><li>Some other small improvements</li></ul>",
-            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.2/cleepmod_system_1.0.2.zip",
-            "sha256": "7f9bc69cbbb66985394314bc947a503a1188541e84141ecd990bda9e5fb17cf5"
-        },
-        "developer": {"category": "APPLICATION", "description": "Helps you to develop on CleepOS.", "tags": ["developer", "python", "cleepos", "module", "angularjs"], "country": null, "price": 0, "author": "Cleep", "deps": [], "longdescription": "Developer module helps you to develop on CleepOS installing and preconfiguring remote sync tools. It also provides a full page that helps you to check and build your own module.<br/>This module will provide the official way to publish your module on CleepOS market.<br/><br/>Lot of resources are available on developer module wiki, have a look and start enjoying CleepOS!", "urls": {"info": "https://github.com/tangb/cleepmod-developer", "bugs": "https://github.com/tangb/cleepmod-developer/issues", "site": null, "help": "https://github.com/tangb/cleepmod-developer/wiki"}, "icon": "worker", 
-            "certified": true, "note": 0,
-            "version": "1.0.2", "changelog": "Issues:<ul><li>Deep scan error during frontend files analysis</li><li>Bug in list of selectable modules</li></ul>Improvements:<ul><li>Reset previous analysis content when restarting raspiot</li></ul>",
-            "download": "https://github.com/tangb/cleepmod-developer/releases/download/v1.0.2/cleepmod_developer_1.0.2.zip",
-            "sha256": "7074501dcc372664616d77d704d834475796dc729111fe8a8ce15443f9f61022"
-        },
-        "smtp": {"category": "SERVICE", "description": "Sends you alerts by email.", "tags": ["email", "smtp", "alert"], "country": null, "price": 0, "author": "Cleep", "deps": [], "longdescription": "This module allows your device to send alert by email and other events that occured and should be noticed by your device.<br>This module implements natively connectors to Google Gmail, Yahoo! mail and your own email server.", "urls": {"info": "https://github.com/tangb/cleepmod-smtp", "bugs": "https://github.com/tangb/cleepmod-smtp/issues", "site": null, "help": "https://github.com/tangb/cleepmod-smtp/wiki"}, "icon": "email",
-            "certified": true, "note": 0,
-            "version": "1.0.0",
-            "changelog": "First working release. Handles Google Gmail, Yahoo! mail and own email provider properly.",
-            "download": "https://github.com/tangb/cleepmod-smtp/releases/download/1.0.0/cleepmod_smtp_1.0.0.zip",
-            "sha256": "87aa1ebf8e56eb38d332c4060a3df68c448559bc70be185f2c290e8c76935cf7"
-        },
-        "gpios": {"category": "DRIVER", "description": "Configure your raspberry pins", "tags": ["gpios", "inputs", "outputs"], "country": null, "price": 0, "author": "Cleep", "deps": [], "longdescription": "Gives you access to raspberry pins to configure your inputs/ouputs as you wish quickly and easily.", "urls": {"info": "https://github.com/tangb/cleepmod-gpios", "bugs": "https://github.com/tangb/cleepmod-gpios/issues", "site": null, "help": "https://github.com/tangb/cleepmod-gpios/wiki"}, "icon": "video-input-component", 
-            "certified": true, "note": 0,
-            "version": "1.0.0",
-            "changelog": "First release",
-            "download": "https://github.com/tangb/cleepmod-gpios/releases/download/v1.0.0/cleepmod_gpios_1.0.0.zip",
-            "sha256": "04d6bf5ff44790a7a30520ba3057f37fc255eda39e893b46e7a1b882f99e7656"
-        }
-    }
+	"update": 1555958142,
+	"list": {
+		"audio": {
+			"category": "APPLICATION",
+			"description": "Configure audio on your device",
+			"tags": ["audio", "sound"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"changelog": "Fix small issues",
+			"deps": [],
+			"longdescription": "Application that helps you to configure audio on your device",
+			"version": "1.0.1",
+			"urls": {
+				"info": null,
+				"bugs": null,
+				"site": null,
+				"help": null
+			},
+			"icon": "speaker",
+			"certified": true,
+			"note": -1,
+			"download": "https://github.com/tangb/cleepmod-audio/releases/download/v1.0.1/cleepmod_audio_1.0.1.zip",
+			"sha256": "92505a218cd9382745156706606b94b81a3936ada27b6cbad7f981630e173aab"
+		},
+		"cleepbus": {
+			"category": "APPLICATION",
+			"description": "Enables communications between all your Cleep devices through your home network",
+			"tags": ["bus", "communication"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"changelog": "Fix small issues",
+			"deps": [],
+			"longdescription": "Application that enables communication between devices",
+			"version": "1.0.1",
+			"urls": {
+				"info": "https://github.com/tangb/cleepmod-cleepbus/wiki/CleepBus-module",
+				"bugs": "https://github.com/tangb/cleepmod-cleepbus/issues",
+				"site": null,
+				"help": null
+			},
+			"icon": "bus",
+			"certified": true,
+			"note": -1,
+			"download": "https://github.com/tangb/cleepmod-cleepbus/releases/download/v1.0.1/cleepmod_cleepbus_1.0.1.zip",
+			"sha256": "b5e8f817f925f28fe0f7bb9a8d5ab3fc5c346d096b922c3ab9ae5f1e669f43f0"
+		},
+		"network": {
+			"category": "APPLICATION",
+			"description": "Configure how your device connect to your network",
+			"tags": ["wireless", "wifi", "ethernet"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"changelog": "Fix small issues",
+			"deps": [],
+			"longdescription": "Application that helps you to configure device network connection",
+			"version": "1.0.1",
+			"urls": {
+				"info": "https://github.com/tangb/cleepmod-network/wiki",
+				"bugs": "https://github.com/tangb/cleepmod-network/issues",
+				"site": null,
+				"help": "https://github.com/tangb/cleepmod-network/wiki/Help"
+			},
+			"icon": "ethernet",
+			"certified": true,
+			"note": -1,
+			"download": "https://github.com/tangb/cleepmod-network/releases/download/v1.0.1/cleepmod_network_1.0.1.zip",
+			"sha256": "f42dcf4060051cfb7d75fff4db0302866165fefa536cfa3c956550e5239d7687"
+		},
+		"parameters": {
+			"category": "APPLICATION",
+			"description": "Configure generic parameters of your device",
+			"tags": ["configuration", "date", "time", "locale", "lang"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"changelog": "Fix small issues",
+			"deps": [],
+			"longdescription": "Application that helps you to configure generic parameters of your device",
+			"version": "1.0.1",
+			"urls": {
+				"info": null,
+				"bugs": null,
+				"site": null,
+				"help": null
+			},
+			"icon": "settings",
+			"certified": true,
+			"note": -1,
+			"download": "https://github.com/tangb/cleepmod-parameters/releases/download/v1.0.1/cleepmod_parameters_1.0.1.zip",
+			"sha256": "424c3a818a9ff58a7dfc53eabefdbc6b8d76bf6d7db8b6f67521a803cd583746"
+		},
+		"system": {
+			"category": "APPLICATION",
+			"description": "Helps updating, controlling and monitoring the device",
+			"tags": ["troubleshoot", "locale", "events", "monitoring", "update", "log"],
+			"country": "",
+			"price": 0,
+			"author": "Cleep",
+			"deps": [],
+			"longdescription": "Application to help you to configure your system",
+			"urls": {
+				"info": null,
+				"bugs": null,
+				"site": null,
+				"help": null
+			},
+			"icon": "heart-pulse",
+			"certified": true,
+			"note": -1,
+			"version": "1.0.2",
+			"changelog": "<ul><li>Check only released CleepOs version during update check</li><li>Improve CleepOs update adding specific dialog with changes and new version available</li><li>Disable by default auto application and CleepOs update</li><li>Some other small improvements</li></ul>",
+			"download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.2/cleepmod_system_1.0.2.zip",
+			"sha256": "7f9bc69cbbb66985394314bc947a503a1188541e84141ecd990bda9e5fb17cf5"
+		},
+		"developer": {
+			"category": "APPLICATION",
+			"description": "Helps you to develop Cleep applications.",
+			"tags": ["developer", "python", "cleepos", "module", "angularjs", "cleep", "cli", "test", "documentation"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"changelog": "Features\n<ul><li>Replace remotedev by cleep-cli usage. Simpler to use and to maintain</li>\n<li>Module documentation generation</li>\n<li>Module tests execution</li>\n<li>Some UI enhancements</li></ul>",
+			"deps": [],
+			"longdescription": "Developer module helps you to develop on Cleep installing and preconfiguring sync tools. It also provides a full page that helps you to check and build your own application.<br/>This module will provide the official way to publish your module on Cleep market.<br/><br/>Lot of resources are available on developer module wiki, have a look and start enjoying Cleep!",
+			"version": "2.0.0",
+			"urls": {
+				"info": "https://github.com/tangb/cleepmod-developer",
+				"bugs": "https://github.com/tangb/cleepmod-developer/issues",
+				"site": null,
+				"help": "https://github.com/tangb/cleepmod-developer/wiki"
+			},
+			"icon": "worker",
+			"certified": true,
+			"note": 0,
+			"download": "https://github.com/tangb/cleepmod-developer/releases/download/v2.0.0/cleepmod_developer_2.0.0.zip",
+			"sha256": "efa83da7c5e1dd94543bd9315cc6f490f559ea6fc05de15d34386dc776bf1860"
+		},
+		"smtp": {
+			"category": "SERVICE",
+			"description": "Sends you alerts by email.",
+			"tags": ["email", "smtp", "alert"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"deps": [],
+			"longdescription": "This module allows your device to send alert by email and other events that occured and should be noticed by your device.<br>This module implements natively connectors to Google Gmail, Yahoo! mail and your own email server.",
+			"urls": {
+				"info": "https://github.com/tangb/cleepmod-smtp",
+				"bugs": "https://github.com/tangb/cleepmod-smtp/issues",
+				"site": null,
+				"help": "https://github.com/tangb/cleepmod-smtp/wiki"
+			},
+			"icon": "email",
+			"certified": true,
+			"note": 0,
+			"version": "1.0.0",
+			"changelog": "First working release. Handles Google Gmail, Yahoo! mail and own email provider properly.",
+			"download": "https://github.com/tangb/cleepmod-smtp/releases/download/1.0.0/cleepmod_smtp_1.0.0.zip",
+			"sha256": "87aa1ebf8e56eb38d332c4060a3df68c448559bc70be185f2c290e8c76935cf7"
+		},
+		"gpios": {
+			"category": "DRIVER",
+			"description": "Configure your raspberry pins",
+			"tags": ["gpios", "inputs", "outputs"],
+			"country": null,
+			"price": 0,
+			"author": "Cleep",
+			"deps": [],
+			"longdescription": "Gives you access to raspberry pins to configure your inputs/ouputs as you wish quickly and easily.",
+			"urls": {
+				"info": "https://github.com/tangb/cleepmod-gpios",
+				"bugs": "https://github.com/tangb/cleepmod-gpios/issues",
+				"site": null,
+				"help": "https://github.com/tangb/cleepmod-gpios/wiki"
+			},
+			"icon": "video-input-component",
+			"certified": true,
+			"note": 0,
+			"version": "1.0.0",
+			"changelog": "First release",
+			"download": "https://github.com/tangb/cleepmod-gpios/releases/download/v1.0.0/cleepmod_gpios_1.0.0.zip",
+			"sha256": "04d6bf5ff44790a7a30520ba3057f37fc255eda39e893b46e7a1b882f99e7656"
+		}
+	}
 }
