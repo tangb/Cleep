@@ -1,5 +1,5 @@
 {
-  "update": 1556832568,
+  "update": 1556833818,
   "list": {
     "audio": {
       "category": "APPLICATION",
@@ -239,7 +239,7 @@
       "changelog": "First release",
       "deps": [],
       "longdescription": "This application gets data from OpenWeatherMap online service and displays it directly on your device dashboard.<br>OpenWeatherMap allows to get for free current weather condition and 5 days forecast.<br>This application also broadcasts weather event on all your devices.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "urls": {
         "info": "https://github.com/tangb/cleepmod-openweathermap",
         "bugs": "https://github.com/tangb/cleepmod-openweathermap/issues",
@@ -249,8 +249,8 @@
       "icon": "cloud",
       "certified": true,
       "note": 0,
-      "download": "https://github.com/tangb/cleepmod-openweathermap/releases/download/v1.0.0/cleepmod_openweathermap_1.0.0.zip",
-      "sha256": "aa7635cd5a1d15d5d318a8b7164ab2b5ed018b021f4919c01e87da4659262e0a"
+      "download": "https://github.com/tangb/cleepmod-openweathermap/releases/download/v1.0.1/cleepmod_openweathermap_1.0.1.zip",
+      "sha256": "8c33a5804c685f4c7eaa3befe608a36af255410134b5c0e812331067eeaa7508"
     }
   }
 }
