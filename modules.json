@@ -156,10 +156,10 @@
       "country": null,
       "price": 0,
       "author": "Cleep",
-      "changelog": "Features\n<ul><li>Replace remotedev by cleep-cli usage. Simpler to use and to maintain</li>\n<li>Module documentation generation</li>\n<li>Module tests execution</li>\n<li>Some UI enhancements</li></ul>",
+      "changelog": "Changes:<ul><li>Update cleep-cli version</li><li>Handle module tests</li><li>Handle module documentationSome improvements: add notes, sort files list, update desc.json file generation</li></ul>",
       "deps": [],
-      "longdescription": "Developer module helps you to develop on Cleep installing and preconfiguring sync tools. It also provides a full page that helps you to check and build your own application.<br/>This module will provide the official way to publish your module on Cleep market.<br/><br/>Lot of resources are available on developer module wiki, have a look and start enjoying Cleep!",
-      "version": "2.0.0",
+      "longdescription": "Developer module helps you to develop on Cleep installing         and preconfiguring sync tools. It also provides a full page that helps you to         check and build your own application.<br/>This module will provide the official way to         publish your module on Cleep market.<br/><br/>Lot of resources are available         on developer module wiki, have a look and start enjoying Cleep!",
+      "version": "2.1.0",
       "urls": {
         "info": "https://github.com/tangb/cleepmod-developer",
         "bugs": "https://github.com/tangb/cleepmod-developer/issues",
@@ -169,8 +169,8 @@
       "icon": "worker",
       "certified": true,
       "note": 0,
-      "download": "https://github.com/tangb/cleepmod-developer/releases/download/v2.0.0/cleepmod_developer_2.0.0.zip",
-      "sha256": "efa83da7c5e1dd94543bd9315cc6f490f559ea6fc05de15d34386dc776bf1860"
+      "download": "https://github.com/tangb/cleepmod-developer/releases/download/v2.1.0/cleepmod_developer_2.1.0.zip",
+      "sha256": "00219fafd0719d296183e753297c3808e6182a0d95ca4688d9d15832f67afac5"
     },
     "smtp": {
       "category": "SERVICE",
