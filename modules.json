@@ -1,5 +1,5 @@
 {
-  "update": 1556833818,
+  "update": 1559771039,
   "list": {
     "audio": {
       "category": "APPLICATION",
@@ -218,7 +218,7 @@
         "site": null,
         "help": "https://github.com/tangb/cleepmod-gpios/wiki"
       },
-      "icon": "video-input-component",
+      "icon": "drag-horizontal",
       "certified": true,
       "note": 0,
       "version": "1.0.0",
