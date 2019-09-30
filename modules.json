@@ -146,17 +146,17 @@
         "gpios": {
             "author": "Cleep", 
             "category": "DRIVER", 
-            "certified": true, 
-            "changelog": "First release", 
+            "certified": false, 
+            "changelog": "Changes:\n<ul>\n<li>Improve robustness adding unit tests</li>\n<li>Add documentation generation</li>\n<li>Update after core changes</li>\n<li>Fox some issues</li>\n</ul>", 
             "country": null, 
             "deps": [], 
             "description": "Configure your raspberry pins", 
-            "download": "https://github.com/tangb/cleepmod-gpios/releases/download/v1.0.0/cleepmod_gpios_1.0.0.zip", 
+            "download": "https://github.com/tangb/cleepmod-gpios/releases/download/v1.1.0/cleepmod_gpios_1.1.0.zip", 
             "icon": "drag-horizontal", 
             "longdescription": "Gives you access to raspberry pins to configure your inputs/ouputs as you wish quickly and easily.", 
-            "note": 0, 
+            "note": -1, 
             "price": 0, 
-            "sha256": "04d6bf5ff44790a7a30520ba3057f37fc255eda39e893b46e7a1b882f99e7656", 
+            "sha256": "6479489e78d4f67c98e649989cf7d1d71c82dd17162155b56e646c4dac4b6bbe", 
             "tags": [
                 "gpios", 
                 "inputs", 
@@ -168,7 +168,7 @@
                 "info": "https://github.com/tangb/cleepmod-gpios", 
                 "site": null
             }, 
-            "version": "1.0.0"
+            "version": "1.1.0"
         }, 
         "network": {
             "author": "Cleep", 
@@ -310,5 +310,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841166
+    "update": 1569841236
 }
