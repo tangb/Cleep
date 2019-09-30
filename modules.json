@@ -173,17 +173,17 @@
         "network": {
             "author": "Cleep", 
             "category": "APPLICATION", 
-            "certified": true, 
-            "changelog": "Fix small issues", 
+            "certified": false, 
+            "changelog": "Changes:\n<ul>\n<li>Update after core changes</li>\n</ul>", 
             "country": null, 
             "deps": [], 
             "description": "Configure how your device connect to your network", 
-            "download": "https://github.com/tangb/cleepmod-network/releases/download/v1.0.1/cleepmod_network_1.0.1.zip", 
+            "download": "https://github.com/tangb/cleepmod-network/releases/download/v1.1.0/cleepmod_network_1.1.0.zip", 
             "icon": "ethernet", 
             "longdescription": "Application that helps you to configure device network connection", 
             "note": -1, 
             "price": 0, 
-            "sha256": "f42dcf4060051cfb7d75fff4db0302866165fefa536cfa3c956550e5239d7687", 
+            "sha256": "862f6cc74340667baf688336ed2b6b07a4ac0fc2da9a9f6802648d3d5edb8ff1", 
             "tags": [
                 "wireless", 
                 "wifi", 
@@ -195,7 +195,7 @@
                 "info": "https://github.com/tangb/cleepmod-network/wiki", 
                 "site": null
             }, 
-            "version": "1.0.1"
+            "version": "1.1.0"
         }, 
         "openweathermap": {
             "author": "Cleep", 
@@ -372,5 +372,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569869804
+    "update": 1569870094
 }
