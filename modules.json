@@ -252,6 +252,38 @@
             }, 
             "version": "1.0.1"
         }, 
+        "respeaker2mic": {
+            "author": "Cleep", 
+            "category": "DRIVER", 
+            "certified": false, 
+            "changelog": "First release", 
+            "country": null, 
+            "deps": [
+                "gpios"
+            ], 
+            "description": "Configure your ReSpeaker2Mic hat", 
+            "download": "https://github.com/tangb/cleepmod-respeaker2mic/releases/download/v1.0.0/cleepmod_respeaker2mic_1.0.0.zip", 
+            "icon": "microphone-settings", 
+            "longdescription": "The ReSpeaker 2 Mic Array (ReSpeaker 2-Mics Pi HAT) is a 2 microphone array                             Pi Hat for Raspberry Pi designed for AI and voice applications. It also handles                             3 RGB Leds and a button that allow application to interact with user easily. It embeds                             a soundcard really useful for Raspberrypi Zero.<br><br>It the perfect partner for your                             first voice assistant.", 
+            "note": -1, 
+            "price": 0, 
+            "sha256": "236c981b6bf128168fa357b89ca94564b10817ac6ed7e1491daad0ef33793375", 
+            "tags": [
+                "audio", 
+                "mic", 
+                "led", 
+                "button", 
+                "soundcard", 
+                "grove"
+            ], 
+            "urls": {
+                "bugs": "https://github.com/tangb/cleepmod-respeaker2mic/issues", 
+                "help": "https://github.com/tangb/cleepmod-respeaker2mic/wiki", 
+                "info": "https://github.com/tangb/cleepmod-respeaker2mic", 
+                "site": "https://respeaker.io/2_mic_array/"
+            }, 
+            "version": "1.0.0"
+        }, 
         "smtp": {
             "author": "Cleep", 
             "category": "SERVICE", 
@@ -310,5 +342,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841236
+    "update": 1569841276
 }
