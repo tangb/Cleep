@@ -284,6 +284,36 @@
             }, 
             "version": "1.0.0"
         }, 
+        "sensors": {
+            "author": "Cleep", 
+            "category": "APPLICATION", 
+            "certified": false, 
+            "changelog": "First release", 
+            "country": null, 
+            "deps": [
+                "gpios"
+            ], 
+            "description": "Implements easily and quickly sensors like temperature, motion, light...", 
+            "download": "https://github.com/tangb/cleepmod-sensors/releases/download/v1.0.0/cleepmod_sensors_1.0.0.zip", 
+            "icon": "chip", 
+            "longdescription": "With this module you will be able to follow environment temperature, detect some motion around your device, detect when light level is dim... and trigger some action according to those stimuli.", 
+            "note": -1, 
+            "price": 0, 
+            "sha256": "1af2b840a514fae3936e5b2715e7c5416bbfaa865a2baa432cf40cd97a4cfb2f", 
+            "tags": [
+                "sensors", 
+                "temperature", 
+                "motiononewire", 
+                "1wire"
+            ], 
+            "urls": {
+                "bugs": "https://github.com/tangb/cleepmod-sensors/issues", 
+                "help": null, 
+                "info": "https://github.com/tangb/cleepmod-sensors", 
+                "site": null
+            }, 
+            "version": "1.0.0"
+        }, 
         "smtp": {
             "author": "Cleep", 
             "category": "SERVICE", 
@@ -342,5 +372,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841397
+    "update": 1569841497
 }
