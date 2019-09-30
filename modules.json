@@ -344,17 +344,17 @@
         "system": {
             "author": "Cleep", 
             "category": "APPLICATION", 
-            "certified": true, 
-            "changelog": "<ul><li>Check only released CleepOs version during update check</li><li>Improve CleepOs update adding specific dialog with changes and new version available</li><li>Disable by default auto application and CleepOs update</li><li>Some other small improvements</li></ul>", 
+            "certified": false, 
+            "changelog": "Changes:\n<ul>\n<li>Update after core update</li>\n<li>Improve layout</li>\n<li>Fix issues in front and back</li>\n<li>Add driver config tab</li>\n</ul>", 
             "country": "", 
             "deps": [], 
             "description": "Helps updating, controlling and monitoring the device", 
-            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.0.2/cleepmod_system_1.0.2.zip", 
+            "download": "https://github.com/tangb/cleepmod-system/releases/download/v1.1.0/cleepmod_system_1.1.0.zip", 
             "icon": "heart-pulse", 
-            "longdescription": "Application to help you to configure your system", 
+            "longdescription": "Application that helps you to configure your system", 
             "note": -1, 
             "price": 0, 
-            "sha256": "7f9bc69cbbb66985394314bc947a503a1188541e84141ecd990bda9e5fb17cf5", 
+            "sha256": "15e7eb805f55200a7d4627d4ddc77d138f9a04700713bc60b064e8420d22635e", 
             "tags": [
                 "troubleshoot", 
                 "locale", 
@@ -364,13 +364,13 @@
                 "log"
             ], 
             "urls": {
-                "bugs": null, 
+                "bugs": "https://github.com/tangb/cleepmod-system/issues", 
                 "help": null, 
-                "info": null, 
+                "info": "https://github.com/tangb/cleepmod-system", 
                 "site": null
             }, 
-            "version": "1.0.2"
+            "version": "1.1.0"
         }
     }, 
-    "update": 1569870927
+    "update": 1569880084
 }
