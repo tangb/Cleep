@@ -113,17 +113,17 @@
         "developer": {
             "author": "Cleep", 
             "category": "APPLICATION", 
-            "certified": true, 
-            "changelog": "Changes:<ul><li>Update cleep-cli version</li><li>Handle module tests</li><li>Handle module documentationSome improvements: add notes, sort files list, update desc.json file generation</li></ul>", 
+            "certified": false, 
+            "changelog": "Changes:\n<ul>\n<li>Update after core changes</li>\n<li>Fix some issues</li>\n</ul>", 
             "country": null, 
             "deps": [], 
             "description": "Helps you to develop Cleep applications.", 
-            "download": "https://github.com/tangb/cleepmod-developer/releases/download/v2.1.0/cleepmod_developer_2.1.0.zip", 
+            "download": "https://github.com/tangb/cleepmod-developer/releases/download/v2.2.0/cleepmod_developer_2.2.0.zip", 
             "icon": "worker", 
             "longdescription": "Developer module helps you to develop on Cleep installing         and preconfiguring sync tools. It also provides a full page that helps you to         check and build your own application.<br/>This module will provide the official way to         publish your module on Cleep market.<br/><br/>Lot of resources are available         on developer module wiki, have a look and start enjoying Cleep!", 
-            "note": 0, 
+            "note": -1, 
             "price": 0, 
-            "sha256": "00219fafd0719d296183e753297c3808e6182a0d95ca4688d9d15832f67afac5", 
+            "sha256": "8550046516ece9d61446590fa9d96dc2ac88334adadcc15a7605ac3654b6d1f4", 
             "tags": [
                 "developer", 
                 "python", 
@@ -141,7 +141,7 @@
                 "info": "https://github.com/tangb/cleepmod-developer", 
                 "site": null
             }, 
-            "version": "2.1.0"
+            "version": "2.2.0"
         }, 
         "gpios": {
             "author": "Cleep", 
@@ -372,5 +372,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841515
+    "update": 1569842481
 }
