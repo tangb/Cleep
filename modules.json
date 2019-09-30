@@ -43,7 +43,7 @@
             "longdescription": "Application that helps you to configure audio on your device", 
             "note": -1, 
             "price": 0, 
-            "sha256": "5cfd6b6a40b3f75906a507bda3013efe0ffc455dbc6d0150c0ec7523d7085061", 
+            "sha256": "cdeda05a87cc78fc2b14a6dbd63f9a2e2063062d010f84bdbff9497ac9f93fab", 
             "tags": [
                 "audio", 
                 "sound"
@@ -372,5 +372,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569843281
+    "update": 1569869804
 }
