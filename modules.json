@@ -200,17 +200,17 @@
         "openweathermap": {
             "author": "Cleep", 
             "category": "SERVICE", 
-            "certified": true, 
-            "changelog": "First release", 
+            "certified": false, 
+            "changelog": "Changes:\n<ul>\n<li>Update after core changes</li>\n</ul>", 
             "country": null, 
             "deps": [], 
             "description": "Gets weather conditions using OpenWeatherMap service", 
-            "download": "https://github.com/tangb/cleepmod-openweathermap/releases/download/v1.0.1/cleepmod_openweathermap_1.0.1.zip", 
+            "download": "https://github.com/tangb/cleepmod-openweathermap/releases/download/v1.1.0/cleepmod_openweathermap_1.1.0.zip", 
             "icon": "cloud", 
-            "longdescription": "This application gets data from OpenWeatherMap online service and displays it directly on your device dashboard.<br>OpenWeatherMap allows to get for free current weather condition and 5 days forecast.<br>This application also broadcasts weather event on all your devices.", 
-            "note": 0, 
+            "longdescription": "This application gets data from OpenWeatherMap online service and displays it directly on your device                                dashboard.<br>OpenWeatherMap allows to get for free current weather condition and 5 days forecast.<br>                                This application also broadcasts weather event on all your devices.", 
+            "note": -1, 
             "price": 0, 
-            "sha256": "8c33a5804c685f4c7eaa3befe608a36af255410134b5c0e812331067eeaa7508", 
+            "sha256": "a2a8726363b290978322bcabb3c85bbd6fe8a370e3cab4db2a3a4661ea1fa47a", 
             "tags": [
                 "weather", 
                 "forecast"
@@ -219,9 +219,9 @@
                 "bugs": "https://github.com/tangb/cleepmod-openweathermap/issues", 
                 "help": "https://github.com/tangb/cleepmod-openweathermap/wiki", 
                 "info": "https://github.com/tangb/cleepmod-openweathermap", 
-                "site": null
+                "site": "https://openweathermap.org/"
             }, 
-            "version": "1.0.1"
+            "version": "1.1.0"
         }, 
         "parameters": {
             "author": "Cleep", 
@@ -372,5 +372,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841497
+    "update": 1569841515
 }
