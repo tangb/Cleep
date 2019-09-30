@@ -33,28 +33,28 @@
         "audio": {
             "author": "Cleep", 
             "category": "APPLICATION", 
-            "certified": true, 
-            "changelog": "Fix small issues", 
+            "certified": false, 
+            "changelog": "Changes:\n<ul>\n<li>Update after core changes</li>\n<li>Layout improvments</li>\n<li>Implement new driver core feature</li>\n<li>Fix issues</li>\n</ul>", 
             "country": null, 
             "deps": [], 
             "description": "Configure audio on your device", 
-            "download": "https://github.com/tangb/cleepmod-audio/releases/download/v1.0.1/cleepmod_audio_1.0.1.zip", 
+            "download": "https://github.com/tangb/cleepmod-audio/releases/download/v1.1.0/cleepmod_audio_1.1.0.zip", 
             "icon": "speaker", 
             "longdescription": "Application that helps you to configure audio on your device", 
             "note": -1, 
             "price": 0, 
-            "sha256": "92505a218cd9382745156706606b94b81a3936ada27b6cbad7f981630e173aab", 
+            "sha256": "5cfd6b6a40b3f75906a507bda3013efe0ffc455dbc6d0150c0ec7523d7085061", 
             "tags": [
                 "audio", 
                 "sound"
             ], 
             "urls": {
-                "bugs": null, 
-                "help": null, 
-                "info": null, 
+                "bugs": "https://github.com/tangb/cleepmod-audio/issues", 
+                "help": "https://github.com/tangb/cleepmod-audio/wiki", 
+                "info": "https://github.com/tangb/cleepmod-audio", 
                 "site": null
             }, 
-            "version": "1.0.1"
+            "version": "1.1.0"
         }, 
         "charts": {
             "author": "Cleep", 
@@ -372,5 +372,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569842977
+    "update": 1569843281
 }
