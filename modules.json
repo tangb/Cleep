@@ -287,17 +287,17 @@
         "smtp": {
             "author": "Cleep", 
             "category": "SERVICE", 
-            "certified": true, 
-            "changelog": "First working release. Handles Google Gmail, Yahoo! mail and own email provider properly.", 
+            "certified": false, 
+            "changelog": "Update after core changes", 
             "country": null, 
             "deps": [], 
             "description": "Sends you alerts by email.", 
-            "download": "https://github.com/tangb/cleepmod-smtp/releases/download/1.0.0/cleepmod_smtp_1.0.0.zip", 
+            "download": "https://github.com/tangb/cleepmod-smtp/releases/download/v1.1.0/cleepmod_smtp_1.1.0.zip", 
             "icon": "email", 
             "longdescription": "This module allows your device to send alert by email and other events that occured and should be noticed by your device.<br>This module implements natively connectors to Google Gmail, Yahoo! mail and your own email server.", 
-            "note": 0, 
+            "note": -1, 
             "price": 0, 
-            "sha256": "87aa1ebf8e56eb38d332c4060a3df68c448559bc70be185f2c290e8c76935cf7", 
+            "sha256": "ee5b88d028c7fb345abaa6711b3e2f36ec7b2285d81bf6219bcd9079e6dad359", 
             "tags": [
                 "email", 
                 "smtp", 
@@ -309,7 +309,7 @@
                 "info": "https://github.com/tangb/cleepmod-smtp", 
                 "site": null
             }, 
-            "version": "1.0.0"
+            "version": "1.1.0"
         }, 
         "system": {
             "author": "Cleep", 
@@ -342,5 +342,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841276
+    "update": 1569841397
 }
