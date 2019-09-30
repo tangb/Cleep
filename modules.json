@@ -1,5 +1,35 @@
 {
     "list": {
+        "actions": {
+            "author": "Cleep", 
+            "category": "APPLICATION", 
+            "certified": false, 
+            "changelog": "First release", 
+            "country": null, 
+            "deps": [], 
+            "description": "Interact with other modules to trigger custom actions", 
+            "download": "https://github.com/tangb/cleepmod-actions/releases/download/v1.0.0/cleepmod_actions_1.0.0.zip", 
+            "icon": "play-box-outline", 
+            "longdescription": "Write your own python script as Cleep actions.<br>\n                                Those actions can interact with all installed modules and trigger custom actions according to received events.<br>\n                                Action scripts are written in Python and executed after any event is received. This application is the best place\n                                to quickly implement cron job for example.", 
+            "note": -1, 
+            "price": 0, 
+            "sha256": "c44d0d1fa6fe776f69b369af1f7a15a9e882f95573a376438df404a22d8e87cf", 
+            "tags": [
+                "action", 
+                "skill", 
+                "script", 
+                "trigger", 
+                "python", 
+                "cron"
+            ], 
+            "urls": {
+                "bugs": "https://github.com/tangb/cleepmod-actions/issues", 
+                "help": "https://github.com/tangb/cleepmod-actions/wiki", 
+                "info": "https://github.com/tangb/cleepmod-actions", 
+                "site": null
+            }, 
+            "version": "1.0.0"
+        }, 
         "audio": {
             "author": "Cleep", 
             "category": "APPLICATION", 
@@ -280,5 +310,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569841022
+    "update": 1569841166
 }
