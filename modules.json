@@ -26,6 +26,34 @@
             }, 
             "version": "1.0.1"
         }, 
+        "charts": {
+            "author": "Cleep", 
+            "category": "APPLICATION", 
+            "certified": false, 
+            "changelog": "First release", 
+            "country": null, 
+            "deps": [], 
+            "description": "Follow easily your sensors values graphically.", 
+            "download": "https://github.com/tangb/cleepmod-charts/releases/download/v1.0.0/cleepmod_charts_1.0.0.zip", 
+            "icon": "chart-areaspline", 
+            "longdescription": "Charts application automatically generates charts according to your connected sensors values.<br>                              It allows you to follow in time the evolution of the measurements of your sensors", 
+            "note": -1, 
+            "price": 0, 
+            "sha256": "00625651423636e7087a3cfa422929440858781585138d273120e87c61bea46c", 
+            "tags": [
+                "sensors", 
+                "graphs", 
+                "charts", 
+                "database"
+            ], 
+            "urls": {
+                "bugs": "https://github.com/tangb/cleepmod-charts/issues", 
+                "help": "https://github.com/tangb/cleepmod-charts/wiki", 
+                "info": "https://github.com/tangb/cleepmod-charts", 
+                "site": null
+            }, 
+            "version": "1.0.0"
+        }, 
         "cleepbus": {
             "author": "Cleep", 
             "category": "APPLICATION", 
@@ -252,5 +280,5 @@
             "version": "1.0.2"
         }
     }, 
-    "update": 1569833173
+    "update": 1569841022
 }
