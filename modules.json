@@ -88,16 +88,16 @@
             "author": "Cleep", 
             "category": "APPLICATION", 
             "certified": false, 
-            "changelog": "Changes:\n<ul>\n<li>Update after core changes</li>\n<li>Return more infos about device</li>\n</ul>", 
+            "changelog": "Update after core changes", 
             "country": null, 
             "deps": [], 
             "description": "Enables communications between all your Cleep devices through your home network", 
-            "download": "https://github.com/tangb/cleepmod-cleepbus/releases/download/v1.1.0/cleepmod_cleepbus_1.1.0.zip", 
+            "download": "https://github.com/tangb/cleepmod-cleepbus/releases/download/v1.1.1/cleepmod_cleepbus_1.1.1.zip", 
             "icon": "bus", 
             "longdescription": "Application that enables communication between devices", 
             "note": -1, 
             "price": 0, 
-            "sha256": "ce2a3ff6f07c6acaa98151c9da93816aa119ff518d32064f311d59979def31b8", 
+            "sha256": "55b435169af8bac7cc06446d4f0ffcadb49ef2118d5eeaa04eaffa77f68f4b9c", 
             "tags": [
                 "bus", 
                 "communication"
@@ -108,7 +108,7 @@
                 "info": "https://github.com/tangb/cleepmod-cleepbus/wiki/CleepBus-module", 
                 "site": null
             }, 
-            "version": "1.1.0"
+            "version": "1.1.1"
         }, 
         "developer": {
             "author": "Cleep", 
@@ -372,5 +372,5 @@
             "version": "1.1.0"
         }
     }, 
-    "update": 1570268006
+    "update": 1571561176
 }
