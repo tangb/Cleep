@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cleep.profiles package &mdash; Cleep core API 0.0.21 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cleep.resources package" href="cleep.resources.html" />
+    <link rel="prev" title="cleep.libs.tests.lib module" href="cleep.libs.tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #607d8b" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cleep core API
+          
+
+          
+            
+            <img src="../_static/cleep-logo-red.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.21
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cleep</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cleep.html">cleep package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.bus">cleep.bus module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.common">cleep.common module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.core">cleep.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.exception">cleep.exception module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.inventory">cleep.inventory module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.rpcserver">cleep.rpcserver module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.libs.html">cleep.libs package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-commands">cleep.libs.commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html">cleep.libs.commands.alsa module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html">cleep.libs.configs.asoundrc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.config">cleep.libs.configs.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.configtxt">cleep.libs.configs.configtxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.dhcpcdconf">cleep.libs.configs.dhcpcdconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcasoundconf">cleep.libs.configs.etcasoundconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcmodules">cleep.libs.configs.etcmodules module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcnetworkinterfaces">cleep.libs.configs.etcnetworkinterfaces module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-drivers">cleep.libs.drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.drivers.html">cleep.libs.drivers.audiodriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.drivers.html#module-cleep.libs.drivers.driver">cleep.libs.drivers.driver module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-internals">cleep.libs.internals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html">cleep.libs.internals.cleepbackup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepfilesystem">cleep.libs.internals.cleepfilesystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepgithub">cleep.libs.internals.cleepgithub module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepresource">cleep.libs.internals.cleepresource module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.console">cleep.libs.internals.console module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.crashreport">cleep.libs.internals.crashreport module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.criticalresources">cleep.libs.internals.criticalresources module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.download">cleep.libs.internals.download module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.drivers">cleep.libs.internals.drivers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.rendererprofile">cleep.libs.internals.rendererprofile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.sun">cleep.libs.internals.sun module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.task">cleep.libs.internals.task module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.tools">cleep.libs.internals.tools module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-tests">cleep.libs.tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.tests.html">cleep.libs.tests.lib module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.tests.html#module-cleep.libs.tests.session">cleep.libs.tests.session module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cleep.profiles package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.alertemailprofile">cleep.profiles.alertemailprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.alertpushprofile">cleep.profiles.alertpushprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.alertsmsprofile">cleep.profiles.alertsmsprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.displayaddorreplacemessageprofile">cleep.profiles.displayaddorreplacemessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.displaymessageprofile">cleep.profiles.displaymessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.displaytimelimitedmessageprofile">cleep.profiles.displaytimelimitedmessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.soundtexttospeechprofile">cleep.profiles.soundtexttospeechprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.speechrecognitioncommandprofile">cleep.profiles.speechrecognitioncommandprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.profiles.speechrecognitionhotwordprofile">cleep.profiles.speechrecognitionhotwordprofile module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.resources.html">cleep.resources package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audiocaptureresource">cleep.resources.audiocaptureresource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audioplaybackresource">cleep.resources.audioplaybackresource module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cleep core API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">cleep</a> &raquo;</li>
+        
+      <li>cleep.profiles package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/cleep.profiles.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cleep-profiles-package">
+<h1>cleep.profiles package<a class="headerlink" href="#cleep-profiles-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-cleep.profiles.alertemailprofile">
+<span id="cleep-profiles-alertemailprofile-module"></span><h2>cleep.profiles.alertemailprofile module<a class="headerlink" href="#module-cleep.profiles.alertemailprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.alertemailprofile.AlertEmailProfile">
+<em class="property">class </em><code class="descname">AlertEmailProfile</code><a class="headerlink" href="#cleep.profiles.alertemailprofile.AlertEmailProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Default email profile</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.alertpushprofile">
+<span id="cleep-profiles-alertpushprofile-module"></span><h2>cleep.profiles.alertpushprofile module<a class="headerlink" href="#module-cleep.profiles.alertpushprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.alertpushprofile.AlertPushProfile">
+<em class="property">class </em><code class="descname">AlertPushProfile</code><a class="headerlink" href="#cleep.profiles.alertpushprofile.AlertPushProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Default email profile</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.alertsmsprofile">
+<span id="cleep-profiles-alertsmsprofile-module"></span><h2>cleep.profiles.alertsmsprofile module<a class="headerlink" href="#module-cleep.profiles.alertsmsprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.alertsmsprofile.AlertSmsProfile">
+<em class="property">class </em><code class="descname">AlertSmsProfile</code><a class="headerlink" href="#cleep.profiles.alertsmsprofile.AlertSmsProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Default sms profile</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.displayaddorreplacemessageprofile">
+<span id="cleep-profiles-displayaddorreplacemessageprofile-module"></span><h2>cleep.profiles.displayaddorreplacemessageprofile module<a class="headerlink" href="#module-cleep.profiles.displayaddorreplacemessageprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.displayaddorreplacemessageprofile.DisplayAddOrReplaceMessageProfile">
+<em class="property">class </em><code class="descname">DisplayAddOrReplaceMessageProfile</code><a class="headerlink" href="#cleep.profiles.displayaddorreplacemessageprofile.DisplayAddOrReplaceMessageProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Display profile.</p>
+<p>Handles single message with message id to replace.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.displaymessageprofile">
+<span id="cleep-profiles-displaymessageprofile-module"></span><h2>cleep.profiles.displaymessageprofile module<a class="headerlink" href="#module-cleep.profiles.displaymessageprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.displaymessageprofile.DisplayMessageProfile">
+<em class="property">class </em><code class="descname">DisplayMessageProfile</code><a class="headerlink" href="#cleep.profiles.displaymessageprofile.DisplayMessageProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Display profile.</p>
+<p>Handles single message</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.displaytimelimitedmessageprofile">
+<span id="cleep-profiles-displaytimelimitedmessageprofile-module"></span><h2>cleep.profiles.displaytimelimitedmessageprofile module<a class="headerlink" href="#module-cleep.profiles.displaytimelimitedmessageprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.displaytimelimitedmessageprofile.DisplayTimeLimitedMessageProfile">
+<em class="property">class </em><code class="descname">DisplayTimeLimitedMessageProfile</code><a class="headerlink" href="#cleep.profiles.displaytimelimitedmessageprofile.DisplayTimeLimitedMessageProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Display profile.</p>
+<p>Handles single message with start and end range datetime.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.soundtexttospeechprofile">
+<span id="cleep-profiles-soundtexttospeechprofile-module"></span><h2>cleep.profiles.soundtexttospeechprofile module<a class="headerlink" href="#module-cleep.profiles.soundtexttospeechprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.soundtexttospeechprofile.SoundTextToSpeechProfile">
+<em class="property">class </em><code class="descname">SoundTextToSpeechProfile</code><a class="headerlink" href="#cleep.profiles.soundtexttospeechprofile.SoundTextToSpeechProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Sound profile.</p>
+<p>TextToSpeech message.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.speechrecognitioncommandprofile">
+<span id="cleep-profiles-speechrecognitioncommandprofile-module"></span><h2>cleep.profiles.speechrecognitioncommandprofile module<a class="headerlink" href="#module-cleep.profiles.speechrecognitioncommandprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.speechrecognitioncommandprofile.SpeechRecognitionCommandProfile">
+<em class="property">class </em><code class="descname">SpeechRecognitionCommandProfile</code><a class="headerlink" href="#cleep.profiles.speechrecognitioncommandprofile.SpeechRecognitionCommandProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Speechrecognition command profile.</p>
+<p>Handles speechrecognition detected and error command.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.profiles.speechrecognitionhotwordprofile">
+<span id="cleep-profiles-speechrecognitionhotwordprofile-module"></span><h2>cleep.profiles.speechrecognitionhotwordprofile module<a class="headerlink" href="#module-cleep.profiles.speechrecognitionhotwordprofile" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.profiles.speechrecognitionhotwordprofile.SpeechRecognitionHotwordProfile">
+<em class="property">class </em><code class="descname">SpeechRecognitionHotwordProfile</code><a class="headerlink" href="#cleep.profiles.speechrecognitionhotwordprofile.SpeechRecognitionHotwordProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.rendererprofile.RendererProfile</span></code></a></p>
+<p>Speechrecognition hotword profile.</p>
+<p>Handles hotword detected and released.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Tanguy Bonneau
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

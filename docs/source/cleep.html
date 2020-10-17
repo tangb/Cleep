@@ -1,0 +1,2425 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cleep package &mdash; Cleep core API 0.0.21 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cleep.libs package" href="cleep.libs.html" />
+    <link rel="prev" title="cleep" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #607d8b" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cleep core API
+          
+
+          
+            
+            <img src="../_static/cleep-logo-red.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.21
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cleep</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cleep package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.bus">cleep.bus module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.common">cleep.common module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.core">cleep.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.exception">cleep.exception module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.inventory">cleep.inventory module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cleep.rpcserver">cleep.rpcserver module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.libs.html">cleep.libs package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-commands">cleep.libs.commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html">cleep.libs.commands.alsa module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html">cleep.libs.configs.asoundrc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.config">cleep.libs.configs.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.configtxt">cleep.libs.configs.configtxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.dhcpcdconf">cleep.libs.configs.dhcpcdconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcasoundconf">cleep.libs.configs.etcasoundconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcmodules">cleep.libs.configs.etcmodules module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcnetworkinterfaces">cleep.libs.configs.etcnetworkinterfaces module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-drivers">cleep.libs.drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.drivers.html">cleep.libs.drivers.audiodriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.drivers.html#module-cleep.libs.drivers.driver">cleep.libs.drivers.driver module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-internals">cleep.libs.internals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html">cleep.libs.internals.cleepbackup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepfilesystem">cleep.libs.internals.cleepfilesystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepgithub">cleep.libs.internals.cleepgithub module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepresource">cleep.libs.internals.cleepresource module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.console">cleep.libs.internals.console module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.crashreport">cleep.libs.internals.crashreport module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.criticalresources">cleep.libs.internals.criticalresources module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.download">cleep.libs.internals.download module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.drivers">cleep.libs.internals.drivers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.rendererprofile">cleep.libs.internals.rendererprofile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.sun">cleep.libs.internals.sun module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.task">cleep.libs.internals.task module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.tools">cleep.libs.internals.tools module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-tests">cleep.libs.tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.tests.html">cleep.libs.tests.lib module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.tests.html#module-cleep.libs.tests.session">cleep.libs.tests.session module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.profiles.html">cleep.profiles package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertemailprofile">cleep.profiles.alertemailprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertpushprofile">cleep.profiles.alertpushprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertsmsprofile">cleep.profiles.alertsmsprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displayaddorreplacemessageprofile">cleep.profiles.displayaddorreplacemessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displaymessageprofile">cleep.profiles.displaymessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displaytimelimitedmessageprofile">cleep.profiles.displaytimelimitedmessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.soundtexttospeechprofile">cleep.profiles.soundtexttospeechprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.speechrecognitioncommandprofile">cleep.profiles.speechrecognitioncommandprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.speechrecognitionhotwordprofile">cleep.profiles.speechrecognitionhotwordprofile module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.resources.html">cleep.resources package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audiocaptureresource">cleep.resources.audiocaptureresource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audioplaybackresource">cleep.resources.audioplaybackresource module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cleep core API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">cleep</a> &raquo;</li>
+        
+      <li>cleep package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/cleep.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cleep-package">
+<h1>cleep package<a class="headerlink" href="#cleep-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-cleep.bus">
+<span id="cleep-bus-module"></span><h2>cleep.bus module<a class="headerlink" href="#module-cleep.bus" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.bus.MessageBus">
+<em class="property">class </em><code class="descname">MessageBus</code><span class="sig-paren">(</span><em>crash_report</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="cleep.bus.MessageBus.DEQUE_MAX_LEN">
+<code class="descname">DEQUE_MAX_LEN</code><em class="property"> = 100</em><a class="headerlink" href="#cleep.bus.MessageBus.DEQUE_MAX_LEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.bus.MessageBus.STARTUP_TIMEOUT">
+<code class="descname">STARTUP_TIMEOUT</code><em class="property"> = 30.0</em><a class="headerlink" href="#cleep.bus.MessageBus.STARTUP_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME">
+<code class="descname">SUBSCRIPTION_LIFETIME</code><em class="property"> = 600</em><a class="headerlink" href="#cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME" title="Permalink to this definition">¶</a></dt>
+<dd><p>Message bus
+Used to send messages to subscribed clients
+A pushed message can have recipient to directly send message to specific client. In that case
+a response is awaited. If there is no response before end of timeout, an exception is throwed.
+A message without recipient is broadcasted to all subscribers. No response is awaited.
+Only broadcasted messages can be sent before all clients have subscribed (during init phase)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus._MessageBus__pull_with_timeout">
+<code class="descname">_MessageBus__pull_with_timeout</code><span class="sig-paren">(</span><em>module</em>, <em>module_lc</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus._MessageBus__pull_with_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull message with timeout
+Timeout specified, try to read each 0.1 seconds a message until specified timeout</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus._MessageBus__pull_without_timeout">
+<code class="descname">_MessageBus__pull_without_timeout</code><span class="sig-paren">(</span><em>module</em>, <em>module_lc</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus._MessageBus__pull_without_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull message without timeout</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus._MessageBus__push_to_broadcast">
+<code class="descname">_MessageBus__push_to_broadcast</code><span class="sig-paren">(</span><em>request</em>, <em>request_dict</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus._MessageBus__push_to_broadcast" title="Permalink to this definition">¶</a></dt>
+<dd><p>No recipient to request, broadcast message to all subscribed modules
+Broadcast message does not reply with a response (return None)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus._MessageBus__push_to_recipient">
+<code class="descname">_MessageBus__push_to_recipient</code><span class="sig-paren">(</span><em>request</em>, <em>request_dict</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus._MessageBus__push_to_recipient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push message to specified recipient</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus._MessageBus__push_to_rpc">
+<code class="descname">_MessageBus__push_to_rpc</code><span class="sig-paren">(</span><em>request</em>, <em>request_dict</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus._MessageBus__push_to_rpc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send message to all subscribed frontends
+If application is not configured, messages are dropped</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus._MessageBus__push_to_unknown_module">
+<code class="descname">_MessageBus__push_to_unknown_module</code><span class="sig-paren">(</span><em>request</em>, <em>request_dict</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus._MessageBus__push_to_unknown_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle message sent before app is configured and recipient queue doesn’t exist yet
+This part of code will create queue for specified recipient and increase request timeout
+This is only a hack, a best practice is to wait startup event to send request to recipient</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.add_subscription">
+<code class="descname">add_subscription</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.add_subscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new subscription.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.app_configured">
+<code class="descname">app_configured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.app_configured" title="Permalink to this definition">¶</a></dt>
+<dd><p>Say to message bus application is configured and ready to run.
+/!This way of proceed is dangerous if clients always broadcast messages, the bus may always stay
+blocked in “app not configured” state. But in small system like cleep, it should be fine.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.is_subscribed">
+<code class="descname">is_subscribed</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.is_subscribed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if module is subscribed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module is subscribed.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.pull">
+<code class="descname">pull</code><span class="sig-paren">(</span><em>module</em>, <em>timeout=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.pull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull message from specified module queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>module</strong> (<em>string</em>) – module name</li>
+<li><strong>timeout</strong> (<em>float</em>) – time to wait, default is blocking (0.5s)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>received message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">message</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">MessageRequest</span> <span class="k">as</span> <span class="nb">dict</span>
+    <span class="n">event</span> <span class="p">(</span><span class="n">Event</span><span class="p">):</span> <span class="n">sync</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">no</span> <span class="n">response</span> <span class="n">awaited</span> <span class="p">(</span><span class="n">broadcast</span><span class="p">,</span> <span class="n">event</span> <span class="n">message</span><span class="p">)</span>
+    <span class="n">response</span> <span class="p">(</span><span class="n">MessageResponse</span><span class="p">):</span> <span class="n">request</span> <span class="n">response</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">no</span> <span class="n">response</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dict</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidModule</span></code> – if module is unknown.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">BusError</span></code> – if fatal error occured during message pulling.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoMessageAvailable</span></code> – if no message is available.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.purge_subscriptions">
+<code class="descname">purge_subscriptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.purge_subscriptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Purge old subscriptions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>request</em>, <em>timeout=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push message to specified module and wait for response until timeout.
+By default it is blocking but with timeout=0.0 the function returns instantly
+without result, but command is sent.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message to push.</li>
+<li><strong>timeout</strong> (<em>float</em>) – time to wait for response. If not specified, function returns None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">message response
+None: if no response awaited (request is an event or a broadcast command or if timeout is None)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dict</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if request is not a MessageRequest instance.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoResponse</span></code> – if no response is received from module.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidModule</span></code> – if specified recipient is unknown.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.remove_subscription">
+<code class="descname">remove_subscription</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.remove_subscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove existing subscription;</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if module is unknown.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.MessageBus.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop bus</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.bus.BusClient">
+<em class="property">class </em><code class="descname">BusClient</code><span class="sig-paren">(</span><em>bootstrap</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
+<p>BusClient class must be inherited to handle message from MessageBus.
+It reads module message, read command and execute module command.
+Finally it returns command response to message originator.</p>
+<dl class="attribute">
+<dt id="cleep.bus.BusClient.CORE_SYNC_TIMEOUT">
+<code class="descname">CORE_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.bus.BusClient.CORE_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._BusClient__check_params">
+<code class="descname">_BusClient__check_params</code><span class="sig-paren">(</span><em>function</em>, <em>message</em>, <em>sender</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._BusClient__check_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if message contains all necessary function parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>function</strong> (<em>function</em>) – function reference.</li>
+<li><strong>message</strong> (<em>dict</em>) – current message content (contains all command parameters).</li>
+<li><strong>sender</strong> (<em>string</em>) – message sender (“from” item from MessageRequest).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>parameters check response:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="nb">bool</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">parameters</span> <span class="n">are</span> <span class="n">valid</span> <span class="n">otherwise</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="nb">dict</span><span class="p">:</span> <span class="n">args</span> <span class="n">to</span> <span class="k">pass</span> <span class="n">during</span> <span class="n">command</span> <span class="n">call</span> <span class="ow">or</span> <span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._BusClient__started_callback">
+<code class="descname">_BusClient__started_callback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._BusClient__started_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when module is started. It releases internal event lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._configure">
+<code class="descname">_configure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._configure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module configuration. This method is called once at beginning of thread before
+module is really started.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function mustn’t be blocking!</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._custom_process">
+<code class="descname">_custom_process</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._custom_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite this function to execute something during bus message polling
+This function is called at every process tick just before message pulling from queue</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function mustn’t be blocking otherwise no message will be pulled from queue</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._event_received">
+<code class="descname">_event_received</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._event_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module received an event message</p>
+<dl class="docutils">
+<dt>Params:</dt>
+<dd><p class="first">event (dict): MessageRequest as dict with event values:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
+    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span>
+    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">that</span> <span class="n">emits</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span>
+    <span class="n">sender</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">sender</span>
+    <span class="n">startup</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">startup</span> <span class="n">event</span> <span class="n">flag</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._on_start">
+<code class="descname">_on_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._on_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module starts. This method is called once after all modules are started.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._on_stop">
+<code class="descname">_on_stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._on_stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Module stops. This method is called once at end of main process.</p>
+<p>It should be used to stop thread and tasks and to disconnect from
+external services.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient._wait_is_started">
+<code class="descname">_wait_is_started</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient._wait_is_started" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for module is started.
+Use it if you need to</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As mentionned this function is blocking</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>request</em>, <em>timeout=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push message to specified module and wait for response until timeout.
+By default it is blocking but with timeout=0.0 the function returns instantly
+without result, but command is sent.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message to push.</li>
+<li><strong>timeout</strong> (<em>float</em>) – time to wait for response. If not specified, function returns None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MessageResponse as dict or None if no response awaited (event or broadcast)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dict</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if request is not a MessageRequest instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bus reading process.</p>
+<dl class="docutils">
+<dt>Process cycle life:</dt>
+<dd><ul class="first last simple">
+<li>configure module</li>
+<li>wait for all modules configured</li>
+<li>run async start function</li>
+<li>infinite loop on message bus (custom process can run on each loop)</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient.send_command">
+<code class="descname">send_command</code><span class="sig-paren">(</span><em>command</em>, <em>to</em>, <em>params=None</em>, <em>timeout=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to push command message to bus.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>command</strong> (<em>string</em>) – command name.</li>
+<li><strong>to</strong> (<em>string</em>) – command recipient. If None the command is broadcasted but you’ll get no reponse in return.</li>
+<li><strong>params</strong> (<em>dict</em>) – command parameters.</li>
+<li><strong>timeout</strong> (<em>float</em>) – change default timeout if you wish. Default is 3 seconds.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MessageResponse as dict or None if no response waited</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient.send_event">
+<code class="descname">send_event</code><span class="sig-paren">(</span><em>event</em>, <em>params=None</em>, <em>device_id=None</em>, <em>to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to push event message to bus.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> (<em>string</em>) – event name.</li>
+<li><strong>params</strong> (<em>dict</em>) – event parameters.</li>
+<li><strong>device_id</strong> (<em>string</em>) – device id that send event. If not specified event cannot be monitored.</li>
+<li><strong>to</strong> (<em>string</em>) – event recipient. If not specified, event will be broadcasted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">event always returns None.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient.send_external_event">
+<code class="descname">send_external_event</code><span class="sig-paren">(</span><em>event</em>, <em>params</em>, <em>peer_infos</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_external_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to push to all modules an event received from external bus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event</strong> (<em>string</em>) – event name.</li>
+<li><strong>params</strong> (<em>dict</em>) – event parameters.</li>
+<li><strong>peer_infos</strong> (<em>dict</em>) – infos about peer that sends the event</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">event always returns None.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.bus.BusClient.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.common">
+<span id="cleep-common-module"></span><h2>cleep.common module<a class="headerlink" href="#module-cleep.common" title="Permalink to this headline">¶</a></h2>
+<p>This file shares some constants and classes</p>
+<dl class="class">
+<dt id="cleep.common.CATEGORIES">
+<em class="property">class </em><code class="descname">CATEGORIES</code><a class="headerlink" href="#cleep.common.CATEGORIES" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Cleep application categories</p>
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.ALL">
+<code class="descname">ALL</code><em class="property"> = ['APPLICATION', 'MOBILE', 'DRIVER', 'HOMEAUTOMATION', 'MEDIA', 'SERVICE']</em><a class="headerlink" href="#cleep.common.CATEGORIES.ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.APPLICATION">
+<code class="descname">APPLICATION</code><em class="property"> = 'APPLICATION'</em><a class="headerlink" href="#cleep.common.CATEGORIES.APPLICATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.DRIVER">
+<code class="descname">DRIVER</code><em class="property"> = 'DRIVER'</em><a class="headerlink" href="#cleep.common.CATEGORIES.DRIVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.HOMEAUTOMATION">
+<code class="descname">HOMEAUTOMATION</code><em class="property"> = 'HOMEAUTOMATION'</em><a class="headerlink" href="#cleep.common.CATEGORIES.HOMEAUTOMATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.MEDIA">
+<code class="descname">MEDIA</code><em class="property"> = 'MEDIA'</em><a class="headerlink" href="#cleep.common.CATEGORIES.MEDIA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.MOBILE">
+<code class="descname">MOBILE</code><em class="property"> = 'MOBILE'</em><a class="headerlink" href="#cleep.common.CATEGORIES.MOBILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.CATEGORIES.SERVICE">
+<code class="descname">SERVICE</code><em class="property"> = 'SERVICE'</em><a class="headerlink" href="#cleep.common.CATEGORIES.SERVICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.common.ExecutionStep">
+<em class="property">class </em><code class="descname">ExecutionStep</code><a class="headerlink" href="#cleep.common.ExecutionStep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Cleep execution steps</p>
+<dl class="attribute">
+<dt id="cleep.common.ExecutionStep.BOOT">
+<code class="descname">BOOT</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.common.ExecutionStep.BOOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.ExecutionStep.CONFIG">
+<code class="descname">CONFIG</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.common.ExecutionStep.CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.ExecutionStep.INIT">
+<code class="descname">INIT</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.common.ExecutionStep.INIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.ExecutionStep.RUN">
+<code class="descname">RUN</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.common.ExecutionStep.RUN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.common.ExecutionStep.STOP">
+<code class="descname">STOP</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.common.ExecutionStep.STOP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.common.MessageResponse">
+<em class="property">class </em><code class="descname">MessageResponse</code><a class="headerlink" href="#cleep.common.MessageResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object that holds message response</p>
+<p>A response is composed of:</p>
+<blockquote>
+<div><ul class="simple">
+<li>an error flag: True if error, False otherwise</li>
+<li>a message: a message about request</li>
+<li>some data: data returned by the request</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cleep.common.MessageResponse.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return message response</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.common.MessageRequest">
+<em class="property">class </em><code class="descname">MessageRequest</code><a class="headerlink" href="#cleep.common.MessageRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object that holds message request</p>
+<p>A message request is composed of:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">in case of a command:</p>
+<blockquote>
+<div><ul class="simple">
+<li>a command name</li>
+<li>command parameters</li>
+<li>the command sender</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">in case of an event:</p>
+<blockquote>
+<div><ul class="simple">
+<li>an event name</li>
+<li>event parameters</li>
+<li>core_event flag to say if event is a core event (and may not be pushed away from device)</li>
+<li>a device id</li>
+<li>a startup flag that indicates this event was sent during cleep startup</li>
+<li>peer infos if message comes from external device</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cleep.common.MessageRequest.is_broadcast">
+<code class="descname">is_broadcast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_broadcast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return broadcast status</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the request is broadcast</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.common.MessageRequest.is_external_event">
+<code class="descname">is_external_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_external_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if event comes from external device</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if event comes from external device</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.common.MessageRequest.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><em>startup=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert message request to dict object</p>
+<dl class="docutils">
+<dt>Params:</dt>
+<dd>startup (bool): True if the message is startup message</dd>
+<dt>Raise:</dt>
+<dd>InvalidMessage if message is not valid</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.core">
+<span id="cleep-core-module"></span><h2>cleep.core module<a class="headerlink" href="#module-cleep.core" title="Permalink to this headline">¶</a></h2>
+<p>Core implements all kind of cleep modules/apps</p>
+<dl class="class">
+<dt id="cleep.core.Cleep">
+<em class="property">class </em><code class="descname">Cleep</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.bus.BusClient" title="cleep.bus.BusClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.bus.BusClient</span></code></a></p>
+<p>Base Cleep class</p>
+<p>It Implements:</p>
+<blockquote>
+<div><ul class="simple">
+<li>configuration helpers</li>
+<li>message bus access</li>
+<li>logger with log level configured</li>
+<li>custom crash report</li>
+<li>driver registration</li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="cleep.core.Cleep.CONFIG_DIR">
+<code class="descname">CONFIG_DIR</code><em class="property"> = '/etc/cleep/'</em><a class="headerlink" href="#cleep.core.Cleep.CONFIG_DIR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.core.Cleep.MODULE_DEPS">
+<code class="descname">MODULE_DEPS</code><em class="property"> = []</em><a class="headerlink" href="#cleep.core.Cleep.MODULE_DEPS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._Cleep__check_config">
+<code class="descname">_Cleep__check_config</code><span class="sig-paren">(</span><em>keys</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._Cleep__check_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check config files looking for specified keys.
+If key not found, key is added with specified default value.
+Save new configuration file if necessary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>keys</strong> (<em>dict</em>) – dict of keys-default values {‘key1’:’default value1’, …}.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">nothing, only check configuration file consistency.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._Cleep__load_config">
+<code class="descname">_Cleep__load_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._Cleep__load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load config file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">configuration file content</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._Cleep__save_config">
+<code class="descname">_Cleep__save_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._Cleep__save_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save config file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>dict</em>) – config to save</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">False if error occured, True otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._event_received">
+<code class="descname">_event_received</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._event_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event is received on bus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event</strong> (<em>dict</em>) – <p>MessageRequest as dict with event values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
+    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span>
+    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">that</span> <span class="n">emits</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span>
+    <span class="n">sender</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">sender</span>
+    <span class="n">startup</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">startup</span> <span class="n">event</span> <span class="n">flag</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cleep.core.Cleep._file_is_empty">
+<em class="property">static </em><code class="descname">_file_is_empty</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._file_is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if file is empty.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>string</em>) – path to check.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if file is empty.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._get_config">
+<code class="descname">_get_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return deep copy of config dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">config file content</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._get_config_field">
+<code class="descname">_get_config_field</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._get_config_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return specified config field value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>string</em>) – field name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns field value</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">any</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Exception if field is unknown</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._get_drivers">
+<code class="descname">_get_drivers</code><span class="sig-paren">(</span><em>driver_type</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._get_drivers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns drivers for specified type</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>driver_type</strong> (<em>string</em>) – see Driver.DRIVER_XXX for values</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">drivers</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._get_event">
+<code class="descname">_get_event</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._get_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get event name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> (<em>string</em>) – event name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Event instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.event.Event" title="cleep.libs.internals.event.Event">Event</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._get_module_name">
+<code class="descname">_get_module_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._get_module_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return module name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">module name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cleep.core.Cleep._get_unique_id">
+<em class="property">static </em><code class="descname">_get_unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unique id. Useful to get unique device identifier.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">new unique id (uuid4 format).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._has_config_field">
+<code class="descname">_has_config_field</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._has_config_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if config has specified field</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>field</strong> (<em>string</em>) – field to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if field exists</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._has_config_file">
+<code class="descname">_has_config_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._has_config_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if module has configuration file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if module has config file, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._register_driver">
+<code class="descname">_register_driver</code><span class="sig-paren">(</span><em>driver</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._register_driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register driver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if driver has invalid base class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._set_config_field">
+<code class="descname">_set_config_field</code><span class="sig-paren">(</span><em>field</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._set_config_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to update config field value
+Unlike _update_config function, _set_config_field check parameter existence in config</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>field</strong> (<em>string</em>) – field name</li>
+<li><strong>value</strong> (<em>any</em>) – field value to set</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">result of _update_config function</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep._update_config">
+<code class="descname">_update_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep._update_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Secured config update: update specified fields, do not completely overwrite content</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>dict</em>) – new config to update</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">False if update failed, True otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">InvalidParameter if input params are invalid</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.event_received">
+<code class="descname">event_received</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.event_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event message received</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Implement this function to handle event on your module</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event</strong> (<em>dict</em>) – <p>MessageRequest as dict with event values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
+    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span>
+    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">that</span> <span class="n">emits</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span>
+    <span class="n">sender</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">sender</span>
+    <span class="n">startup</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">startup</span> <span class="n">event</span> <span class="n">flag</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.get_module_commands">
+<code class="descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return available module commands.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of command names.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.get_module_config">
+<code class="descname">get_module_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns module configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all config content except ‘devices’ entry.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.is_debug_enabled">
+<code class="descname">is_debug_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.is_debug_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if debug is enabled</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if debug enabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.is_module_loaded">
+<code class="descname">is_module_loaded</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.is_module_loaded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Request inventory to check if specified module is loaded or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module is loaded, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.set_debug">
+<code class="descname">set_debug</code><span class="sig-paren">(</span><em>debug</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.set_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable debug level. It changes logger level on the fly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>debug</strong> (<em>bool</em>) – debug enabled if True, otherwise info level</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start module.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.Cleep.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop process.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.core.CleepRpcWrapper">
+<em class="property">class </em><code class="descname">CleepRpcWrapper</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRpcWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
+<p>Base Cleep class for RPC request wrapping</p>
+<dl class="method">
+<dt id="cleep.core.CleepRpcWrapper._wrap_request">
+<code class="descname">_wrap_request</code><span class="sig-paren">(</span><em>route</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRpcWrapper._wrap_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called when web request from / in POST is called.</p>
+<p>By default this access point is not supported by Cleep but it can be wrapped here</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Must be implemented</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<em>bottle.request</em>) – web server bottle request content. See
+doc <a class="reference external" href="https://bottlepy.org/docs/dev/tutorial.html#request-data">https://bottlepy.org/docs/dev/tutorial.html#request-data</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns any data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.core.CleepModule">
+<em class="property">class </em><code class="descname">CleepModule</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
+<p>Base cleep class for module</p>
+<p>It implements:</p>
+<blockquote>
+<div><ul class="simple">
+<li>all device helpers</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cleep.core.CleepModule._add_device">
+<code class="descname">_add_device</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._add_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to add device in module configuration file.
+This function auto inject new entry “devices” in configuration file.
+It appends new device in devices section and add unique id in uuid property.
+It also appends ‘name’ property if not provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>dict</em>) – device data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">device data if process was successful, None otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._delete_device">
+<code class="descname">_delete_device</code><span class="sig-paren">(</span><em>device_uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._delete_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to remove device from module configuration file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device_uuid</strong> (<em>string</em>) – device identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if device was deleted, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._get_device">
+<code class="descname">_get_device</code><span class="sig-paren">(</span><em>device_uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._get_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get device according to specified identifier.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device_uuid</strong> (<em>string</em>) – device identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None if device not found, device data otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._get_device_count">
+<code class="descname">_get_device_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._get_device_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return number of devices registered in module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">number of saved devices.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._get_devices">
+<code class="descname">_get_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._get_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return module devices (get_module_devices alias).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all devices registered in ‘devices’ config section:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">device</span> <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">data</span> <span class="p">(</span><span class="nb">dict</span><span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._search_device">
+<code class="descname">_search_device</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._search_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to search a device based on the property value.
+Useful to search a device of course, but can be used to check if a name is not already assigned to a device.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<em>string</em>) – device property to search on.</li>
+<li><strong>value</strong> (<em>any</em>) – property value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>dict: the device data if key-value found, or None otherwise.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._search_devices">
+<code class="descname">_search_devices</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._search_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to search a device based on the property value.
+Useful to search a device of course, but can be used to check if a name is not already assigned to a device.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> (<em>string</em>) – device property to search on.</li>
+<li><strong>value</strong> (<em>any</em>) – property value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns</dt>
+<dd>list: list of devices which key-value matches, empty list if nothing found</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule._update_device">
+<code class="descname">_update_device</code><span class="sig-paren">(</span><em>device_uuid</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule._update_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to update device.
+This function only update fields that already exists in device data. Other new fields are dropped.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>device_uuid</strong> (<em>string</em>) – device identifier.</li>
+<li><strong>data</strong> (<em>dict</em>) – device data to update.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if device updated, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule.get_module_commands">
+<code class="descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return available module commands.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of command names.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule.get_module_config">
+<code class="descname">get_module_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns module configuration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all config content except ‘devices’ entry.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepModule.get_module_devices">
+<code class="descname">get_module_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns module devices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all devices registered in ‘devices’ config section:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">device</span> <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">data</span> <span class="p">(</span><span class="nb">dict</span><span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.core.CleepResources">
+<em class="property">class </em><code class="descname">CleepResources</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.CleepModule" title="cleep.core.CleepModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.CleepModule</span></code></a></p>
+<p>Base cleep class to handle critical resources such as audio capture and make sure
+loaded application using the same resource are not using it at the same time.</p>
+<p>It implements:</p>
+<blockquote>
+<div><ul class="simple">
+<li>a mechanism of acquire/release a resoure</li>
+<li>an auto resource acquisition (aka permanent)</li>
+</ul>
+</div></blockquote>
+<dl class="attribute">
+<dt id="cleep.core.CleepResources.MODULE_RESOURCES">
+<code class="descname">MODULE_RESOURCES</code><em class="property"> = {}</em><a class="headerlink" href="#cleep.core.CleepResources.MODULE_RESOURCES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepResources._CleepResources__register_resources">
+<code class="descname">_CleepResources__register_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources._CleepResources__register_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register module resources</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepResources._get_resources">
+<code class="descname">_get_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources._get_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return loaded resources with extra data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of available resources</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepResources._need_resource">
+<code class="descname">_need_resource</code><span class="sig-paren">(</span><em>resource_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources._need_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Need to acquire specified resource. The resource is really acquired after _resource_acquired
+function execution. A delay could occurs if resource is not available at this time.
+This function call does not guarantee to have resource access if current acquirer still needs
+to use it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource_name</strong> (<em>string</em>) – Existing resource name (see resources core directory content)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepResources._release_resource">
+<code class="descname">_release_resource</code><span class="sig-paren">(</span><em>resource_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources._release_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Release specified resource</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource_name</strong> (<em>string</em>) – Existing resource name (see resources core directory content)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepResources._resource_acquired">
+<code class="descname">_resource_acquired</code><span class="sig-paren">(</span><em>resource_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources._resource_acquired" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called when resource is acquired.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Must be implemented</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource_name</strong> (<em>string</em>) – acquired resource name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code> – if function is not implemented</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepResources._resource_needs_to_be_released">
+<code class="descname">_resource_needs_to_be_released</code><span class="sig-paren">(</span><em>resource_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources._resource_needs_to_be_released" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function called when resource is acquired by other module and needs to be released.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Must be implemented</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource_name</strong> (<em>string</em>) – acquired resource name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code> – if function is not implemented</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.core.CleepRenderer">
+<em class="property">class </em><code class="descname">CleepRenderer</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.CleepModule" title="cleep.core.CleepModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.CleepModule</span></code></a></p>
+<p>Base cleep class for renderer.</p>
+<p>It implements:</p>
+<blockquote>
+<div><ul class="simple">
+<li>automatic renderer registration</li>
+<li>render function to render received profile</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cleep.core.CleepRenderer._get_renderer_config">
+<code class="descname">_get_renderer_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer._get_renderer_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register internally available profiles and return it.
+This method is called once by inventory at startup</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">handled profiles by instance:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">profiles</span><span class="p">:</span> <span class="nb">list</span> <span class="p">(</span><span class="n">RendererProfile</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – if RENDERER_PROFILES member is not defined</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepRenderer._render">
+<code class="descname">_render</code><span class="sig-paren">(</span><em>profile</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer._render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use specified profile values to render them</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Must be implemented</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code> – if not implemented</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepRenderer.get_module_commands">
+<code class="descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return available module commands.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of command names.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.core.CleepRenderer.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>profile</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render profile</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>profile</strong> (<a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><em>RendererProfile</em></a>) – profile to render</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if post is successful.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MissingParameter, InvalidParameter</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.exception">
+<span id="cleep-exception-module"></span><h2>cleep.exception module<a class="headerlink" href="#module-cleep.exception" title="Permalink to this headline">¶</a></h2>
+<p>Cleep exceptions</p>
+<dl class="exception">
+<dt id="cleep.exception.CommandError">
+<em class="property">exception </em><code class="descname">CommandError</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.CommandError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception used when module command failed.
+Message will be toasted on UI.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.CommandInfo">
+<em class="property">exception </em><code class="descname">CommandInfo</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.CommandInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception used to toast a message from backend on UI while command succeed.
+Message will be toasted on ui</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.NoResponse">
+<em class="property">exception </em><code class="descname">NoResponse</code><span class="sig-paren">(</span><em>to</em>, <em>timeout</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.NoResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception raised when no response is received while it does.
+Typically when a command takes too long to be processed and timeout is reached.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.NoMessageAvailable">
+<em class="property">exception </em><code class="descname">NoMessageAvailable</code><a class="headerlink" href="#cleep.exception.NoMessageAvailable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception raised when no message is available.
+Typically when bus pull process reaches end of timeout and no message was received, it will raise this exception.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.ResourceNotAvailable">
+<em class="property">exception </em><code class="descname">ResourceNotAvailable</code><span class="sig-paren">(</span><em>resource</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.ResourceNotAvailable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception raised when no requested Cleep resource is not available.
+See CleepResource for more information.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.InvalidParameter">
+<em class="property">exception </em><code class="descname">InvalidParameter</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.InvalidParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>InvalidParameter is raised when invalid command parameter is detected</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.MissingParameter">
+<em class="property">exception </em><code class="descname">MissingParameter</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.MissingParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>MissingParameter is raised when missing command parameter is detected</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.InvalidMessage">
+<em class="property">exception </em><code class="descname">InvalidMessage</code><a class="headerlink" href="#cleep.exception.InvalidMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>InvalidMessage is raised when an invalid message is sent to bus.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.InvalidModule">
+<em class="property">exception </em><code class="descname">InvalidModule</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.InvalidModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>InvalidModule is raised when an unknown module is requested</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.Unauthorized">
+<em class="property">exception </em><code class="descname">Unauthorized</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.Unauthorized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Generic Unauthorized exception is raised when there is a problem with credentials.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cleep.exception.BusError">
+<em class="property">exception </em><code class="descname">BusError</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.BusError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Generic bus error exception</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.inventory">
+<span id="cleep-inventory-module"></span><h2>cleep.inventory module<a class="headerlink" href="#module-cleep.inventory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cleep.inventory.Inventory">
+<em class="property">class </em><code class="descname">Inventory</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>rpcserver</em>, <em>debug_enabled</em>, <em>configured_modules</em>, <em>debug_config</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
+<dl class="docutils">
+<dt>Inventory handles inventory of:</dt>
+<dd><ul class="first last simple">
+<li>existing devices: knows all devices and module that handles it</li>
+<li>loaded modules and their commands</li>
+<li>existing renderers (sms, email, sound…)</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="cleep.inventory.Inventory.MODULES_SYNC_TIMEOUT">
+<code class="descname">MODULES_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULES_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.inventory.Inventory.MODULE_AUTHOR">
+<code class="descname">MODULE_AUTHOR</code><em class="property"> = 'Cleep'</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_AUTHOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.inventory.Inventory.MODULE_CORE">
+<code class="descname">MODULE_CORE</code><em class="property"> = True</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_CORE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.inventory.Inventory.MODULE_VERSION">
+<code class="descname">MODULE_VERSION</code><em class="property"> = '0.0.0'</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_VERSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.inventory.Inventory.PYTHON_CLEEP_IMPORT_PATH">
+<code class="descname">PYTHON_CLEEP_IMPORT_PATH</code><em class="property"> = 'cleep.modules.'</em><a class="headerlink" href="#cleep.inventory.Inventory.PYTHON_CLEEP_IMPORT_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.inventory.Inventory.PYTHON_CLEEP_MODULES_PATH">
+<code class="descname">PYTHON_CLEEP_MODULES_PATH</code><em class="property"> = 'modules'</em><a class="headerlink" href="#cleep.inventory.Inventory.PYTHON_CLEEP_MODULES_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._Inventory__fix_country">
+<code class="descname">_Inventory__fix_country</code><span class="sig-paren">(</span><em>country</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._Inventory__fix_country" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._Inventory__fix_urls">
+<code class="descname">_Inventory__fix_urls</code><span class="sig-paren">(</span><em>site_url</em>, <em>bugs_url</em>, <em>info_url</em>, <em>help_url</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._Inventory__fix_urls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._Inventory__get_bootstrap">
+<code class="descname">_Inventory__get_bootstrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._Inventory__get_bootstrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get bootstrap object to pass to module to load
+This function instanciate a new Event for module synchronization and pass all other attributes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._Inventory__load_module">
+<code class="descname">_Inventory__load_module</code><span class="sig-paren">(</span><em>module_name</em>, <em>local_modules</em>, <em>is_dependency=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._Inventory__load_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load specified module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>module_name</strong> (<em>string</em>) – module name</li>
+<li><strong>local_modules</strong> (<em>list</em>) – list of locally installed modules</li>
+<li><strong>is_dependency</strong> (<em>bool</em>) – True if module to load is a dependency</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._configure">
+<code class="descname">_configure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._configure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure module</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._get_modules">
+<code class="descname">_get_modules</code><span class="sig-paren">(</span><em>module_filter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._get_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns modules adding possibility to filter them</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_filter</strong> (<em>function</em>) – filtering function. Params: module name, module data, all modules</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict of modules:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">module</span> <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._get_modules_json">
+<code class="descname">_get_modules_json</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._get_modules_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get content of modules.json file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">modules.json content</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._load_modules">
+<code class="descname">_load_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._load_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load all modules</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory._rpc_wrapper">
+<code class="descname">_rpc_wrapper</code><span class="sig-paren">(</span><em>route</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory._rpc_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rpc wrapper is called by rpc server when default / POST route is called.
+Inventory get all loaded CleepRpcWrapperModule modules and push the bottle request object.
+See bottle documentation for request object description <a class="reference external" href="https://bottlepy.org/docs/dev/tutorial.html#request-data">https://bottlepy.org/docs/dev/tutorial.html#request-data</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.all_started">
+<code class="descname">all_started</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.all_started" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns when Cleep is completely loaded and started</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This method is blocking !</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_devices">
+<code class="descname">get_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dict of modules devices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of devices by module:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">module1</span><span class="p">:</span>
+        <span class="n">device</span> <span class="n">uuid</span><span class="p">:</span> <span class="p">{</span>
+            <span class="n">device</span> <span class="n">properties</span><span class="p">,</span>
+            <span class="o">...</span>
+        <span class="p">},</span>
+        <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="n">module2</span><span class="p">:</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_drivers">
+<code class="descname">get_drivers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_drivers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return drivers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_installable_modules">
+<code class="descname">get_installable_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_installable_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns dict of installable modules. It also returns modules installed as library.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">module</span> <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_module_commands">
+<code class="descname">get_module_commands</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of module commands</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of commands or empty list if module not found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;command1&#39;</span><span class="p">,</span> <span class="s1">&#39;command2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_module_device">
+<code class="descname">get_module_device</code><span class="sig-paren">(</span><em>uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return module that owns specified device</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> (<em>string</em>) – device identifier</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">module name or None if device was not found</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_module_devices">
+<code class="descname">get_module_devices</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_devices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return module devices</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of devices:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;uuid&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CommandError</span></code> – if module doesn’t exists</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_module_infos">
+<code class="descname">get_module_infos</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns infos of specified module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">module infos or empty dict if module not found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_modules">
+<code class="descname">get_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns dict of installed modules. It also returned modules installed as library.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">module</span> <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_modules_debug">
+<code class="descname">get_modules_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dict of installed modules or libraries debug flag</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules/libraries debug flag:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">modulename</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">debug</span> <span class="n">flag</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_modules_events">
+<code class="descname">get_modules_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return modules events</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules events:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">module1</span><span class="p">:</span> <span class="p">[</span><span class="n">event1</span><span class="p">,</span> <span class="n">event2</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="n">module2</span><span class="p">:</span> <span class="p">[</span><span class="n">event1</span><span class="p">],</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_renderers">
+<code class="descname">get_renderers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_renderers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return renderers from events broker</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of renderers with their handled profiles</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.get_used_events">
+<code class="descname">get_used_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_used_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return used events</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of used events</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.is_module_loaded">
+<code class="descname">is_module_loaded</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.is_module_loaded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simply returns True if specified module is loaded</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module loaded, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.reload_modules">
+<code class="descname">reload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.reload_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reload modules refreshing only not installed modules</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.set_rpc_cache_control">
+<code class="descname">set_rpc_cache_control</code><span class="sig-paren">(</span><em>cache_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.set_rpc_cache_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set RPC server cache control</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cache_enabled</strong> (<em>bool</em>) – True to enable cache</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.set_rpc_debug">
+<code class="descname">set_rpc_debug</code><span class="sig-paren">(</span><em>debug</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.set_rpc_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set debug on rpcserver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>debug</strong> (<em>bool</em>) – debug enabled or not</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.inventory.Inventory.unload_modules">
+<code class="descname">unload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.unload_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unload all modules stopping them</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.rpcserver">
+<span id="cleep-rpcserver-module"></span><h2>cleep.rpcserver module<a class="headerlink" href="#module-cleep.rpcserver" title="Permalink to this headline">¶</a></h2>
+<p>Rpcserver based on long poll example from <a class="reference external" href="https://github.com/larsks/pubsub_example">https://github.com/larsks/pubsub_example</a></p>
+<p>Rpcserver implements:</p>
+<blockquote>
+<div><ul class="simple">
+<li>authentication (login, password)</li>
+<li>HTTP and HTTPS support</li>
+<li>file upload and download</li>
+<li>poll requests</li>
+<li>command requests</li>
+<li>module configs requests</li>
+<li>devices list requests</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Tanguy Bonneau
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

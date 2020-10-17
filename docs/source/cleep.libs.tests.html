@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cleep.libs.tests.lib module &mdash; Cleep core API 0.0.21 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cleep.profiles package" href="cleep.profiles.html" />
+    <link rel="prev" title="cleep.libs.internals.cleepbackup module" href="cleep.libs.internals.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #607d8b" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cleep core API
+          
+
+          
+            
+            <img src="../_static/cleep-logo-red.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.21
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cleep</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cleep.html">cleep package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.bus">cleep.bus module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.common">cleep.common module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.core">cleep.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.exception">cleep.exception module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.inventory">cleep.inventory module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.rpcserver">cleep.rpcserver module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="cleep.libs.html">cleep.libs package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-commands">cleep.libs.commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html">cleep.libs.commands.alsa module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html">cleep.libs.configs.asoundrc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.config">cleep.libs.configs.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.configtxt">cleep.libs.configs.configtxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.dhcpcdconf">cleep.libs.configs.dhcpcdconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcasoundconf">cleep.libs.configs.etcasoundconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcmodules">cleep.libs.configs.etcmodules module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcnetworkinterfaces">cleep.libs.configs.etcnetworkinterfaces module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-drivers">cleep.libs.drivers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.drivers.html">cleep.libs.drivers.audiodriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.drivers.html#module-cleep.libs.drivers.driver">cleep.libs.drivers.driver module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-internals">cleep.libs.internals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html">cleep.libs.internals.cleepbackup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepfilesystem">cleep.libs.internals.cleepfilesystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepgithub">cleep.libs.internals.cleepgithub module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepresource">cleep.libs.internals.cleepresource module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.console">cleep.libs.internals.console module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.crashreport">cleep.libs.internals.crashreport module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.criticalresources">cleep.libs.internals.criticalresources module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.download">cleep.libs.internals.download module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.drivers">cleep.libs.internals.drivers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.rendererprofile">cleep.libs.internals.rendererprofile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.sun">cleep.libs.internals.sun module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.task">cleep.libs.internals.task module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.tools">cleep.libs.internals.tools module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="cleep.libs.html#cleep-libs-tests">cleep.libs.tests</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cleep.libs.tests.lib module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.tests.session">cleep.libs.tests.session module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.profiles.html">cleep.profiles package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertemailprofile">cleep.profiles.alertemailprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertpushprofile">cleep.profiles.alertpushprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertsmsprofile">cleep.profiles.alertsmsprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displayaddorreplacemessageprofile">cleep.profiles.displayaddorreplacemessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displaymessageprofile">cleep.profiles.displaymessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displaytimelimitedmessageprofile">cleep.profiles.displaytimelimitedmessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.soundtexttospeechprofile">cleep.profiles.soundtexttospeechprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.speechrecognitioncommandprofile">cleep.profiles.speechrecognitioncommandprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.speechrecognitionhotwordprofile">cleep.profiles.speechrecognitionhotwordprofile module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.resources.html">cleep.resources package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audiocaptureresource">cleep.resources.audiocaptureresource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audioplaybackresource">cleep.resources.audioplaybackresource module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cleep core API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">cleep</a> &raquo;</li>
+        
+          <li><a href="cleep.libs.html">cleep.libs package</a> &raquo;</li>
+        
+      <li>cleep.libs.tests.lib module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/cleep.libs.tests.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cleep.libs.tests.lib">
+<span id="cleep-libs-tests-lib-module"></span><h1>cleep.libs.tests.lib module<a class="headerlink" href="#module-cleep.libs.tests.lib" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cleep.libs.tests.lib.FileDescriptorMock">
+<em class="property">class </em><code class="descname">FileDescriptorMock</code><span class="sig-paren">(</span><em>write_side_effect=None</em>, <em>content='file contentn'</em>, <em>read_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>FileDescriptorMock is used to simulate output of file|io.open function and force some output values or side effects</p>
+<dl class="method">
+<dt id="cleep.libs.tests.lib.FileDescriptorMock.close">
+<code class="descname">close</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.lib.FileDescriptorMock.get_content_hashes">
+<code class="descname">get_content_hashes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.get_content_hashes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns hashes of specified content</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.lib.FileDescriptorMock.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.lib.FileDescriptorMock.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.libs.tests.lib.TestLib">
+<em class="property">class </em><code class="descname">TestLib</code><span class="sig-paren">(</span><em>test_case=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Instanciate TestLib to enable some features to be able to run tests on a library for Cleep</p>
+<dl class="staticmethod">
+<dt id="cleep.libs.tests.lib.TestLib.clone_class">
+<em class="property">static </em><code class="descname">clone_class</code><span class="sig-paren">(</span><em>base_class</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.clone_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clone specified base class. This can be useful when you need to alter class (adding mock)
+keeping original one clean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_class</strong> (<em>Class</em>) – class object (not instance!)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">cloned class that can be instanciated. Cloned class name is prefixed by “C”</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cleep.libs.tests.lib.TestLib.mock_cleepfilesystem">
+<em class="property">static </em><code class="descname">mock_cleepfilesystem</code><span class="sig-paren">(</span><em>open_response=None</em>, <em>open_side_effect=None</em>, <em>rename_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.mock_cleepfilesystem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mock cleepfilsystem</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>open_response</strong> (<em>instance</em>) – mock output of open function</li>
+<li><strong>open_side_effect</strong> (<em>function|exception</em>) – value passed to mock side_effect parameter</li>
+<li><strong>rename_side_effect</strong> (<em>function|exception</em>) – value passed to mock side_effect parameter</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cleep.libs.tests.lib.TestLib.mock_urllib3">
+<em class="property">static </em><code class="descname">mock_urllib3</code><span class="sig-paren">(</span><em>request_response</em>, <em>request_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.mock_urllib3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mock urllib3</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_response</strong> (<em>instance</em>) – mocked response instance. You can use Urllib3RequestResponseMock.</li>
+<li><strong>request_side_effect</strong> (<em>anything</em>) – value passed to Mock side_effect parameter</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>tuple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">urllib3</span> <span class="n">mock</span> <span class="p">(</span><span class="n">Mock</span><span class="p">):</span> <span class="n">urllib3</span> <span class="n">mock</span> <span class="n">instance</span>
+    <span class="n">request</span> <span class="n">mock</span> <span class="p">(</span><span class="n">Mock</span><span class="p">):</span> <span class="n">urllib3</span><span class="o">.</span><span class="n">PoolManager</span><span class="o">.</span><span class="n">request</span> <span class="n">mock</span> <span class="n">instance</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.lib.TestLib.set_functional_tests">
+<code class="descname">set_functional_tests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.set_functional_tests" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.libs.tests.lib.Urllib3RequestResponseMock">
+<em class="property">class </em><code class="descname">Urllib3RequestResponseMock</code><span class="sig-paren">(</span><em>status=200</em>, <em>raw=''</em>, <em>read_side_effect=None</em>, <em>getheader_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Urllib3RequestResponseMock is used to simulate output of urllib3.request function and force some output values or side effects</p>
+<dl class="method">
+<dt id="cleep.libs.tests.lib.Urllib3RequestResponseMock.getheader">
+<code class="descname">getheader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock.getheader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.lib.Urllib3RequestResponseMock.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.libs.tests.session">
+<span id="cleep-libs-tests-session-module"></span><h1>cleep.libs.tests.session module<a class="headerlink" href="#module-cleep.libs.tests.session" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cleep.libs.tests.session.AnyArg">
+<em class="property">class </em><code class="descname">AnyArg</code><a class="headerlink" href="#cleep.libs.tests.session.AnyArg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Used to perform a “any” params comparison during an assert_called_with</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cleep.libs.tests.session.TestSession">
+<em class="property">class </em><code class="descname">TestSession</code><span class="sig-paren">(</span><em>testcase</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Create session to be able to run tests on a Cleep module</p>
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession._TestSession__build_bootstrap_objects">
+<code class="descname">_TestSession__build_bootstrap_objects</code><span class="sig-paren">(</span><em>debug</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession._TestSession__build_bootstrap_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build bootstrap object with appropriate singleton instances
+All data is pre-configured for tests</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession._events_broker_get_event_instance_mock">
+<code class="descname">_events_broker_get_event_instance_mock</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession._events_broker_get_event_instance_mock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create monkey-patched Event of specified name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession._message_bus_push_mock">
+<code class="descname">_message_bus_push_mock</code><span class="sig-paren">(</span><em>request</em>, <em>timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession._message_bus_push_mock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mocked message bus push method</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.add_mock_command">
+<code class="descname">add_mock_command</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.add_mock_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mock command sent to internal message bus</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>dict</em>) – command object as returned by make_mock_command function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.assert_command_called_with">
+<code class="descname">assert_command_called_with</code><span class="sig-paren">(</span><em>command_name</em>, <em>params</em>, <em>to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_command_called_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as command_called_wth but with assertion</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.assert_event_called">
+<code class="descname">assert_event_called</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_event_called" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as event_called with assertion</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean all stuff.
+Can be called during test tear down.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="cleep.libs.tests.session.TestSession.clone_class">
+<em class="property">static </em><code class="descname">clone_class</code><span class="sig-paren">(</span><em>base_class</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clone_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clone specified base class. This can be useful when you need to alter class (adding mock)
+keeping original one clean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_class</strong> (<em>Class</em>) – class object (not instance!)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">cloned class that can be instanciated. Cloned class name is prefixed by “C”</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Class</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.command_call_count">
+<code class="descname">command_call_count</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_call_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return how many times the command handler has been called</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">number of times handler has been called</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.command_called">
+<code class="descname">command_called</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_called" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return False if command not called</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if command called, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.command_called_with">
+<code class="descname">command_called_with</code><span class="sig-paren">(</span><em>command_name</em>, <em>params</em>, <em>to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_called_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if command is called with specified parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>command_name</strong> (<em>string</em>) – command name</li>
+<li><strong>params</strong> (<em>dict</em>) – command parameters</li>
+<li><strong>to</strong> (<em>string</em>) – command recipient. If to is specified, the value is used to check command validity</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if command called with params</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.event_call_count">
+<code class="descname">event_call_count</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_call_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns event calls count</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">number of event calls count or 0 if event not handled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.event_called">
+<code class="descname">event_called</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_called" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if event was called</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> (<em>string</em>) – event name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if event called</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.event_called_with">
+<code class="descname">event_called_with</code><span class="sig-paren">(</span><em>event_name</em>, <em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_called_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if event was called with specified arguments</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>event_name</strong> (<em>string</em>) – event name</li>
+<li><strong>params</strong> (<em>dict</em>) – dict of parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if event called with params</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.get_handled_commands">
+<code class="descname">get_handled_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.get_handled_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of handled commands</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of commands</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list (string)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.get_last_event_params">
+<code class="descname">get_last_event_params</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.get_last_event_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns event params of last call</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">last event call params or None if event not handled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.make_mock_command">
+<code class="descname">make_mock_command</code><span class="sig-paren">(</span><em>command_name</em>, <em>data=None</em>, <em>fail=False</em>, <em>no_response=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.make_mock_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Help user to make a ready to user command object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>command_name</strong> (<em>string</em>) – command name</li>
+<li><strong>data</strong> (<em>any</em>) – data to return as command result</li>
+<li><strong>fail</strong> (<em>bool</em>) – set True to simulate command failure</li>
+<li><strong>no_response</strong> (<em>bool</em>) – set True to simulate command no response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">awaited mocked command object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.respawn_module">
+<code class="descname">respawn_module</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.respawn_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respawn module instance (simulate module start)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">returns module_class instance or None if setup not executed before</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.set_mock_command_fail">
+<code class="descname">set_mock_command_fail</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_fail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag command as fail will return error when called</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.set_mock_command_no_response">
+<code class="descname">set_mock_command_no_response</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_no_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag command as not responding</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.set_mock_command_succeed">
+<code class="descname">set_mock_command_succeed</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_succeed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag command as succeed will return specified data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.setup">
+<code class="descname">setup</code><span class="sig-paren">(</span><em>module_class</em>, <em>bootstrap={}</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instanciate specified module overwriting some stuff and initalizing it with appropriate content
+Can be called during test setup.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>module_class</strong> (<em>type</em>) – module class type</li>
+<li><strong>bootstrap</strong> (<em>dict</em>) – overwrite default bootstrap by specified one. You dont have to specify
+all items, only specified ones will be replaced.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns module_class instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.tests.session.TestSession.start_module">
+<code class="descname">start_module</code><span class="sig-paren">(</span><em>module_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.start_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start module. Use this function if you disable module launch during setup</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_instance</strong> (<em>instance</em>) – module instance returned by setup function</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Tanguy Bonneau
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,690 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cleep.libs.drivers.audiodriver module &mdash; Cleep core API 0.0.21 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cleep.libs.internals.cleepbackup module" href="cleep.libs.internals.html" />
+    <link rel="prev" title="cleep.libs.configs.asoundrc module" href="cleep.libs.configs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #607d8b" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Cleep core API
+          
+
+          
+            
+            <img src="../_static/cleep-logo-red.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.21
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cleep</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cleep.html">cleep package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.bus">cleep.bus module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.common">cleep.common module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.core">cleep.core module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.exception">cleep.exception module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.inventory">cleep.inventory module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.html#module-cleep.rpcserver">cleep.rpcserver module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="cleep.libs.html">cleep.libs package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-commands">cleep.libs.commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html">cleep.libs.commands.alsa module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html">cleep.libs.configs.asoundrc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.config">cleep.libs.configs.config module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.configtxt">cleep.libs.configs.configtxt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.dhcpcdconf">cleep.libs.configs.dhcpcdconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcasoundconf">cleep.libs.configs.etcasoundconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcmodules">cleep.libs.configs.etcmodules module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.etcnetworkinterfaces">cleep.libs.configs.etcnetworkinterfaces module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="cleep.libs.html#cleep-libs-drivers">cleep.libs.drivers</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cleep.libs.drivers.audiodriver module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.drivers.driver">cleep.libs.drivers.driver module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-internals">cleep.libs.internals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html">cleep.libs.internals.cleepbackup module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepfilesystem">cleep.libs.internals.cleepfilesystem module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepgithub">cleep.libs.internals.cleepgithub module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.cleepresource">cleep.libs.internals.cleepresource module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.console">cleep.libs.internals.console module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.crashreport">cleep.libs.internals.crashreport module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.criticalresources">cleep.libs.internals.criticalresources module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.download">cleep.libs.internals.download module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.drivers">cleep.libs.internals.drivers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.rendererprofile">cleep.libs.internals.rendererprofile module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.sun">cleep.libs.internals.sun module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.task">cleep.libs.internals.task module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.tools">cleep.libs.internals.tools module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-tests">cleep.libs.tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.tests.html">cleep.libs.tests.lib module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.tests.html#module-cleep.libs.tests.session">cleep.libs.tests.session module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.profiles.html">cleep.profiles package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertemailprofile">cleep.profiles.alertemailprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertpushprofile">cleep.profiles.alertpushprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.alertsmsprofile">cleep.profiles.alertsmsprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displayaddorreplacemessageprofile">cleep.profiles.displayaddorreplacemessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displaymessageprofile">cleep.profiles.displaymessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.displaytimelimitedmessageprofile">cleep.profiles.displaytimelimitedmessageprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.soundtexttospeechprofile">cleep.profiles.soundtexttospeechprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.speechrecognitioncommandprofile">cleep.profiles.speechrecognitioncommandprofile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.profiles.html#module-cleep.profiles.speechrecognitionhotwordprofile">cleep.profiles.speechrecognitionhotwordprofile module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cleep.resources.html">cleep.resources package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audiocaptureresource">cleep.resources.audiocaptureresource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cleep.resources.html#module-cleep.resources.audioplaybackresource">cleep.resources.audioplaybackresource module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cleep core API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">cleep</a> &raquo;</li>
+        
+          <li><a href="cleep.libs.html">cleep.libs package</a> &raquo;</li>
+        
+      <li>cleep.libs.drivers.audiodriver module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/source/cleep.libs.drivers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cleep.libs.drivers.audiodriver">
+<span id="cleep-libs-drivers-audiodriver-module"></span><h1>cleep.libs.drivers.audiodriver module<a class="headerlink" href="#module-cleep.libs.drivers.audiodriver" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver">
+<em class="property">class </em><code class="descname">AudioDriver</code><span class="sig-paren">(</span><em>cleep_filesystem</em>, <em>driver_name</em>, <em>card_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.libs.drivers.driver.Driver" title="cleep.libs.drivers.driver.Driver"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.drivers.driver.Driver</span></code></a></p>
+<p>Audio driver base class</p>
+<dl class="docutils">
+<dt>As mentionned in Driver base class, we implements following methods:</dt>
+<dd><ul class="first last simple">
+<li>_install</li>
+<li>_uninstall</li>
+<li>is_installed</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.disable">
+<code class="descname">disable</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable driver</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function must be implemented in audio driver</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> (<em>dict</em>) – additionnal parameters if necessary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.enable">
+<code class="descname">enable</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable driver</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function must be implemented in audio driver</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> (<em>dict</em>) – additionnal parameters if necessary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.get_alsa_infos">
+<code class="descname">get_alsa_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.get_alsa_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return alsa infos for current card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">alsa infos or None if card not found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">cardname</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">card</span> <span class="n">name</span>
+    <span class="n">cardid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">alsa</span> <span class="n">card</span> <span class="nb">id</span>
+    <span class="n">deviceid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">alsa</span> <span class="n">device</span> <span class="nb">id</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.get_card_capabilities">
+<code class="descname">get_card_capabilities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.get_card_capabilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return card capabilities</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function must be implemented in audio driver</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">card capabilities:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="nb">bool</span><span class="p">:</span> <span class="n">playback</span> <span class="n">capability</span><span class="p">,</span>
+    <span class="nb">bool</span><span class="p">:</span> <span class="n">capture</span> <span class="n">capability</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.get_card_name">
+<code class="descname">get_card_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.get_card_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return card name as returned by alsa</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function must be implemented in audio driver</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">card name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.get_cardid_deviceid">
+<code class="descname">get_cardid_deviceid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.get_cardid_deviceid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns only cardid/deviceid for current card</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">cardid/deviceid:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">cardid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">card</span> <span class="nb">id</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span>
+    <span class="n">deviceid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">device</span> <span class="nb">id</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.get_device_infos">
+<code class="descname">get_device_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.get_device_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns infos about device associated to driver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">device infos:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">cardname</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">handled</span> <span class="n">card</span> <span class="n">name</span>
+    <span class="n">cardid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">card</span> <span class="nb">id</span>
+    <span class="n">deviceid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">device</span> <span class="nb">id</span>
+    <span class="n">playback</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">audio</span> <span class="n">playback</span> <span class="ow">is</span> <span class="n">possible</span>
+    <span class="n">capture</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">audio</span> <span class="n">capture</span> <span class="ow">is</span> <span class="n">possible</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.get_volumes">
+<code class="descname">get_volumes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.get_volumes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get volumes</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function must be implemented in audio driver</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">volumes level:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">playback</span> <span class="p">(</span><span class="nb">float</span><span class="p">):</span> <span class="n">playback</span> <span class="n">volume</span>
+    <span class="n">capture</span> <span class="p">(</span><span class="nb">float</span><span class="p">):</span> <span class="n">capture</span> <span class="n">volume</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.is_card_enabled">
+<code class="descname">is_card_enabled</code><span class="sig-paren">(</span><em>card_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.is_card_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is specified card enabled ?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>card_name</strong> (<em>string</em>) – card name to check. If None specified, driver card name is used</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if enable</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.audiodriver.AudioDriver.set_volumes">
+<code class="descname">set_volumes</code><span class="sig-paren">(</span><em>playback=None</em>, <em>capture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.audiodriver.AudioDriver.set_volumes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set volumes</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This function must be implemented in audio driver</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>playback</strong> (<em>float</em>) – playback volume (None to disable update)</li>
+<li><strong>capture</strong> (<em>float</em>) – capture volume (None to disable update)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.libs.drivers.driver">
+<span id="cleep-libs-drivers-driver-module"></span><h1>cleep.libs.drivers.driver module<a class="headerlink" href="#module-cleep.libs.drivers.driver" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cleep.libs.drivers.driver.Driver">
+<em class="property">class </em><code class="descname">Driver</code><span class="sig-paren">(</span><em>cleep_filesystem</em>, <em>driver_type</em>, <em>driver_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base driver class</p>
+<dl class="attribute">
+<dt id="cleep.libs.drivers.driver.Driver.DRIVER_AUDIO">
+<code class="descname">DRIVER_AUDIO</code><em class="property"> = 'audio'</em><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.DRIVER_AUDIO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.libs.drivers.driver.Driver.DRIVER_GPIO">
+<code class="descname">DRIVER_GPIO</code><em class="property"> = 'gpio'</em><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.DRIVER_GPIO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.libs.drivers.driver.Driver.PROCESSING_INSTALLING">
+<code class="descname">PROCESSING_INSTALLING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.PROCESSING_INSTALLING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.libs.drivers.driver.Driver.PROCESSING_NONE">
+<code class="descname">PROCESSING_NONE</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.PROCESSING_NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cleep.libs.drivers.driver.Driver.PROCESSING_UNINSTALLING">
+<code class="descname">PROCESSING_UNINSTALLING</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.PROCESSING_UNINSTALLING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.driver.Driver._install">
+<code class="descname">_install</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver._install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install driver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> (<em>dict</em>) – optionnal parameters</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.driver.Driver._uninstall">
+<code class="descname">_uninstall</code><span class="sig-paren">(</span><em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver._uninstall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uninstall driver. Don’t forget to enable writings during driver installation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> (<em>dict</em>) – additionnal parameters if necessary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.driver.Driver.install">
+<code class="descname">install</code><span class="sig-paren">(</span><em>end_callback</em>, <em>params=None</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install driver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>end_callback</strong> (<em>function</em>) – function called when install complete. Function args: driver_type (string), driver_name (string), success (bool), message (string)</li>
+<li><strong>params</strong> (<em>dict</em>) – additionnal parameters if necessary</li>
+<li><strong>logger</strong> (<em>logging</em>) – logging instance. If None driver logger will be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">install task instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.task.Task" title="cleep.libs.internals.task.Task">Task</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.driver.Driver.is_installed">
+<code class="descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.is_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is driver installed ?</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if driver installed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.driver.Driver.processing">
+<code class="descname">processing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.processing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return processing status</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">processing status (see Driver.PROCESSING_XXX)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cleep.libs.drivers.driver.Driver.uninstall">
+<code class="descname">uninstall</code><span class="sig-paren">(</span><em>end_callback</em>, <em>params=None</em>, <em>logger=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.drivers.driver.Driver.uninstall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uninstall driver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>end_callback</strong> (<em>function</em>) – function called when install complete. Function args: driver type (string), driver name (string), success (bool), message (string)</li>
+<li><strong>params</strong> (<em>dict</em>) – additionnal parameters if necessary</li>
+<li><strong>logger</strong> (<em>logging</em>) – logging instance. If None driver logger will be provided</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">install task instance</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.task.Task" title="cleep.libs.internals.task.Task">Task</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020 Tanguy Bonneau
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
