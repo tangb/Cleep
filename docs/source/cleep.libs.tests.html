@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -266,92 +266,85 @@
             
   <div class="section" id="module-cleep.libs.tests.lib">
 <span id="cleep-libs-tests-lib-module"></span><h1>cleep.libs.tests.lib module<a class="headerlink" href="#module-cleep.libs.tests.lib" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.tests.lib.FileDescriptorMock">
-<em class="property">class </em><code class="descname">FileDescriptorMock</code><span class="sig-paren">(</span><em>write_side_effect=None</em>, <em>content='file contentn'</em>, <em>read_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">FileDescriptorMock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">write_side_effect</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">content</span><span class="o">=</span><span class="default_value">'file content\n'</span></em>, <em class="sig-param"><span class="n">read_side_effect</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>FileDescriptorMock is used to simulate output of file|io.open function and force some output values or side effects</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.FileDescriptorMock.close">
-<code class="descname">close</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.close" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.close" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.FileDescriptorMock.get_content_hashes">
-<code class="descname">get_content_hashes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.get_content_hashes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_content_hashes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.get_content_hashes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns hashes of specified content</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.FileDescriptorMock.read">
-<code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.read" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.read" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.FileDescriptorMock.write">
-<code class="descname">write</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.write" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.FileDescriptorMock.write" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.tests.lib.TestLib">
-<em class="property">class </em><code class="descname">TestLib</code><span class="sig-paren">(</span><em>test_case=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">TestLib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">test_case</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Instanciate TestLib to enable some features to be able to run tests on a library for Cleep</p>
-<dl class="staticmethod">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.TestLib.clone_class">
-<em class="property">static </em><code class="descname">clone_class</code><span class="sig-paren">(</span><em>base_class</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.clone_class" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">clone_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_class</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.clone_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clone specified base class. This can be useful when you need to alter class (adding mock)
 keeping original one clean.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_class</strong> (<em>Class</em>) – class object (not instance!)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">cloned class that can be instanciated. Cloned class name is prefixed by “C”</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Class</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>base_class</strong> (<em>Class</em>) – class object (not instance!)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cloned class that can be instanciated. Cloned class name is prefixed by “C”</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Class</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.TestLib.mock_cleepfilesystem">
-<em class="property">static </em><code class="descname">mock_cleepfilesystem</code><span class="sig-paren">(</span><em>open_response=None</em>, <em>open_side_effect=None</em>, <em>rename_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.mock_cleepfilesystem" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">mock_cleepfilesystem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">open_response</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">open_side_effect</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rename_side_effect</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.mock_cleepfilesystem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mock cleepfilsystem</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>open_response</strong> (<em>instance</em>) – mock output of open function</li>
-<li><strong>open_side_effect</strong> (<em>function|exception</em>) – value passed to mock side_effect parameter</li>
-<li><strong>rename_side_effect</strong> (<em>function|exception</em>) – value passed to mock side_effect parameter</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>open_response</strong> (<em>instance</em>) – mock output of open function</p></li>
+<li><p><strong>open_side_effect</strong> (<em>function|exception</em>) – value passed to mock side_effect parameter</p></li>
+<li><p><strong>rename_side_effect</strong> (<em>function|exception</em>) – value passed to mock side_effect parameter</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.TestLib.mock_urllib3">
-<em class="property">static </em><code class="descname">mock_urllib3</code><span class="sig-paren">(</span><em>request_response</em>, <em>request_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.mock_urllib3" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">mock_urllib3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request_response</span></em>, <em class="sig-param"><span class="n">request_side_effect</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.mock_urllib3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mock urllib3</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>request_response</strong> (<em>instance</em>) – mocked response instance. You can use Urllib3RequestResponseMock.</li>
-<li><strong>request_side_effect</strong> (<em>anything</em>) – value passed to Mock side_effect parameter</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request_response</strong> (<em>instance</em>) – mocked response instance. You can use Urllib3RequestResponseMock.</p></li>
+<li><p><strong>request_side_effect</strong> (<em>anything</em>) – value passed to Mock side_effect parameter</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><p>tuple:</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>tuple:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">urllib3</span> <span class="n">mock</span> <span class="p">(</span><span class="n">Mock</span><span class="p">):</span> <span class="n">urllib3</span> <span class="n">mock</span> <span class="n">instance</span>
     <span class="n">request</span> <span class="n">mock</span> <span class="p">(</span><span class="n">Mock</span><span class="p">):</span> <span class="n">urllib3</span><span class="o">.</span><span class="n">PoolManager</span><span class="o">.</span><span class="n">request</span> <span class="n">mock</span> <span class="n">instance</span>
@@ -359,32 +352,30 @@ keeping original one clean.</p>
 </pre></div>
 </div>
 </p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.TestLib.set_functional_tests">
-<code class="descname">set_functional_tests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.set_functional_tests" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_functional_tests</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.TestLib.set_functional_tests" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.tests.lib.Urllib3RequestResponseMock">
-<em class="property">class </em><code class="descname">Urllib3RequestResponseMock</code><span class="sig-paren">(</span><em>status=200</em>, <em>raw=''</em>, <em>read_side_effect=None</em>, <em>getheader_side_effect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Urllib3RequestResponseMock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">read_side_effect</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">getheader_side_effect</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Urllib3RequestResponseMock is used to simulate output of urllib3.request function and force some output values or side effects</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.Urllib3RequestResponseMock.getheader">
-<code class="descname">getheader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock.getheader" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getheader</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock.getheader" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.lib.Urllib3RequestResponseMock.read">
-<code class="descname">read</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock.read" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.lib.Urllib3RequestResponseMock.read" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -392,343 +383,300 @@ keeping original one clean.</p>
 </div>
 <div class="section" id="module-cleep.libs.tests.session">
 <span id="cleep-libs-tests-session-module"></span><h1>cleep.libs.tests.session module<a class="headerlink" href="#module-cleep.libs.tests.session" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.tests.session.AnyArg">
-<em class="property">class </em><code class="descname">AnyArg</code><a class="headerlink" href="#cleep.libs.tests.session.AnyArg" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">AnyArg</code><a class="headerlink" href="#cleep.libs.tests.session.AnyArg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Used to perform a “any” params comparison during an assert_called_with</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.tests.session.TestSession">
-<em class="property">class </em><code class="descname">TestSession</code><span class="sig-paren">(</span><em>testcase</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">TestSession</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">testcase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Create session to be able to run tests on a Cleep module</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.add_mock_command">
-<code class="descname">add_mock_command</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.add_mock_command" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_mock_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.add_mock_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mock command sent to internal message bus</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>dict</em>) – command object as returned by make_mock_command function</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command</strong> (<em>dict</em>) – command object as returned by make_mock_command function</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.assert_command_called_with">
-<code class="descname">assert_command_called_with</code><span class="sig-paren">(</span><em>command_name</em>, <em>params</em>, <em>to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_command_called_with" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">assert_command_called_with</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">to</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_command_called_with" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as command_called_wth but with assertion</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.assert_event_called">
-<code class="descname">assert_event_called</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_event_called" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">assert_event_called</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_event_called" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as event_called with assertion</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.clean">
-<code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clean all stuff.
 Can be called during test tear down.</p>
 </dd></dl>
 
-<dl class="staticmethod">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.clone_class">
-<em class="property">static </em><code class="descname">clone_class</code><span class="sig-paren">(</span><em>base_class</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clone_class" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">clone_class</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_class</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clone_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clone specified base class. This can be useful when you need to alter class (adding mock)
 keeping original one clean.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>base_class</strong> (<em>Class</em>) – class object (not instance!)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">cloned class that can be instanciated. Cloned class name is prefixed by “C”</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Class</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>base_class</strong> (<em>Class</em>) – class object (not instance!)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cloned class that can be instanciated. Cloned class name is prefixed by “C”</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Class</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.command_call_count">
-<code class="descname">command_call_count</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_call_count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">command_call_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_call_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return how many times the command handler has been called</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">number of times handler has been called</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>string</em>) – command name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>number of times handler has been called</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.command_called">
-<code class="descname">command_called</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_called" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">command_called</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_called" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return False if command not called</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if command called, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>string</em>) – command name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command called, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.command_called_with">
-<code class="descname">command_called_with</code><span class="sig-paren">(</span><em>command_name</em>, <em>params</em>, <em>to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_called_with" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">command_called_with</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">to</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.command_called_with" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if command is called with specified parameters</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>command_name</strong> (<em>string</em>) – command name</li>
-<li><strong>params</strong> (<em>dict</em>) – command parameters</li>
-<li><strong>to</strong> (<em>string</em>) – command recipient. If to is specified, the value is used to check command validity</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command_name</strong> (<em>string</em>) – command name</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – command parameters</p></li>
+<li><p><strong>to</strong> (<em>string</em>) – command recipient. If to is specified, the value is used to check command validity</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if command called with params</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command called with params</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.event_call_count">
-<code class="descname">event_call_count</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_call_count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">event_call_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_call_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns event calls count</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">number of event calls count or 0 if event not handled</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>number of event calls count or 0 if event not handled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.event_called">
-<code class="descname">event_called</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_called" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">event_called</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_called" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if event was called</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_name</strong> (<em>string</em>) – event name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if event called</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event_name</strong> (<em>string</em>) – event name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if event called</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.event_called_with">
-<code class="descname">event_called_with</code><span class="sig-paren">(</span><em>event_name</em>, <em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_called_with" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">event_called_with</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_name</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.event_called_with" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if event was called with specified arguments</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>event_name</strong> (<em>string</em>) – event name</li>
-<li><strong>params</strong> (<em>dict</em>) – dict of parameters</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>string</em>) – event name</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – dict of parameters</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if event called with params</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if event called with params</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.get_handled_commands">
-<code class="descname">get_handled_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.get_handled_commands" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_handled_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.get_handled_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of handled commands</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of commands</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list (string)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of commands</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list (string)</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.get_last_event_params">
-<code class="descname">get_last_event_params</code><span class="sig-paren">(</span><em>event_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.get_last_event_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_last_event_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.get_last_event_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns event params of last call</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">last event call params or None if event not handled</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>last event call params or None if event not handled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.make_mock_command">
-<code class="descname">make_mock_command</code><span class="sig-paren">(</span><em>command_name</em>, <em>data=None</em>, <em>fail=False</em>, <em>no_response=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.make_mock_command" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">make_mock_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fail</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">no_response</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.make_mock_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Help user to make a ready to user command object</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>command_name</strong> (<em>string</em>) – command name</li>
-<li><strong>data</strong> (<em>any</em>) – data to return as command result</li>
-<li><strong>fail</strong> (<em>bool</em>) – set True to simulate command failure</li>
-<li><strong>no_response</strong> (<em>bool</em>) – set True to simulate command no response</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command_name</strong> (<em>string</em>) – command name</p></li>
+<li><p><strong>data</strong> (<em>any</em>) – data to return as command result</p></li>
+<li><p><strong>fail</strong> (<em>bool</em>) – set True to simulate command failure</p></li>
+<li><p><strong>no_response</strong> (<em>bool</em>) – set True to simulate command no response</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">awaited mocked command object</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>awaited mocked command object</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.respawn_module">
-<code class="descname">respawn_module</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.respawn_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">respawn_module</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.respawn_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Respawn module instance (simulate module start)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">returns module_class instance or None if setup not executed before</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Object</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>returns module_class instance or None if setup not executed before</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Object</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.set_mock_command_fail">
-<code class="descname">set_mock_command_fail</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_fail" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_mock_command_fail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_fail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flag command as fail will return error when called</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>string</em>) – command name</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.set_mock_command_no_response">
-<code class="descname">set_mock_command_no_response</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_no_response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_mock_command_no_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_no_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flag command as not responding</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>string</em>) – command name</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.set_mock_command_succeed">
-<code class="descname">set_mock_command_succeed</code><span class="sig-paren">(</span><em>command_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_succeed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_mock_command_succeed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.set_mock_command_succeed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flag command as succeed will return specified data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command_name</strong> (<em>string</em>) – command name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>command_name</strong> (<em>string</em>) – command name</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.setup">
-<code class="descname">setup</code><span class="sig-paren">(</span><em>module_class</em>, <em>bootstrap={}</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.setup" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_class</span></em>, <em class="sig-param"><span class="n">bootstrap</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.setup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Instanciate specified module overwriting some stuff and initalizing it with appropriate content
 Can be called during test setup.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>module_class</strong> (<em>type</em>) – module class type</li>
-<li><strong>bootstrap</strong> (<em>dict</em>) – overwrite default bootstrap by specified one. You dont have to specify
-all items, only specified ones will be replaced.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>module_class</strong> (<em>type</em>) – module class type</p></li>
+<li><p><strong>bootstrap</strong> (<em>dict</em>) – overwrite default bootstrap by specified one. You dont have to specify
+all items, only specified ones will be replaced.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">returns module_class instance</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Object</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns module_class instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Object</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.start_module">
-<code class="descname">start_module</code><span class="sig-paren">(</span><em>module_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.start_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_instance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.start_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start module. Use this function if you disable module launch during setup</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_instance</strong> (<em>instance</em>) – module instance returned by setup function</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module_instance</strong> (<em>instance</em>) – module instance returned by setup function</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

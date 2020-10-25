@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -266,105 +266,100 @@
             
   <div class="section" id="module-cleep.libs.commands.alsa">
 <span id="cleep-libs-commands-alsa-module"></span><h1>cleep.libs.commands.alsa module<a class="headerlink" href="#module-cleep.libs.commands.alsa" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.alsa.Alsa">
-<em class="property">class </em><code class="descname">Alsa</code><span class="sig-paren">(</span><em>cleep_filesystem</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Alsa</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Alsa commands helper (aplay, arecord, amixer).</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.CGET">
-<code class="descname">CGET</code><em class="property"> = 'cget'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CGET" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CGET</code><em class="property"> = 'cget'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CGET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.CHANNELS_DOLBY">
-<code class="descname">CHANNELS_DOLBY</code><em class="property"> = 5</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CHANNELS_DOLBY" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CHANNELS_DOLBY</code><em class="property"> = 5</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CHANNELS_DOLBY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.CHANNELS_MONO">
-<code class="descname">CHANNELS_MONO</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CHANNELS_MONO" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CHANNELS_MONO</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CHANNELS_MONO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.CHANNELS_STEREO">
-<code class="descname">CHANNELS_STEREO</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CHANNELS_STEREO" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CHANNELS_STEREO</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CHANNELS_STEREO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.CSET">
-<code class="descname">CSET</code><em class="property"> = 'cset'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CSET" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CSET</code><em class="property"> = 'cset'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.CSET" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.FORMAT_S16LE">
-<code class="descname">FORMAT_S16LE</code><em class="property"> = 'S16_LE'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.FORMAT_S16LE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FORMAT_S16LE</code><em class="property"> = 'S16_LE'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.FORMAT_S16LE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.FORMAT_S24LE">
-<code class="descname">FORMAT_S24LE</code><em class="property"> = 'S24_LE'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.FORMAT_S24LE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FORMAT_S24LE</code><em class="property"> = 'S24_LE'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.FORMAT_S24LE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.FORMAT_S32LE">
-<code class="descname">FORMAT_S32LE</code><em class="property"> = 'S32_LE'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.FORMAT_S32LE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FORMAT_S32LE</code><em class="property"> = 'S32_LE'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.FORMAT_S32LE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.RATE_22K">
-<code class="descname">RATE_22K</code><em class="property"> = 22050</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.RATE_22K" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RATE_22K</code><em class="property"> = 22050</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.RATE_22K" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.RATE_44K">
-<code class="descname">RATE_44K</code><em class="property"> = 44100</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.RATE_44K" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RATE_44K</code><em class="property"> = 44100</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.RATE_44K" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.RATE_48K">
-<code class="descname">RATE_48K</code><em class="property"> = 48000</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.RATE_48K" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RATE_48K</code><em class="property"> = 48000</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.RATE_48K" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.alsa.Alsa.SIMPLE_MIXER_CONTROL">
-<code class="descname">SIMPLE_MIXER_CONTROL</code><em class="property"> = 'Simple mixer control'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.SIMPLE_MIXER_CONTROL" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SIMPLE_MIXER_CONTROL</code><em class="property"> = 'Simple mixer control'</em><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.SIMPLE_MIXER_CONTROL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.amixer_control">
-<code class="descname">amixer_control</code><span class="sig-paren">(</span><em>command</em>, <em>numid</em>, <em>value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.amixer_control" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">amixer_control</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">numid</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.amixer_control" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute amixer control</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>command</strong> (<em>string</em>) – Alsa.CGET or Alsa.CSET</li>
-<li><strong>numid</strong> (<em>int</em>) – amixer numid. Use command “amixer controls” to get available numids</li>
-<li><strong>value</strong> (<em>string</em>) – value to use with CSET</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>string</em>) – Alsa.CGET or Alsa.CSET</p></li>
+<li><p><strong>numid</strong> (<em>int</em>) – amixer numid. Use command “amixer controls” to get available numids</p></li>
+<li><p><strong>value</strong> (<em>string</em>) – value to use with CSET</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if parameter is invalid</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code> – if parameter is missing</li>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if parameter is invalid</p></li>
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.MissingParameter" title="cleep.exception.MissingParameter"><strong>MissingParameter</strong></a> – if parameter is missing</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.get_capture_devices">
-<code class="descname">get_capture_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_capture_devices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_capture_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_capture_devices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of capture devices</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of outputs:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">cardname</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">cardname</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
         <span class="n">cardid</span> <span class="p">(</span><span class="nb">int</span><span class="p">),</span>
@@ -373,23 +368,22 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.get_device_infos">
-<code class="descname">get_device_infos</code><span class="sig-paren">(</span><em>card_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_device_infos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_device_infos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">card_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_device_infos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get device infos</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">selected device info or None if nothing found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>selected device info or None if nothing found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">name</span> <span class="p">(</span><span class="n">first</span> <span class="n">device</span> <span class="n">name</span><span class="p">)</span>
     <span class="n">devices</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">devices</span>
         <span class="p">[</span>
@@ -403,23 +397,22 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.get_playback_devices">
-<code class="descname">get_playback_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_playback_devices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_playback_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_playback_devices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return list of playback devices</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of outputs:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">cardname</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">cardname</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
         <span class="n">cardid</span> <span class="p">(</span><span class="nb">int</span><span class="p">),</span>
@@ -428,23 +421,22 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.get_selected_device">
-<code class="descname">get_selected_device</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_selected_device" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_selected_device</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_selected_device" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return selected device info</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">selected device info or None if nothing found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>selected device info or None if nothing found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">name</span> <span class="p">(</span><span class="n">first</span> <span class="n">device</span> <span class="n">name</span><span class="p">)</span>
     <span class="n">devices</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">devices</span>
         <span class="p">[</span>
@@ -458,150 +450,132 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.get_volume">
-<code class="descname">get_volume</code><span class="sig-paren">(</span><em>control</em>, <em>pattern</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_volume" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_volume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">control</span></em>, <em class="sig-param"><span class="n">pattern</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.get_volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return current playback volume on current device</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>control</strong> (<em>string</em>) – amixer control that contains volume level. To get list of controls execute “amixer scontrols”</li>
-<li><strong>pattern</strong> (<em>string</em>) – pattern to use to parse volume level</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>control</strong> (<em>string</em>) – amixer control that contains volume level. To get list of controls execute “amixer scontrols”</p></li>
+<li><p><strong>pattern</strong> (<em>string</em>) – pattern to use to parse volume level</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">volume or None if not found</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">float</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code> – if parameter is missing</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>volume or None if not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="cleep.html#cleep.exception.MissingParameter" title="cleep.exception.MissingParameter"><strong>MissingParameter</strong></a> – if parameter is missing</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.play_sound">
-<code class="descname">play_sound</code><span class="sig-paren">(</span><em>path</em>, <em>timeout=5.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.play_sound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">play_sound</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.play_sound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Play specified sound using aplay command. Please take care of setting timeout accordingly to your duration!</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>path</strong> (<em>string</em>) – sound file path</li>
-<li><strong>timeout</strong> (<em>float</em>) – max playing duration. If you want to play longer sound file, increase the timeout</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>string</em>) – sound file path</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – max playing duration. If you want to play longer sound file, increase the timeout</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if command succeed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">bool</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if parameter is invalid</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code></li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if parameter is invalid</p></li>
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.MissingParameter" title="cleep.exception.MissingParameter"><strong>MissingParameter</strong></a> – </p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.record_sound">
-<code class="descname">record_sound</code><span class="sig-paren">(</span><em>channels=2</em>, <em>rate=44100</em>, <em>format='S32_LE'</em>, <em>timeout=5.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.record_sound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">record_sound</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channels</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">rate</span><span class="o">=</span><span class="default_value">44100</span></em>, <em class="sig-param"><span class="n">format</span><span class="o">=</span><span class="default_value">'S32_LE'</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.record_sound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Record sound. In charge of function caller to remove properly generated file
 After timeout command is killed so use timeout to record specific duration.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>channels</strong> (<em>int</em>) – number of channels to record. Default CHANNELS_STEREO.</li>
-<li><strong>rate</strong> (<em>int</em>) – record rate. Default RATE_44K.</li>
-<li><strong>format</strong> (<em>string</em>) – RECORD_FORMAT_XXX. Default FORMAT_S32LE.</li>
-<li><strong>timeout</strong> (<em>float</em>) – max recording duration</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channels</strong> (<em>int</em>) – number of channels to record. Default CHANNELS_STEREO.</p></li>
+<li><p><strong>rate</strong> (<em>int</em>) – record rate. Default RATE_44K.</p></li>
+<li><p><strong>format</strong> (<em>string</em>) – RECORD_FORMAT_XXX. Default FORMAT_S32LE.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – max recording duration</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">path of recording file (wav format)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">string</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code> – if parameter is missing</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if parameter is invalid</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">CommandError</span></code> – if error occured during command execution</li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>path of recording file (wav format)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.MissingParameter" title="cleep.exception.MissingParameter"><strong>MissingParameter</strong></a> – if parameter is missing</p></li>
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if parameter is invalid</p></li>
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.CommandError" title="cleep.exception.CommandError"><strong>CommandError</strong></a> – if error occured during command execution</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.save">
-<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save alsa configuration in /var/lib/alsa/asound.state</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if configuration saved successfully, False otherwise</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if configuration saved successfully, False otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.alsa.Alsa.set_volume">
-<code class="descname">set_volume</code><span class="sig-paren">(</span><em>control</em>, <em>pattern</em>, <em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.set_volume" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_volume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">control</span></em>, <em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">volume</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.set_volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set volume</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>control</strong> (<em>string</em>) – amixer control that contains volume level</li>
-<li><strong>pattern</strong> (<em>string</em>) – pattern to use to parse volume level</li>
-<li><strong>volume</strong> (<em>float</em>) – volume level to set (in percentage)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>control</strong> (<em>string</em>) – amixer control that contains volume level</p></li>
+<li><p><strong>pattern</strong> (<em>string</em>) – pattern to use to parse volume level</p></li>
+<li><p><strong>volume</strong> (<em>float</em>) – volume level to set (in percentage)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">new volume or None if failed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">float</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if parameter is invalid</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code> – if parameter is missing</li>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new volume or None if failed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if parameter is invalid</p></li>
+<li><p><a class="reference internal" href="cleep.html#cleep.exception.MissingParameter" title="cleep.exception.MissingParameter"><strong>MissingParameter</strong></a> – if parameter is missing</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -609,26 +583,26 @@ After timeout command is killed so use timeout to record specific duration.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.blkid">
 <span id="cleep-libs-commands-blkid-module"></span><h1>cleep.libs.commands.blkid module<a class="headerlink" href="#module-cleep.libs.commands.blkid" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.blkid.Blkid">
-<em class="property">class </em><code class="descname">Blkid</code><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Blkid</code><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.blkid.Blkid.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.blkid.Blkid.get_device">
-<code class="descname">get_device</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_device</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">device</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get device</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device</strong> (<em>string</em>) – device to search for</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">device data:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device</strong> (<em>string</em>) – device to search for</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>device data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">path</span><span class="p">,</span>
     <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">uuid</span><span class="p">,</span>
     <span class="nb">type</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">filesystem</span> <span class="nb">type</span><span class="p">,</span>
@@ -636,25 +610,25 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.blkid.Blkid.get_device_by_partuuid">
-<code class="descname">get_device_by_partuuid</code><span class="sig-paren">(</span><em>partuuid</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device_by_partuuid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_device_by_partuuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">partuuid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device_by_partuuid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get device specified by partuuid</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>partuuid</strong> (<em>string</em>) – device partuuid</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">device data:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>partuuid</strong> (<em>string</em>) – device partuuid</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>device data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">path</span><span class="p">,</span>
     <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">uuid</span><span class="p">,</span>
     <span class="nb">type</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">filesystem</span> <span class="nb">type</span><span class="p">,</span>
@@ -662,25 +636,25 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.blkid.Blkid.get_device_by_uuid">
-<code class="descname">get_device_by_uuid</code><span class="sig-paren">(</span><em>uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device_by_uuid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_device_by_uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device_by_uuid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get device specified by uuid</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> (<em>string</em>) – device uuid</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">device data:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uuid</strong> (<em>string</em>) – device uuid</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>device data:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">path</span><span class="p">,</span>
     <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">uuid</span><span class="p">,</span>
     <span class="nb">type</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">filesystem</span> <span class="nb">type</span><span class="p">,</span>
@@ -688,23 +662,22 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.blkid.Blkid.get_devices">
-<code class="descname">get_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_devices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_devices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all devices infos</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of devices:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of devices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
         <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">path</span><span class="p">,</span>
         <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">uuid</span><span class="p">,</span>
@@ -715,12 +688,12 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -728,29 +701,28 @@ After timeout command is killed so use timeout to record specific duration.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.ifconfig">
 <span id="cleep-libs-commands-ifconfig-module"></span><h1>cleep.libs.commands.ifconfig module<a class="headerlink" href="#module-cleep.libs.commands.ifconfig" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.ifconfig.Ifconfig">
-<em class="property">class </em><code class="descname">Ifconfig</code><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Ifconfig</code><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Command /sbin/ifconfig</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Command ifconfig parsing is replaced by netifaces library</p>
+<p class="admonition-title">Note</p>
+<p>Command ifconfig parsing is replaced by netifaces library</p>
 </div>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.ifconfig.Ifconfig.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.ifconfig.Ifconfig.get_configurations">
-<code class="descname">get_configurations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig.get_configurations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_configurations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig.get_configurations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns current network configuration</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">interfaces configurations:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>interfaces configurations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">interface1</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">)):</span> <span class="n">interface</span> <span class="n">name</span>
         <span class="n">mac</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">mac</span> <span class="n">address</span>
@@ -765,12 +737,12 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -778,64 +750,61 @@ After timeout command is killed so use timeout to record specific duration.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.ifupdown">
 <span id="cleep-libs-commands-ifupdown-module"></span><h1>cleep.libs.commands.ifupdown module<a class="headerlink" href="#module-cleep.libs.commands.ifupdown" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.ifupdown.Ifupdown">
-<em class="property">class </em><code class="descname">Ifupdown</code><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Ifupdown</code><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
 <p>Command /sbin/ifup /sbin/ifdown.
 It also uses /sbin/ip command</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.ifupdown.Ifupdown.restart_interface">
-<code class="descname">restart_interface</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown.restart_interface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">restart_interface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown.restart_interface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restart specified interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface to restart</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if command succeed (but maybe not connected!)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface to restart</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed (but maybe not connected!)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.ifupdown.Ifupdown.start_interface">
-<code class="descname">start_interface</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown.start_interface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start_interface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown.start_interface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start specified interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface to restart</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if command succeed (but maybe not connected!)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface to restart</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed (but maybe not connected!)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.ifupdown.Ifupdown.stop_interface">
-<code class="descname">stop_interface</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown.stop_interface" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stop_interface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifupdown.Ifupdown.stop_interface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop specified interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface to restart</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if command succeed (but maybe not connected!)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface to restart</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed (but maybe not connected!)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -843,26 +812,25 @@ It also uses /sbin/ip command</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.iw">
 <span id="cleep-libs-commands-iw-module"></span><h1>cleep.libs.commands.iw module<a class="headerlink" href="#module-cleep.libs.commands.iw" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.iw.Iw">
-<em class="property">class </em><code class="descname">Iw</code><a class="headerlink" href="#cleep.libs.commands.iw.Iw" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Iw</code><a class="headerlink" href="#cleep.libs.commands.iw.Iw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Command /sbin/iw helper.
 Return wireless network interface infos.</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iw.Iw.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.iw.Iw.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.iw.Iw.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iw.Iw.get_adapters">
-<code class="descname">get_adapters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.get_adapters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_adapters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.get_adapters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all adapters with associated interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of adapters and connected network:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>list of adapters and connected network:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">adapter</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
         <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">associated</span> <span class="n">interface</span> <span class="n">name</span>
         <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">connected</span> <span class="n">network</span>
@@ -871,28 +839,26 @@ Return wireless network interface infos.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iw.Iw.is_installed">
-<code class="descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.is_installed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.is_installed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if iw command is installed</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True is installed</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True is installed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -900,40 +866,39 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.iwconfig">
 <span id="cleep-libs-commands-iwconfig-module"></span><h1>cleep.libs.commands.iwconfig module<a class="headerlink" href="#module-cleep.libs.commands.iwconfig" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig">
-<em class="property">class </em><code class="descname">Iwconfig</code><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Iwconfig</code><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Command /sbin/iwlist helper</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.INVALID_INTERFACE">
-<code class="descname">INVALID_INTERFACE</code><em class="property"> = 'no wireless extensions'</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.INVALID_INTERFACE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">INVALID_INTERFACE</code><em class="property"> = 'no wireless extensions'</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.INVALID_INTERFACE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.NOT_CONNECTED">
-<code class="descname">NOT_CONNECTED</code><em class="property"> = 'off/any'</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.NOT_CONNECTED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">NOT_CONNECTED</code><em class="property"> = 'off/any'</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.NOT_CONNECTED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.UNASSOCIATED">
-<code class="descname">UNASSOCIATED</code><em class="property"> = 'unassociated'</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.UNASSOCIATED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">UNASSOCIATED</code><em class="property"> = 'unassociated'</em><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.UNASSOCIATED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.get_interfaces">
-<code class="descname">get_interfaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.get_interfaces" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_interfaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.get_interfaces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all interfaces with wireless informations</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionnary of found wifi networks:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dictionnary of found wifi networks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
         <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">connected</span> <span class="n">network</span> <span class="n">name</span>
     <span class="p">},</span>
@@ -941,37 +906,33 @@ Return wireless network interface infos.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.set_network_to_connect_to">
-<code class="descname">set_network_to_connect_to</code><span class="sig-paren">(</span><em>interface</em>, <em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.set_network_to_connect_to" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_network_to_connect_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em>, <em class="sig-param"><span class="n">network</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.set_network_to_connect_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect interface to specified network
 /!May not work as expected</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>interface</strong> (<em>string</em>) – interface name</li>
-<li><strong>network</strong> (<em>string</em>) – network name</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interface</strong> (<em>string</em>) – interface name</p></li>
+<li><p><strong>network</strong> (<em>string</em>) – network name</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if command succeed (may not be connected!)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed (may not be connected!)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -979,25 +940,24 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.iwgetid">
 <span id="cleep-libs-commands-iwgetid-module"></span><h1>cleep.libs.commands.iwgetid module<a class="headerlink" href="#module-cleep.libs.commands.iwgetid" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.iwgetid.Iwgetid">
-<em class="property">class </em><code class="descname">Iwgetid</code><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Iwgetid</code><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Command /sbin/iwgetid helper</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwgetid.Iwgetid.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iwgetid.Iwgetid.get_connections">
-<code class="descname">get_connections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid.get_connections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_connections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid.get_connections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all wifi connections</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dictionnary of found wifi networks:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dictionnary of found wifi networks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">interface</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">connected</span> <span class="n">network</span> <span class="n">name</span>
     <span class="p">},</span>
@@ -1005,12 +965,12 @@ Return wireless network interface infos.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1018,37 +978,37 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.iwlist">
 <span id="cleep-libs-commands-iwlist-module"></span><h1>cleep.libs.commands.iwlist module<a class="headerlink" href="#module-cleep.libs.commands.iwlist" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.iwlist.Iwlist">
-<em class="property">class </em><code class="descname">Iwlist</code><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Iwlist</code><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Command /sbin/iwlist helper</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwlist.Iwlist.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwlist.Iwlist.FREQ_2_4GHZ">
-<code class="descname">FREQ_2_4GHZ</code><em class="property"> = '2.4GHz'</em><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.FREQ_2_4GHZ" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FREQ_2_4GHZ</code><em class="property"> = '2.4GHz'</em><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.FREQ_2_4GHZ" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.iwlist.Iwlist.FREQ_5GHZ">
-<code class="descname">FREQ_5GHZ</code><em class="property"> = '5GHz'</em><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.FREQ_5GHZ" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">FREQ_5GHZ</code><em class="property"> = '5GHz'</em><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.FREQ_5GHZ" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iwlist.Iwlist.get_networks">
-<code class="descname">get_networks</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.get_networks" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_networks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.get_networks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all wifi networks scanned</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dictionnary of found wifi networks:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>dictionnary of found wifi networks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">network</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">interface</span> <span class="n">scanned</span>
         <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">wifi</span> <span class="n">network</span> <span class="n">name</span>
@@ -1060,28 +1020,26 @@ Return wireless network interface infos.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.iwlist.Iwlist.has_error">
-<code class="descname">has_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.has_error" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.has_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if error occured</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if error, False otherwise</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if error, False otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1089,79 +1047,72 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.lsblk">
 <span id="cleep-libs-commands-lsblk-module"></span><h1>cleep.libs.commands.lsblk module<a class="headerlink" href="#module-cleep.libs.commands.lsblk" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.lsblk.Lsblk">
-<em class="property">class </em><code class="descname">Lsblk</code><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Lsblk</code><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.lsblk.Lsblk.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.lsblk.Lsblk.get_device_infos">
-<code class="descname">get_device_infos</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_device_infos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_device_infos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">device</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_device_infos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns device infos according to device name (sda, sdb1…)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device</strong> (<em>string</em>) – existing device name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict of device infos or None if device not found</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device</strong> (<em>string</em>) – existing device name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict of device infos or None if device not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.lsblk.Lsblk.get_devices_infos">
-<code class="descname">get_devices_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_devices_infos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_devices_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_devices_infos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all devices ordered by drive/partition</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of devices</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict of devices</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.lsblk.Lsblk.get_drives">
-<code class="descname">get_drives</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_drives" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_drives</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_drives" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns drives infos only</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of drives</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict of drives</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.lsblk.Lsblk.get_partitions">
-<code class="descname">get_partitions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_partitions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_partitions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.get_partitions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns partitions infos only</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of partitions</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict of partitions</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1169,46 +1120,42 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.lsmod">
 <span id="cleep-libs-commands-lsmod-module"></span><h1>cleep.libs.commands.lsmod module<a class="headerlink" href="#module-cleep.libs.commands.lsmod" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.lsmod.Lsmod">
-<em class="property">class </em><code class="descname">Lsmod</code><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Lsmod</code><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
 <p>Lsmod command helper</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.lsmod.Lsmod.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.lsmod.Lsmod.get_loaded_modules">
-<code class="descname">get_loaded_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.get_loaded_modules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_loaded_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.get_loaded_modules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all loaded modules</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of modules</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of modules</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.lsmod.Lsmod.is_module_loaded">
-<code class="descname">is_module_loaded</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.is_module_loaded" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_module_loaded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.is_module_loaded" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if specified module is loaded</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if module is loaded</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if module is loaded</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1216,45 +1163,43 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.modprobe">
 <span id="cleep-libs-commands-modprobe-module"></span><h1>cleep.libs.commands.modprobe module<a class="headerlink" href="#module-cleep.libs.commands.modprobe" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.modprobe.Modprobe">
-<em class="property">class </em><code class="descname">Modprobe</code><a class="headerlink" href="#cleep.libs.commands.modprobe.Modprobe" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Modprobe</code><a class="headerlink" href="#cleep.libs.commands.modprobe.Modprobe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
 <p>Modprobe command helper</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.modprobe.Modprobe.load_module">
-<code class="descname">load_module</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.modprobe.Modprobe.load_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.modprobe.Modprobe.load_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load specified module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module loaded successfully</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module loaded successfully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.modprobe.Modprobe.unload_module">
-<code class="descname">unload_module</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.modprobe.Modprobe.unload_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unload_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.modprobe.Modprobe.unload_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unload specified module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module unloaded successfully</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module unloaded successfully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1262,57 +1207,56 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.udevadm">
 <span id="cleep-libs-commands-udevadm-module"></span><h1>cleep.libs.commands.udevadm module<a class="headerlink" href="#module-cleep.libs.commands.udevadm" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.udevadm.Udevadm">
-<em class="property">class </em><code class="descname">Udevadm</code><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Udevadm</code><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
 <p>udevadm is used to determine device type. Device type can be ATA, USB or SDCARD</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.udevadm.Udevadm.CACHE_DURATION">
-<code class="descname">CACHE_DURATION</code><em class="property"> = 10.0</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 10.0</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.udevadm.Udevadm.TYPE_ATA">
-<code class="descname">TYPE_ATA</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_ATA" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TYPE_ATA</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_ATA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.udevadm.Udevadm.TYPE_MMC">
-<code class="descname">TYPE_MMC</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_MMC" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TYPE_MMC</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_MMC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.udevadm.Udevadm.TYPE_SDCARD">
-<code class="descname">TYPE_SDCARD</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_SDCARD" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TYPE_SDCARD</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_SDCARD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.udevadm.Udevadm.TYPE_UNKNOWN">
-<code class="descname">TYPE_UNKNOWN</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_UNKNOWN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TYPE_UNKNOWN</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_UNKNOWN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.udevadm.Udevadm.TYPE_USB">
-<code class="descname">TYPE_USB</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_USB" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">TYPE_USB</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.TYPE_USB" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.udevadm.Udevadm.get_device_type">
-<code class="descname">get_device_type</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.get_device_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_device_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">device</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.get_device_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return specified device type</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device</strong> (<em>string</em>) – device name (for example mmcblk0)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">device type (ATA=1, USB=2, SDCARD=3, MMC=4, UNKNOWN=0, see class constants)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device</strong> (<em>string</em>) – device name (for example mmcblk0)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>device type (ATA=1, USB=2, SDCARD=3, MMC=4, UNKNOWN=0, see class constants)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -1320,162 +1264,155 @@ Return wireless network interface infos.</p>
 </div>
 <div class="section" id="module-cleep.libs.commands.wpacli">
 <span id="cleep-libs-commands-wpacli-module"></span><h1>cleep.libs.commands.wpacli module<a class="headerlink" href="#module-cleep.libs.commands.wpacli" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.libs.commands.wpacli.Wpacli">
-<em class="property">class </em><code class="descname">Wpacli</code><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Wpacli</code><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Command /sbin/wpa_cli helper</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Man page <a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_cli">https://www.freebsd.org/cgi/man.cgi?wpa_cli</a></p>
+<p class="admonition-title">Note</p>
+<p>Man page <a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_cli">https://www.freebsd.org/cgi/man.cgi?wpa_cli</a></p>
 </div>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATES">
-<code class="descname">STATES</code><em class="property"> = ['DISCONNECTED', 'INTERFACE_DISABLED', 'INACTIVE', 'SCANNING', 'AUTHENTICATING', 'ASSOCIATING', 'ASSOCIATED', '4WAY_HANDSHAKE', 'GROUP_HANDSHAKE', 'COMPLETED']</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATES" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATES</code><em class="property"> = ['DISCONNECTED', 'INTERFACE_DISABLED', 'INACTIVE', 'SCANNING', 'AUTHENTICATING', 'ASSOCIATING', 'ASSOCIATED', '4WAY_HANDSHAKE', 'GROUP_HANDSHAKE', 'COMPLETED']</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_4WAY_HANDSHAKE">
-<code class="descname">STATE_4WAY_HANDSHAKE</code><em class="property"> = '4WAY_HANDSHAKE'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_4WAY_HANDSHAKE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_4WAY_HANDSHAKE</code><em class="property"> = '4WAY_HANDSHAKE'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_4WAY_HANDSHAKE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_ASSOCIATED">
-<code class="descname">STATE_ASSOCIATED</code><em class="property"> = 'ASSOCIATED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_ASSOCIATED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_ASSOCIATED</code><em class="property"> = 'ASSOCIATED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_ASSOCIATED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_ASSOCIATING">
-<code class="descname">STATE_ASSOCIATING</code><em class="property"> = 'ASSOCIATING'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_ASSOCIATING" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_ASSOCIATING</code><em class="property"> = 'ASSOCIATING'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_ASSOCIATING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_AUTHENTICATING">
-<code class="descname">STATE_AUTHENTICATING</code><em class="property"> = 'AUTHENTICATING'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_AUTHENTICATING" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_AUTHENTICATING</code><em class="property"> = 'AUTHENTICATING'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_AUTHENTICATING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_COMPLETED">
-<code class="descname">STATE_COMPLETED</code><em class="property"> = 'COMPLETED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_COMPLETED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_COMPLETED</code><em class="property"> = 'COMPLETED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_COMPLETED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_DISCONNECTED">
-<code class="descname">STATE_DISCONNECTED</code><em class="property"> = 'DISCONNECTED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_DISCONNECTED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_DISCONNECTED</code><em class="property"> = 'DISCONNECTED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_DISCONNECTED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_GROUP_HANDSHAKE">
-<code class="descname">STATE_GROUP_HANDSHAKE</code><em class="property"> = 'GROUP_HANDSHAKE'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_GROUP_HANDSHAKE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_GROUP_HANDSHAKE</code><em class="property"> = 'GROUP_HANDSHAKE'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_GROUP_HANDSHAKE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_INACTIVE">
-<code class="descname">STATE_INACTIVE</code><em class="property"> = 'INACTIVE'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_INACTIVE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_INACTIVE</code><em class="property"> = 'INACTIVE'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_INACTIVE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_INTERFACE_DISABLED">
-<code class="descname">STATE_INTERFACE_DISABLED</code><em class="property"> = 'INTERFACE_DISABLED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_INTERFACE_DISABLED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_INTERFACE_DISABLED</code><em class="property"> = 'INTERFACE_DISABLED'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_INTERFACE_DISABLED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_SCANNING">
-<code class="descname">STATE_SCANNING</code><em class="property"> = 'SCANNING'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_SCANNING" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_SCANNING</code><em class="property"> = 'SCANNING'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_SCANNING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATE_UNKNOWN">
-<code class="descname">STATE_UNKNOWN</code><em class="property"> = 'UNKNOWN'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_UNKNOWN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATE_UNKNOWN</code><em class="property"> = 'UNKNOWN'</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATE_UNKNOWN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATUS_CURRENT">
-<code class="descname">STATUS_CURRENT</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_CURRENT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATUS_CURRENT</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_CURRENT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATUS_DISABLED">
-<code class="descname">STATUS_DISABLED</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_DISABLED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATUS_DISABLED</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_DISABLED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATUS_ENABLED">
-<code class="descname">STATUS_ENABLED</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_ENABLED" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STATUS_ENABLED</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_ENABLED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.add_network">
-<code class="descname">add_network</code><span class="sig-paren">(</span><em>network</em>, <em>encryption</em>, <em>password</em>, <em>hidden=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.add_network" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span></em>, <em class="sig-param"><span class="n">encryption</span></em>, <em class="sig-param"><span class="n">password</span></em>, <em class="sig-param"><span class="n">hidden</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.add_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start specified interface</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf(5">https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf(5</a>)</p>
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf(5">https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf(5</a>)</p>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>network</strong> (<em>string</em>) – network name</li>
-<li><strong>encryption</strong> (<em>string</em>) – encryption</li>
-<li><strong>password</strong> (<em>string</em>) – password (if no password set to empty string). If you need encrypted password use WpaSupplicantConf encrypt_password function</li>
-<li><strong>hidden</strong> (<em>bool</em>) – True if hidden network</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>network</strong> (<em>string</em>) – network name</p></li>
+<li><p><strong>encryption</strong> (<em>string</em>) – encryption</p></li>
+<li><p><strong>password</strong> (<em>string</em>) – password (if no password set to empty string). If you need encrypted password use WpaSupplicantConf encrypt_password function</p></li>
+<li><p><strong>hidden</strong> (<em>bool</em>) – True if hidden network</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>Result:</dt>
-<dd>bool: True if command succeed (but maybe not connected!)</dd>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Result:</dt><dd><p>bool: True if command succeed (but maybe not connected!)</p>
+</dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.disable_network">
-<code class="descname">disable_network</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.disable_network" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">disable_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.disable_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disable specified network</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>network</strong> (<em>string</em>) – network name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if network disabled, False if network is not configured</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>network</strong> (<em>string</em>) – network name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if network disabled, False if network is not configured</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.enable_network">
-<code class="descname">enable_network</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.enable_network" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">enable_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.enable_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable specified network</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>network</strong> (<em>string</em>) – network name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if network enabled, False if network is not configured</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>network</strong> (<em>string</em>) – network name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if network enabled, False if network is not configured</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.get_configured_networks">
-<code class="descname">get_configured_networks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.get_configured_networks" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_configured_networks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.get_configured_networks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get configured networks. It returns network ids to manipulate it.</p>
-<dl class="docutils">
-<dt>Results:</dt>
-<dd><p class="first">dict: configured networks:</p>
-<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl>
+<dt>Results:</dt><dd><p>dict: configured networks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
         <span class="nb">id</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">network</span> <span class="nb">id</span><span class="o">.</span> <span class="n">This</span> <span class="nb">id</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">other</span> <span class="n">wpacli</span> <span class="n">actions</span>
         <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">network</span> <span class="n">name</span>
@@ -1490,104 +1427,93 @@ Return wireless network interface infos.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.get_status">
-<code class="descname">get_status</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.get_status" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return interface status</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface to get status</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">network and state info</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple (string, string)</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.wpacli.Wpacli.reconfigure_interface">
-<code class="descname">reconfigure_interface</code><span class="sig-paren">(</span><em>interface</em>, <em>pause=5.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.reconfigure_interface" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reconfigure specified interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>interface</strong> (<em>string</em>) – interface name</li>
-<li><strong>pause</strong> (<em>float</em>) – pause before returning result. The pause helps to avoid empty networks list</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if reconfigure succeed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.wpacli.Wpacli.remove_network">
-<code class="descname">remove_network</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.remove_network" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove specified network</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>network</strong> (<em>string</em>) – network name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if network removed</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.wpacli.Wpacli.scan_networks">
-<code class="descname">scan_networks</code><span class="sig-paren">(</span><em>interface</em>, <em>duration=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.scan_networks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Scan networks</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>interface</strong> (<em>string</em>) – interface to scan</li>
-<li><strong>duration</strong> (<em>float</em>) – time to wait before retrieving scan results (default 3 seconds)</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>Result:</dt>
-<dd>bool: True if command succeed (but maybe not connected!)</dd>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface to get status</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>network and state info</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple (string, string)</p>
+</dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
+<dt id="cleep.libs.commands.wpacli.Wpacli.reconfigure_interface">
+<code class="sig-name descname">reconfigure_interface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em>, <em class="sig-param"><span class="n">pause</span><span class="o">=</span><span class="default_value">5.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.reconfigure_interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reconfigure specified interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interface</strong> (<em>string</em>) – interface name</p></li>
+<li><p><strong>pause</strong> (<em>float</em>) – pause before returning result. The pause helps to avoid empty networks list</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if reconfigure succeed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.wpacli.Wpacli.remove_network">
+<code class="sig-name descname">remove_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.remove_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove specified network</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>network</strong> (<em>string</em>) – network name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if network removed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.wpacli.Wpacli.scan_networks">
+<code class="sig-name descname">scan_networks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em>, <em class="sig-param"><span class="n">duration</span><span class="o">=</span><span class="default_value">3.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.scan_networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan networks</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interface</strong> (<em>string</em>) – interface to scan</p></li>
+<li><p><strong>duration</strong> (<em>float</em>) – time to wait before retrieving scan results (default 3 seconds)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Result:</dt><dd><p>bool: True if command succeed (but maybe not connected!)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.select_network">
-<code class="descname">select_network</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.select_network" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">select_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.select_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select specified network. All other networks are automatically disabled by this command</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>network</strong> (<em>string</em>) – network name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if network selected</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>network</strong> (<em>string</em>) – network name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if network selected</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

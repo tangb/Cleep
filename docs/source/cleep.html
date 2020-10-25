@@ -23,10 +23,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -266,23 +266,147 @@
 <h1>cleep package<a class="headerlink" href="#cleep-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-cleep.bus">
 <span id="cleep-bus-module"></span><h2>cleep.bus module<a class="headerlink" href="#module-cleep.bus" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
+<dt id="cleep.bus.BusClient">
+<em class="property">class </em><code class="sig-name descname">BusClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
+<p>BusClient class must be inherited to handle message from MessageBus.
+It reads module message, read command and execute module command.
+Finally it returns command response to message originator.</p>
+<dl class="py attribute">
+<dt id="cleep.bus.BusClient.CORE_SYNC_TIMEOUT">
+<code class="sig-name descname">CORE_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.bus.BusClient.CORE_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">3.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push message to specified module and wait for response until timeout.
+By default it is blocking but with timeout=0.0 the function returns instantly
+without result, but command is sent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message to push.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – time to wait for response. If not specified, function returns None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MessageResponse as dict or None if no response awaited (event or broadcast)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if request is not a MessageRequest instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bus reading process.</p>
+<dl class="simple">
+<dt>Process cycle life:</dt><dd><ul class="simple">
+<li><p>configure module</p></li>
+<li><p>wait for all modules configured</p></li>
+<li><p>run async start function</p></li>
+<li><p>infinite loop on message bus (custom process can run on each loop)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.send_command">
+<code class="sig-name descname">send_command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">to</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">3.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to push command message to bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>string</em>) – command name.</p></li>
+<li><p><strong>to</strong> (<em>string</em>) – command recipient. If None the command is broadcasted but you’ll get no reponse in return.</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – command parameters.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – change default timeout if you wish. Default is 3 seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>MessageResponse as dict or None if no response waited</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.send_event">
+<code class="sig-name descname">send_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">device_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">to</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to push event message to bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> (<em>string</em>) – event name.</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – event parameters.</p></li>
+<li><p><strong>device_id</strong> (<em>string</em>) – device id that send event. If not specified event cannot be monitored.</p></li>
+<li><p><strong>to</strong> (<em>string</em>) – event recipient. If not specified, event will be broadcasted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>event always returns None.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.send_external_event">
+<code class="sig-name descname">send_external_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">peer_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_external_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function to push to all modules an event received from external bus</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> (<em>string</em>) – event name.</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – event parameters.</p></li>
+<li><p><strong>peer_infos</strong> (<em>dict</em>) – infos about peer that sends the event</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>event always returns None.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cleep.bus.MessageBus">
-<em class="property">class </em><code class="descname">MessageBus</code><span class="sig-paren">(</span><em>crash_report</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MessageBus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">crash_report</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.bus.MessageBus.DEQUE_MAX_LEN">
-<code class="descname">DEQUE_MAX_LEN</code><em class="property"> = 100</em><a class="headerlink" href="#cleep.bus.MessageBus.DEQUE_MAX_LEN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DEQUE_MAX_LEN</code><em class="property"> = 100</em><a class="headerlink" href="#cleep.bus.MessageBus.DEQUE_MAX_LEN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.bus.MessageBus.STARTUP_TIMEOUT">
-<code class="descname">STARTUP_TIMEOUT</code><em class="property"> = 30.0</em><a class="headerlink" href="#cleep.bus.MessageBus.STARTUP_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STARTUP_TIMEOUT</code><em class="property"> = 30.0</em><a class="headerlink" href="#cleep.bus.MessageBus.STARTUP_TIMEOUT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME">
-<code class="descname">SUBSCRIPTION_LIFETIME</code><em class="property"> = 600</em><a class="headerlink" href="#cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SUBSCRIPTION_LIFETIME</code><em class="property"> = 600</em><a class="headerlink" href="#cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME" title="Permalink to this definition">¶</a></dt>
 <dd><p>Message bus
 Used to send messages to subscribed clients
 A pushed message can have recipient to directly send message to specific client. In that case
@@ -291,61 +415,55 @@ A message without recipient is broadcasted to all subscribers. No response is aw
 Only broadcasted messages can be sent before all clients have subscribed (during init phase)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.bus.MessageBus.add_subscription">
-<code class="descname">add_subscription</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.add_subscription" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_subscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.add_subscription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add new subscription.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.bus.MessageBus.app_configured">
-<code class="descname">app_configured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.app_configured" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">app_configured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.app_configured" title="Permalink to this definition">¶</a></dt>
 <dd><p>Say to message bus application is configured and ready to run.
 /!This way of proceed is dangerous if clients always broadcast messages, the bus may always stay
 blocked in “app not configured” state. But in small system like cleep, it should be fine.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.bus.MessageBus.is_subscribed">
-<code class="descname">is_subscribed</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.is_subscribed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_subscribed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.is_subscribed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if module is subscribed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module is subscribed.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module is subscribed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.bus.MessageBus.pull">
-<code class="descname">pull</code><span class="sig-paren">(</span><em>module</em>, <em>timeout=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.pull" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pull</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">0.5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.pull" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pull message from specified module queue.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>module</strong> (<em>string</em>) – module name</li>
-<li><strong>timeout</strong> (<em>float</em>) – time to wait, default is blocking (0.5s)</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>module</strong> (<em>string</em>) – module name</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – time to wait, default is blocking (0.5s)</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>received message:</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>received message:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">message</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">MessageRequest</span> <span class="k">as</span> <span class="nb">dict</span>
     <span class="n">event</span> <span class="p">(</span><span class="n">Event</span><span class="p">):</span> <span class="n">sync</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">no</span> <span class="n">response</span> <span class="n">awaited</span> <span class="p">(</span><span class="n">broadcast</span><span class="p">,</span> <span class="n">event</span> <span class="n">message</span><span class="p">)</span>
@@ -354,224 +472,75 @@ blocked in “app not configured” state. But in small system like cleep, it sh
 </pre></div>
 </div>
 </p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dict</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidModule</span></code> – if module is unknown.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">BusError</span></code> – if fatal error occured during message pulling.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoMessageAvailable</span></code> – if no message is available.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.bus.MessageBus.purge_subscriptions">
-<code class="descname">purge_subscriptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.purge_subscriptions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Purge old subscriptions.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.bus.MessageBus.push">
-<code class="descname">push</code><span class="sig-paren">(</span><em>request</em>, <em>timeout=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.push" title="Permalink to this definition">¶</a></dt>
-<dd><p>Push message to specified module and wait for response until timeout.
-By default it is blocking but with timeout=0.0 the function returns instantly
-without result, but command is sent.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message to push.</li>
-<li><strong>timeout</strong> (<em>float</em>) – time to wait for response. If not specified, function returns None.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">message response
-None: if no response awaited (request is an event or a broadcast command or if timeout is None)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dict</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if request is not a MessageRequest instance.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">NoResponse</span></code> – if no response is received from module.</li>
-<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidModule</span></code> – if specified recipient is unknown.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.bus.MessageBus.remove_subscription">
-<code class="descname">remove_subscription</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.remove_subscription" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove existing subscription;</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if module is unknown.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.bus.MessageBus.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop bus</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cleep.bus.BusClient">
-<em class="property">class </em><code class="descname">BusClient</code><span class="sig-paren">(</span><em>bootstrap</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
-<p>BusClient class must be inherited to handle message from MessageBus.
-It reads module message, read command and execute module command.
-Finally it returns command response to message originator.</p>
-<dl class="attribute">
-<dt id="cleep.bus.BusClient.CORE_SYNC_TIMEOUT">
-<code class="descname">CORE_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.bus.BusClient.CORE_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.bus.BusClient.push">
-<code class="descname">push</code><span class="sig-paren">(</span><em>request</em>, <em>timeout=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.push" title="Permalink to this definition">¶</a></dt>
-<dd><p>Push message to specified module and wait for response until timeout.
-By default it is blocking but with timeout=0.0 the function returns instantly
-without result, but command is sent.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message to push.</li>
-<li><strong>timeout</strong> (<em>float</em>) – time to wait for response. If not specified, function returns None.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MessageResponse as dict or None if no response awaited (event or broadcast)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">dict</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InvalidParameter</span></code> – if request is not a MessageRequest instance.</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.bus.BusClient.run">
-<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bus reading process.</p>
-<dl class="docutils">
-<dt>Process cycle life:</dt>
-<dd><ul class="first last simple">
-<li>configure module</li>
-<li>wait for all modules configured</li>
-<li>run async start function</li>
-<li>infinite loop on message bus (custom process can run on each loop)</li>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#cleep.exception.InvalidModule" title="cleep.exception.InvalidModule"><strong>InvalidModule</strong></a> – if module is unknown.</p></li>
+<li><p><a class="reference internal" href="#cleep.exception.BusError" title="cleep.exception.BusError"><strong>BusError</strong></a> – if fatal error occured during message pulling.</p></li>
+<li><p><a class="reference internal" href="#cleep.exception.NoMessageAvailable" title="cleep.exception.NoMessageAvailable"><strong>NoMessageAvailable</strong></a> – if no message is available.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="cleep.bus.BusClient.send_command">
-<code class="descname">send_command</code><span class="sig-paren">(</span><em>command</em>, <em>to</em>, <em>params=None</em>, <em>timeout=3.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper function to push command message to bus.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>command</strong> (<em>string</em>) – command name.</li>
-<li><strong>to</strong> (<em>string</em>) – command recipient. If None the command is broadcasted but you’ll get no reponse in return.</li>
-<li><strong>params</strong> (<em>dict</em>) – command parameters.</li>
-<li><strong>timeout</strong> (<em>float</em>) – change default timeout if you wish. Default is 3 seconds.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">MessageResponse as dict or None if no response waited</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="py method">
+<dt id="cleep.bus.MessageBus.purge_subscriptions">
+<code class="sig-name descname">purge_subscriptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.purge_subscriptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Purge old subscriptions.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="cleep.bus.BusClient.send_event">
-<code class="descname">send_event</code><span class="sig-paren">(</span><em>event</em>, <em>params=None</em>, <em>device_id=None</em>, <em>to=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper function to push event message to bus.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>event</strong> (<em>string</em>) – event name.</li>
-<li><strong>params</strong> (<em>dict</em>) – event parameters.</li>
-<li><strong>device_id</strong> (<em>string</em>) – device id that send event. If not specified event cannot be monitored.</li>
-<li><strong>to</strong> (<em>string</em>) – event recipient. If not specified, event will be broadcasted.</li>
+<dl class="py method">
+<dt id="cleep.bus.MessageBus.push">
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">3.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push message to specified module and wait for response until timeout.
+By default it is blocking but with timeout=0.0 the function returns instantly
+without result, but command is sent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message to push.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – time to wait for response. If not specified, function returns None.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">event always returns None.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>message response
+None: if no response awaited (request is an event or a broadcast command or if timeout is None)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if request is not a MessageRequest instance.</p></li>
+<li><p><a class="reference internal" href="#cleep.exception.NoResponse" title="cleep.exception.NoResponse"><strong>NoResponse</strong></a> – if no response is received from module.</p></li>
+<li><p><a class="reference internal" href="#cleep.exception.InvalidModule" title="cleep.exception.InvalidModule"><strong>InvalidModule</strong></a> – if specified recipient is unknown.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="cleep.bus.BusClient.send_external_event">
-<code class="descname">send_external_event</code><span class="sig-paren">(</span><em>event</em>, <em>params</em>, <em>peer_infos</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_external_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper function to push to all modules an event received from external bus</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>event</strong> (<em>string</em>) – event name.</li>
-<li><strong>params</strong> (<em>dict</em>) – event parameters.</li>
-<li><strong>peer_infos</strong> (<em>dict</em>) – infos about peer that sends the event</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">event always returns None.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="py method">
+<dt id="cleep.bus.MessageBus.remove_subscription">
+<code class="sig-name descname">remove_subscription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.remove_subscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove existing subscription;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if module is unknown.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="cleep.bus.BusClient.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.stop" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py method">
+<dt id="cleep.bus.MessageBus.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop bus</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -579,174 +548,173 @@ without result, but command is sent.</p>
 <div class="section" id="module-cleep.common">
 <span id="cleep-common-module"></span><h2>cleep.common module<a class="headerlink" href="#module-cleep.common" title="Permalink to this headline">¶</a></h2>
 <p>This file shares some constants and classes</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.common.CATEGORIES">
-<em class="property">class </em><code class="descname">CATEGORIES</code><a class="headerlink" href="#cleep.common.CATEGORIES" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">CATEGORIES</code><a class="headerlink" href="#cleep.common.CATEGORIES" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Cleep application categories</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.ALL">
-<code class="descname">ALL</code><em class="property"> = ['APPLICATION', 'MOBILE', 'DRIVER', 'HOMEAUTOMATION', 'MEDIA', 'SERVICE']</em><a class="headerlink" href="#cleep.common.CATEGORIES.ALL" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ALL</code><em class="property"> = ['APPLICATION', 'MOBILE', 'DRIVER', 'HOMEAUTOMATION', 'MEDIA', 'SERVICE']</em><a class="headerlink" href="#cleep.common.CATEGORIES.ALL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.APPLICATION">
-<code class="descname">APPLICATION</code><em class="property"> = 'APPLICATION'</em><a class="headerlink" href="#cleep.common.CATEGORIES.APPLICATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">APPLICATION</code><em class="property"> = 'APPLICATION'</em><a class="headerlink" href="#cleep.common.CATEGORIES.APPLICATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.DRIVER">
-<code class="descname">DRIVER</code><em class="property"> = 'DRIVER'</em><a class="headerlink" href="#cleep.common.CATEGORIES.DRIVER" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DRIVER</code><em class="property"> = 'DRIVER'</em><a class="headerlink" href="#cleep.common.CATEGORIES.DRIVER" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.HOMEAUTOMATION">
-<code class="descname">HOMEAUTOMATION</code><em class="property"> = 'HOMEAUTOMATION'</em><a class="headerlink" href="#cleep.common.CATEGORIES.HOMEAUTOMATION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">HOMEAUTOMATION</code><em class="property"> = 'HOMEAUTOMATION'</em><a class="headerlink" href="#cleep.common.CATEGORIES.HOMEAUTOMATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.MEDIA">
-<code class="descname">MEDIA</code><em class="property"> = 'MEDIA'</em><a class="headerlink" href="#cleep.common.CATEGORIES.MEDIA" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MEDIA</code><em class="property"> = 'MEDIA'</em><a class="headerlink" href="#cleep.common.CATEGORIES.MEDIA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.MOBILE">
-<code class="descname">MOBILE</code><em class="property"> = 'MOBILE'</em><a class="headerlink" href="#cleep.common.CATEGORIES.MOBILE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MOBILE</code><em class="property"> = 'MOBILE'</em><a class="headerlink" href="#cleep.common.CATEGORIES.MOBILE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.CATEGORIES.SERVICE">
-<code class="descname">SERVICE</code><em class="property"> = 'SERVICE'</em><a class="headerlink" href="#cleep.common.CATEGORIES.SERVICE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SERVICE</code><em class="property"> = 'SERVICE'</em><a class="headerlink" href="#cleep.common.CATEGORIES.SERVICE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.common.ExecutionStep">
-<em class="property">class </em><code class="descname">ExecutionStep</code><a class="headerlink" href="#cleep.common.ExecutionStep" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">ExecutionStep</code><a class="headerlink" href="#cleep.common.ExecutionStep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Cleep execution steps</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.ExecutionStep.BOOT">
-<code class="descname">BOOT</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.common.ExecutionStep.BOOT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">BOOT</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.common.ExecutionStep.BOOT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.ExecutionStep.CONFIG">
-<code class="descname">CONFIG</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.common.ExecutionStep.CONFIG" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CONFIG</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.common.ExecutionStep.CONFIG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.ExecutionStep.INIT">
-<code class="descname">INIT</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.common.ExecutionStep.INIT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">INIT</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.common.ExecutionStep.INIT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.ExecutionStep.RUN">
-<code class="descname">RUN</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.common.ExecutionStep.RUN" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RUN</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.common.ExecutionStep.RUN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.common.ExecutionStep.STOP">
-<code class="descname">STOP</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.common.ExecutionStep.STOP" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">STOP</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.common.ExecutionStep.STOP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cleep.common.MessageResponse">
-<em class="property">class </em><code class="descname">MessageResponse</code><a class="headerlink" href="#cleep.common.MessageResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Object that holds message response</p>
-<p>A response is composed of:</p>
-<blockquote>
-<div><ul class="simple">
-<li>an error flag: True if error, False otherwise</li>
-<li>a message: a message about request</li>
-<li>some data: data returned by the request</li>
-</ul>
-</div></blockquote>
-<dl class="method">
-<dt id="cleep.common.MessageResponse.to_dict">
-<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return message response</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.common.MessageRequest">
-<em class="property">class </em><code class="descname">MessageRequest</code><a class="headerlink" href="#cleep.common.MessageRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MessageRequest</code><a class="headerlink" href="#cleep.common.MessageRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Object that holds message request</p>
 <p>A message request is composed of:</p>
 <blockquote>
 <div><ul>
-<li><p class="first">in case of a command:</p>
+<li><p>in case of a command:</p>
 <blockquote>
 <div><ul class="simple">
-<li>a command name</li>
-<li>command parameters</li>
-<li>the command sender</li>
+<li><p>a command name</p></li>
+<li><p>command parameters</p></li>
+<li><p>the command sender</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">in case of an event:</p>
+<li><p>in case of an event:</p>
 <blockquote>
 <div><ul class="simple">
-<li>an event name</li>
-<li>event parameters</li>
-<li>core_event flag to say if event is a core event (and may not be pushed away from device)</li>
-<li>a device id</li>
-<li>a startup flag that indicates this event was sent during cleep startup</li>
-<li>peer infos if message comes from external device</li>
+<li><p>an event name</p></li>
+<li><p>event parameters</p></li>
+<li><p>core_event flag to say if event is a core event (and may not be pushed away from device)</p></li>
+<li><p>a device id</p></li>
+<li><p>a startup flag that indicates this event was sent during cleep startup</p></li>
+<li><p>peer infos if message comes from external device</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.common.MessageRequest.is_broadcast">
-<code class="descname">is_broadcast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_broadcast" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_broadcast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_broadcast" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return broadcast status</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the request is broadcast</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.common.MessageRequest.is_external_event">
-<code class="descname">is_external_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_external_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if event comes from external device</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if event comes from external device</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.common.MessageRequest.to_dict">
-<code class="descname">to_dict</code><span class="sig-paren">(</span><em>startup=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert message request to dict object</p>
-<dl class="docutils">
-<dt>Params:</dt>
-<dd>startup (bool): True if the message is startup message</dd>
-<dt>Raise:</dt>
-<dd>InvalidMessage if message is not valid</dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the request is broadcast</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.common.MessageRequest.is_external_event">
+<code class="sig-name descname">is_external_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_external_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if event comes from external device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if event comes from external device</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.common.MessageRequest.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">startup</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert message request to dict object</p>
+<dl class="simple">
+<dt>Params:</dt><dd><p>startup (bool): True if the message is startup message</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>InvalidMessage if message is not valid</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="cleep.common.MessageResponse">
+<em class="property">class </em><code class="sig-name descname">MessageResponse</code><a class="headerlink" href="#cleep.common.MessageResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Object that holds message response</p>
+<p>A response is composed of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>an error flag: True if error, False otherwise</p></li>
+<li><p>a message: a message about request</p></li>
+<li><p>some data: data returned by the request</p></li>
+</ul>
+</div></blockquote>
+<dl class="py method">
+<dt id="cleep.common.MessageResponse.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return message response</p>
 </dd></dl>
 
 </dd></dl>
@@ -755,44 +723,42 @@ without result, but command is sent.</p>
 <div class="section" id="module-cleep.core">
 <span id="cleep-core-module"></span><h2>cleep.core module<a class="headerlink" href="#module-cleep.core" title="Permalink to this headline">¶</a></h2>
 <p>Core implements all kind of cleep modules/apps</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.core.Cleep">
-<em class="property">class </em><code class="descname">Cleep</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Cleep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.bus.BusClient" title="cleep.bus.BusClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.bus.BusClient</span></code></a></p>
 <p>Base Cleep class</p>
 <p>It Implements:</p>
 <blockquote>
 <div><ul class="simple">
-<li>configuration helpers</li>
-<li>message bus access</li>
-<li>logger with log level configured</li>
-<li>custom crash report</li>
-<li>driver registration</li>
+<li><p>configuration helpers</p></li>
+<li><p>message bus access</p></li>
+<li><p>logger with log level configured</p></li>
+<li><p>custom crash report</p></li>
+<li><p>driver registration</p></li>
 </ul>
 </div></blockquote>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.core.Cleep.CONFIG_DIR">
-<code class="descname">CONFIG_DIR</code><em class="property"> = '/etc/cleep/'</em><a class="headerlink" href="#cleep.core.Cleep.CONFIG_DIR" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CONFIG_DIR</code><em class="property"> = '/etc/cleep/'</em><a class="headerlink" href="#cleep.core.Cleep.CONFIG_DIR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.core.Cleep.MODULE_DEPS">
-<code class="descname">MODULE_DEPS</code><em class="property"> = []</em><a class="headerlink" href="#cleep.core.Cleep.MODULE_DEPS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MODULE_DEPS</code><em class="property"> = []</em><a class="headerlink" href="#cleep.core.Cleep.MODULE_DEPS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.event_received">
-<code class="descname">event_received</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.event_received" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">event_received</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.event_received" title="Permalink to this definition">¶</a></dt>
 <dd><p>Event message received</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Implement this function to handle event on your module</p>
+<p class="admonition-title">Note</p>
+<p>Implement this function to handle event on your module</p>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event</strong> (<em>dict</em>) – <p>MessageRequest as dict with event values:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>dict</em>) – <p>MessageRequest as dict with event values:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
     <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span>
@@ -802,401 +768,381 @@ without result, but command is sent.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.get_module_commands">
-<code class="descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return available module commands.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of command names.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of command names.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.get_module_config">
-<code class="descname">get_module_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns module configuration.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all config content except ‘devices’ entry.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>all config content except ‘devices’ entry.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.is_debug_enabled">
-<code class="descname">is_debug_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.is_debug_enabled" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_debug_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.is_debug_enabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if debug is enabled</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if debug enabled</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if debug enabled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.is_module_loaded">
-<code class="descname">is_module_loaded</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.is_module_loaded" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_module_loaded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.is_module_loaded" title="Permalink to this definition">¶</a></dt>
 <dd><p>Request inventory to check if specified module is loaded or not.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module is loaded, False otherwise.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module is loaded, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.set_debug">
-<code class="descname">set_debug</code><span class="sig-paren">(</span><em>debug</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.set_debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">debug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.set_debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable or disable debug level. It changes logger level on the fly.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>debug</strong> (<em>bool</em>) – debug enabled if True, otherwise info level</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>debug</strong> (<em>bool</em>) – debug enabled if True, otherwise info level</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.start" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start module.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.Cleep.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.stop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop process.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cleep.core.CleepRpcWrapper">
-<em class="property">class </em><code class="descname">CleepRpcWrapper</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRpcWrapper" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
-<p>Base Cleep class for RPC request wrapping</p>
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.core.CleepModule">
-<em class="property">class </em><code class="descname">CleepModule</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">CleepModule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
 <p>Base cleep class for module</p>
 <p>It implements:</p>
 <blockquote>
 <div><ul class="simple">
-<li>all device helpers</li>
+<li><p>all device helpers</p></li>
 </ul>
 </div></blockquote>
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.CleepModule.get_module_commands">
-<code class="descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return available module commands.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of command names.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of command names.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.CleepModule.get_module_config">
-<code class="descname">get_module_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns module configuration.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all config content except ‘devices’ entry.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>all config content except ‘devices’ entry.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.core.CleepModule.get_module_devices">
-<code class="descname">get_module_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_devices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepModule.get_module_devices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns module devices.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">all devices registered in ‘devices’ config section:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>all devices registered in ‘devices’ config section:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">device</span> <span class="n">uuid</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">data</span> <span class="p">(</span><span class="nb">dict</span><span class="p">),</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
+<dt id="cleep.core.CleepRenderer">
+<em class="property">class </em><code class="sig-name descname">CleepRenderer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.CleepModule" title="cleep.core.CleepModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.CleepModule</span></code></a></p>
+<p>Base cleep class for renderer.</p>
+<p>It implements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>automatic renderer registration</p></li>
+<li><p>render function to render received profile</p></li>
+</ul>
+</div></blockquote>
+<dl class="py method">
+<dt id="cleep.core.CleepRenderer.get_module_commands">
+<code class="sig-name descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return available module commands.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of command names.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.core.CleepRenderer.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">profile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render profile</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>profile</strong> (<a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><em>RendererProfile</em></a>) – profile to render</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if post is successful.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#cleep.exception.MissingParameter" title="cleep.exception.MissingParameter"><strong>MissingParameter</strong></a><strong>, </strong><a class="reference internal" href="#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cleep.core.CleepResources">
-<em class="property">class </em><code class="descname">CleepResources</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">CleepResources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepResources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.core.CleepModule" title="cleep.core.CleepModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.CleepModule</span></code></a></p>
 <p>Base cleep class to handle critical resources such as audio capture and make sure
 loaded application using the same resource are not using it at the same time.</p>
 <p>It implements:</p>
 <blockquote>
 <div><ul class="simple">
-<li>a mechanism of acquire/release a resoure</li>
-<li>an auto resource acquisition (aka permanent)</li>
+<li><p>a mechanism of acquire/release a resoure</p></li>
+<li><p>an auto resource acquisition (aka permanent)</p></li>
 </ul>
 </div></blockquote>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.core.CleepResources.MODULE_RESOURCES">
-<code class="descname">MODULE_RESOURCES</code><em class="property"> = {}</em><a class="headerlink" href="#cleep.core.CleepResources.MODULE_RESOURCES" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MODULE_RESOURCES</code><em class="property"> = {}</em><a class="headerlink" href="#cleep.core.CleepResources.MODULE_RESOURCES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cleep.core.CleepRenderer">
-<em class="property">class </em><code class="descname">CleepRenderer</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>debug_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cleep.core.CleepModule" title="cleep.core.CleepModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.CleepModule</span></code></a></p>
-<p>Base cleep class for renderer.</p>
-<p>It implements:</p>
-<blockquote>
-<div><ul class="simple">
-<li>automatic renderer registration</li>
-<li>render function to render received profile</li>
-</ul>
-</div></blockquote>
-<dl class="method">
-<dt id="cleep.core.CleepRenderer.get_module_commands">
-<code class="descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer.get_module_commands" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return available module commands.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of command names.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.core.CleepRenderer.render">
-<code class="descname">render</code><span class="sig-paren">(</span><em>profile</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRenderer.render" title="Permalink to this definition">¶</a></dt>
-<dd><p>Render profile</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>profile</strong> (<a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.rendererprofile.RendererProfile" title="cleep.libs.internals.rendererprofile.RendererProfile"><em>RendererProfile</em></a>) – profile to render</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if post is successful.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">MissingParameter, InvalidParameter</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+<dl class="py class">
+<dt id="cleep.core.CleepRpcWrapper">
+<em class="property">class </em><code class="sig-name descname">CleepRpcWrapper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.CleepRpcWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
+<p>Base Cleep class for RPC request wrapping</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-cleep.exception">
 <span id="cleep-exception-module"></span><h2>cleep.exception module<a class="headerlink" href="#module-cleep.exception" title="Permalink to this headline">¶</a></h2>
 <p>Cleep exceptions</p>
-<dl class="exception">
+<dl class="py exception">
+<dt id="cleep.exception.BusError">
+<em class="property">exception </em><code class="sig-name descname">BusError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.BusError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Generic bus error exception</p>
+</dd></dl>
+
+<dl class="py exception">
 <dt id="cleep.exception.CommandError">
-<em class="property">exception </em><code class="descname">CommandError</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.CommandError" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">CommandError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.CommandError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception used when module command failed.
 Message will be toasted on UI.</p>
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
 <dt id="cleep.exception.CommandInfo">
-<em class="property">exception </em><code class="descname">CommandInfo</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.CommandInfo" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">CommandInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.CommandInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception used to toast a message from backend on UI while command succeed.
 Message will be toasted on ui</p>
 </dd></dl>
 
-<dl class="exception">
-<dt id="cleep.exception.NoResponse">
-<em class="property">exception </em><code class="descname">NoResponse</code><span class="sig-paren">(</span><em>to</em>, <em>timeout</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.NoResponse" title="Permalink to this definition">¶</a></dt>
+<dl class="py exception">
+<dt id="cleep.exception.InvalidMessage">
+<em class="property">exception </em><code class="sig-name descname">InvalidMessage</code><a class="headerlink" href="#cleep.exception.InvalidMessage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Exception raised when no response is received while it does.
-Typically when a command takes too long to be processed and timeout is reached.</p>
+<p>InvalidMessage is raised when an invalid message is sent to bus.</p>
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
+<dt id="cleep.exception.InvalidModule">
+<em class="property">exception </em><code class="sig-name descname">InvalidModule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.InvalidModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>InvalidModule is raised when an unknown module is requested</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="cleep.exception.InvalidParameter">
+<em class="property">exception </em><code class="sig-name descname">InvalidParameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.InvalidParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>InvalidParameter is raised when invalid command parameter is detected</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="cleep.exception.MissingParameter">
+<em class="property">exception </em><code class="sig-name descname">MissingParameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.MissingParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>MissingParameter is raised when missing command parameter is detected</p>
+</dd></dl>
+
+<dl class="py exception">
 <dt id="cleep.exception.NoMessageAvailable">
-<em class="property">exception </em><code class="descname">NoMessageAvailable</code><a class="headerlink" href="#cleep.exception.NoMessageAvailable" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">NoMessageAvailable</code><a class="headerlink" href="#cleep.exception.NoMessageAvailable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception raised when no message is available.
 Typically when bus pull process reaches end of timeout and no message was received, it will raise this exception.</p>
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
+<dt id="cleep.exception.NoResponse">
+<em class="property">exception </em><code class="sig-name descname">NoResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">to</span></em>, <em class="sig-param"><span class="n">timeout</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.NoResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception raised when no response is received while it does.
+Typically when a command takes too long to be processed and timeout is reached.</p>
+</dd></dl>
+
+<dl class="py exception">
 <dt id="cleep.exception.ResourceNotAvailable">
-<em class="property">exception </em><code class="descname">ResourceNotAvailable</code><span class="sig-paren">(</span><em>resource</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.ResourceNotAvailable" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">ResourceNotAvailable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.ResourceNotAvailable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception raised when no requested Cleep resource is not available.
 See CleepResource for more information.</p>
 </dd></dl>
 
-<dl class="exception">
-<dt id="cleep.exception.InvalidParameter">
-<em class="property">exception </em><code class="descname">InvalidParameter</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.InvalidParameter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>InvalidParameter is raised when invalid command parameter is detected</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="cleep.exception.MissingParameter">
-<em class="property">exception </em><code class="descname">MissingParameter</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.MissingParameter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>MissingParameter is raised when missing command parameter is detected</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="cleep.exception.InvalidMessage">
-<em class="property">exception </em><code class="descname">InvalidMessage</code><a class="headerlink" href="#cleep.exception.InvalidMessage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>InvalidMessage is raised when an invalid message is sent to bus.</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="cleep.exception.InvalidModule">
-<em class="property">exception </em><code class="descname">InvalidModule</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.InvalidModule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>InvalidModule is raised when an unknown module is requested</p>
-</dd></dl>
-
-<dl class="exception">
+<dl class="py exception">
 <dt id="cleep.exception.Unauthorized">
-<em class="property">exception </em><code class="descname">Unauthorized</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.Unauthorized" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-name descname">Unauthorized</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.Unauthorized" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Generic Unauthorized exception is raised when there is a problem with credentials.</p>
-</dd></dl>
-
-<dl class="exception">
-<dt id="cleep.exception.BusError">
-<em class="property">exception </em><code class="descname">BusError</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.exception.BusError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Generic bus error exception</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-cleep.inventory">
 <span id="cleep-inventory-module"></span><h2>cleep.inventory module<a class="headerlink" href="#module-cleep.inventory" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="cleep.inventory.Inventory">
-<em class="property">class </em><code class="descname">Inventory</code><span class="sig-paren">(</span><em>bootstrap</em>, <em>rpcserver</em>, <em>debug_enabled</em>, <em>configured_modules</em>, <em>debug_config</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Inventory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bootstrap</span></em>, <em class="sig-param"><span class="n">rpcserver</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em>, <em class="sig-param"><span class="n">configured_modules</span></em>, <em class="sig-param"><span class="n">debug_config</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.core.Cleep" title="cleep.core.Cleep"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.core.Cleep</span></code></a></p>
-<dl class="docutils">
-<dt>Inventory handles inventory of:</dt>
-<dd><ul class="first last simple">
-<li>existing devices: knows all devices and module that handles it</li>
-<li>loaded modules and their commands</li>
-<li>existing renderers (sms, email, sound…)</li>
+<dl class="simple">
+<dt>Inventory handles inventory of:</dt><dd><ul class="simple">
+<li><p>existing devices: knows all devices and module that handles it</p></li>
+<li><p>loaded modules and their commands</p></li>
+<li><p>existing renderers (sms, email, sound…)</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.inventory.Inventory.MODULES_SYNC_TIMEOUT">
-<code class="descname">MODULES_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULES_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MODULES_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULES_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.inventory.Inventory.MODULE_AUTHOR">
-<code class="descname">MODULE_AUTHOR</code><em class="property"> = 'Cleep'</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_AUTHOR" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MODULE_AUTHOR</code><em class="property"> = 'Cleep'</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_AUTHOR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.inventory.Inventory.MODULE_CORE">
-<code class="descname">MODULE_CORE</code><em class="property"> = True</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_CORE" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MODULE_CORE</code><em class="property"> = True</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_CORE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.inventory.Inventory.MODULE_VERSION">
-<code class="descname">MODULE_VERSION</code><em class="property"> = '0.0.0'</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_VERSION" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">MODULE_VERSION</code><em class="property"> = '0.0.0'</em><a class="headerlink" href="#cleep.inventory.Inventory.MODULE_VERSION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.inventory.Inventory.PYTHON_CLEEP_IMPORT_PATH">
-<code class="descname">PYTHON_CLEEP_IMPORT_PATH</code><em class="property"> = 'cleep.modules.'</em><a class="headerlink" href="#cleep.inventory.Inventory.PYTHON_CLEEP_IMPORT_PATH" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">PYTHON_CLEEP_IMPORT_PATH</code><em class="property"> = 'cleep.modules.'</em><a class="headerlink" href="#cleep.inventory.Inventory.PYTHON_CLEEP_IMPORT_PATH" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cleep.inventory.Inventory.PYTHON_CLEEP_MODULES_PATH">
-<code class="descname">PYTHON_CLEEP_MODULES_PATH</code><em class="property"> = 'modules'</em><a class="headerlink" href="#cleep.inventory.Inventory.PYTHON_CLEEP_MODULES_PATH" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">PYTHON_CLEEP_MODULES_PATH</code><em class="property"> = 'modules'</em><a class="headerlink" href="#cleep.inventory.Inventory.PYTHON_CLEEP_MODULES_PATH" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.all_started">
-<code class="descname">all_started</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.all_started" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">all_started</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.all_started" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns when Cleep is completely loaded and started</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This method is blocking !</p>
+<p class="admonition-title">Note</p>
+<p>This method is blocking !</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_devices">
-<code class="descname">get_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_devices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_devices</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_devices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return dict of modules devices</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of devices by module:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of devices by module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">module1</span><span class="p">:</span>
         <span class="n">device</span> <span class="n">uuid</span><span class="p">:</span> <span class="p">{</span>
             <span class="n">device</span> <span class="n">properties</span><span class="p">,</span>
@@ -1208,29 +1154,28 @@ See CleepResource for more information.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_drivers">
-<code class="descname">get_drivers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_drivers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_drivers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_drivers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return drivers</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_installable_modules">
-<code class="descname">get_installable_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_installable_modules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_installable_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_installable_modules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns dict of installable modules. It also returns modules installed as library.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of modules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">module</span> <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -1240,113 +1185,112 @@ See CleepResource for more information.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_module_commands">
-<code class="descname">get_module_commands</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_commands" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_commands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns list of module commands</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of commands or empty list if module not found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;command1&#39;</span><span class="p">,</span> <span class="s1">&#39;command2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>list of commands or empty list if module not found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;command1&#39;</span><span class="p">,</span> <span class="s1">&#39;command2&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_module_device">
-<code class="descname">get_module_device</code><span class="sig-paren">(</span><em>uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_device" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_device</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_device" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return module that owns specified device</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> (<em>string</em>) – device identifier</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">module name or None if device was not found</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uuid</strong> (<em>string</em>) – device identifier</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>module name or None if device was not found</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_module_devices">
-<code class="descname">get_module_devices</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_devices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_devices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_devices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return module devices</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of devices:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module_name</strong> (<em>string</em>) – module name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>list of devices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;uuid&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">},</span>
     <span class="o">...</span>
 <span class="p">]</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">CommandError</span></code> – if module doesn’t exists</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="#cleep.exception.CommandError" title="cleep.exception.CommandError"><strong>CommandError</strong></a> – if module doesn’t exists</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_module_infos">
-<code class="descname">get_module_infos</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_infos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_module_infos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_module_infos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns infos of specified module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">module infos or empty dict if module not found:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module_name</strong> (<em>string</em>) – module name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>module infos or empty dict if module not found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">version</span><span class="p">:</span> <span class="nb">str</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_modules">
-<code class="descname">get_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns dict of installed modules. It also returned modules installed as library.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of modules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">module</span> <span class="n">name</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
         <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -1356,146 +1300,133 @@ See CleepResource for more information.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_modules_debug">
-<code class="descname">get_modules_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules_debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_modules_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules_debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return dict of installed modules or libraries debug flag</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules/libraries debug flag:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of modules/libraries debug flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">modulename</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">debug</span> <span class="n">flag</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_modules_events">
-<code class="descname">get_modules_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules_events" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_modules_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_modules_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return modules events</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of modules events:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict of modules events:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">module1</span><span class="p">:</span> <span class="p">[</span><span class="n">event1</span><span class="p">,</span> <span class="n">event2</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
     <span class="n">module2</span><span class="p">:</span> <span class="p">[</span><span class="n">event1</span><span class="p">],</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_renderers">
-<code class="descname">get_renderers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_renderers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_renderers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_renderers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return renderers from events broker</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of renderers with their handled profiles</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of renderers with their handled profiles</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.get_used_events">
-<code class="descname">get_used_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_used_events" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_used_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.get_used_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return used events</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of used events</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of used events</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.is_module_loaded">
-<code class="descname">is_module_loaded</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.is_module_loaded" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_module_loaded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.is_module_loaded" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simply returns True if specified module is loaded</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module loaded, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module loaded, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.reload_modules">
-<code class="descname">reload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.reload_modules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.reload_modules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reload modules refreshing only not installed modules</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.set_rpc_cache_control">
-<code class="descname">set_rpc_cache_control</code><span class="sig-paren">(</span><em>cache_enabled</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.set_rpc_cache_control" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_rpc_cache_control</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cache_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.set_rpc_cache_control" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set RPC server cache control</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cache_enabled</strong> (<em>bool</em>) – True to enable cache</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cache_enabled</strong> (<em>bool</em>) – True to enable cache</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.set_rpc_debug">
-<code class="descname">set_rpc_debug</code><span class="sig-paren">(</span><em>debug</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.set_rpc_debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_rpc_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">debug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.set_rpc_debug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set debug on rpcserver</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>debug</strong> (<em>bool</em>) – debug enabled or not</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>debug</strong> (<em>bool</em>) – debug enabled or not</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cleep.inventory.Inventory.unload_modules">
-<code class="descname">unload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.unload_modules" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.unload_modules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unload all modules stopping them</p>
 </dd></dl>
 
@@ -1508,13 +1439,13 @@ See CleepResource for more information.</p>
 <p>Rpcserver implements:</p>
 <blockquote>
 <div><ul class="simple">
-<li>authentication (login, password)</li>
-<li>HTTP and HTTPS support</li>
-<li>file upload and download</li>
-<li>poll requests</li>
-<li>command requests</li>
-<li>module configs requests</li>
-<li>devices list requests</li>
+<li><p>authentication (login, password)</p></li>
+<li><p>HTTP and HTTPS support</p></li>
+<li><p>file upload and download</p></li>
+<li><p>poll requests</p></li>
+<li><p>command requests</p></li>
+<li><p>module configs requests</p></li>
+<li><p>devices list requests</p></li>
 </ul>
 </div></blockquote>
 </div>

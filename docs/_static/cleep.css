@@ -30,4 +30,7 @@ a:hover.icon.icon-home {
 .wy-menu-vertical header,.wy-menu-vertical p.caption {
     color: #000000;
 }
-    
+a.reference.internal.current {
+    color: #D32F2F;
+}
+
