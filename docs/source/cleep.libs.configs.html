@@ -399,32 +399,6 @@ Please be aware that no verification is done</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.configs.cleepaudio.CleepAudio._CleepAudio__get_entries">
-<code class="descname">_CleepAudio__get_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepaudio.CleepAudio._CleepAudio__get_entries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all file entries</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">entry informations (empty if nothing found):<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">found</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
-       <span class="n">group</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">full</span> <span class="n">found</span> <span class="n">string</span> <span class="p">(</span><span class="n">usefullto</span> <span class="n">replace</span><span class="p">)</span>
-       <span class="n">key</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">specified</span> <span class="n">key</span><span class="p">,</span>
-       <span class="n">value</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">found</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.configs.cleepaudio.CleepAudio.blacklist_module">
 <code class="descname">blacklist_module</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepaudio.CleepAudio.blacklist_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Blacklist module</p>
@@ -487,9 +461,9 @@ Please be aware that no verification is done</p>
 <dt id="cleep.libs.configs.cleepwificonf.CleepWifiConf">
 <em class="property">class </em><code class="descname">CleepWifiConf</code><a class="headerlink" href="#cleep.libs.configs.cleepwificonf.CleepWifiConf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Helper class to read /boot/cleepwifi.conf
-Config base class is not used here to avoid using cleep_filesystem
-We don’t need to use cleepfilesystem because we only read file</p>
+<p>Helper class to read /boot/cleepwifi.conf.</p>
+<p>Config base class is not used here to avoid using cleep_filesystem.</p>
+<p>We don’t need to use cleepfilesystem because we only read file.</p>
 <dl class="attribute">
 <dt id="cleep.libs.configs.cleepwificonf.CleepWifiConf.CONF">
 <code class="descname">CONF</code><em class="property"> = '/boot/cleepwifi.conf'</em><a class="headerlink" href="#cleep.libs.configs.cleepwificonf.CleepWifiConf.CONF" title="Permalink to this definition">¶</a></dt>
@@ -597,12 +571,6 @@ to generate the file.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.configs.cmdline.Cmdline._Cmdline__refresh">
-<code class="descname">_Cmdline__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cmdline.Cmdline._Cmdline__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh data</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.configs.cmdline.Cmdline.get_root_drive">
 <code class="descname">get_root_drive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cmdline.Cmdline.get_root_drive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return root drive</p>
@@ -660,61 +628,6 @@ to generate the file.</p>
 <dt id="cleep.libs.configs.cmdlinetxt.CmdlineTxt.VALUE_CONSOLE">
 <code class="descname">VALUE_CONSOLE</code><em class="property"> = 'serial0,115200'</em><a class="headerlink" href="#cleep.libs.configs.cmdlinetxt.CmdlineTxt.VALUE_CONSOLE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.cmdlinetxt.CmdlineTxt._CmdlineTxt__get_entries">
-<code class="descname">_CmdlineTxt__get_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cmdlinetxt.CmdlineTxt._CmdlineTxt__get_entries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all file entries</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">entry informations (empty if nothing found):<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">key</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">[</span>
-        <span class="n">value</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-        <span class="o">...</span>
-    <span class="p">],</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.cmdlinetxt.CmdlineTxt._CmdlineTxt__key_value_exists">
-<code class="descname">_CmdlineTxt__key_value_exists</code><span class="sig-paren">(</span><em>key</em>, <em>value</em>, <em>entries</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cmdlinetxt.CmdlineTxt._CmdlineTxt__key_value_exists" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if specified combo key/value exists in entries</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if combo exists</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.cmdlinetxt.CmdlineTxt._CmdlineTxt__save_entries">
-<code class="descname">_CmdlineTxt__save_entries</code><span class="sig-paren">(</span><em>entries</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cmdlinetxt.CmdlineTxt._CmdlineTxt__save_entries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save all specified entries</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entries</strong> (<em>dict</em>) – dict as returned with __get_entries</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.configs.cmdlinetxt.CmdlineTxt.disable_console">
@@ -798,90 +711,6 @@ to backup and restore configuration file</dd>
 <dt id="cleep.libs.configs.config.Config.MODE_WRITE">
 <code class="descname">MODE_WRITE</code><em class="property"> = 'w'</em><a class="headerlink" href="#cleep.libs.configs.config.Config.MODE_WRITE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.config.Config._Config__get_backup_path">
-<code class="descname">_Config__get_backup_path</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config._Config__get_backup_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return backup path</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>string</em>) – path of path to backup</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.config.Config._Config__get_path">
-<code class="descname">_Config__get_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config._Config__get_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return current cleaned conf file path</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">cleaned path</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.config.Config._close">
-<code class="descname">_close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config._close" title="Permalink to this definition">¶</a></dt>
-<dd><p>Close file descriptor is still opened</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.config.Config._make_backup">
-<code class="descname">_make_backup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config._make_backup" title="Permalink to this definition">¶</a></dt>
-<dd><p>Backup original file if necessary</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.config.Config._open">
-<code class="descname">_open</code><span class="sig-paren">(</span><em>mode='r'</em>, <em>encoding=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config._open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open config file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>mode</strong> (<em>string</em>) – opening file mode (see MODE_XXX)</li>
-<li><strong>encoding</strong> (<em>string</em>) – encoding to use to open file (default is system one)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">file descriptor as returned by open() function</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">file</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Exception if file doesn’t exist</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.config.Config._write">
-<code class="descname">_write</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config._write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write content to config file.
-This function removes automatically spaces at end of content</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>content</strong> (<em>string</em>) – content to write</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.configs.config.Config.add">
@@ -1272,100 +1101,6 @@ Please note only results with subgroups are returned.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__enable_dtoverlay">
-<code class="descname">_ConfigTxt__enable_dtoverlay</code><span class="sig-paren">(</span><em>dtoverlay</em>, <em>disable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__enable_dtoverlay" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable/disable specified dtoverlay</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dtoverlay</strong> (<em>string</em>) – existing dtoverlay</li>
-<li><strong>disable</strong> (<em>bool</em>) – True to disable instead of enable</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__enable_dtparam">
-<code class="descname">_ConfigTxt__enable_dtparam</code><span class="sig-paren">(</span><em>dtparam</em>, <em>dtvalue</em>, <em>disable=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__enable_dtparam" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable/disable specified dtparam</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>dtparam</strong> (<em>string</em>) – existing dtparam</li>
-<li><strong>disable</strong> (<em>bool</em>) – True to disable instead of enable</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__get_entries">
-<code class="descname">_ConfigTxt__get_entries</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__get_entries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return file entries according to specified key</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">entry informations (empty if nothing found):<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="o">&lt;</span><span class="n">found</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="n">key</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">specified</span> <span class="n">key</span><span class="o">&gt;</span><span class="p">,</span>
-       <span class="n">value</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">found</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="o">&gt;</span><span class="p">,</span>
-       <span class="n">disabled</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">entry</span> <span class="ow">is</span> <span class="n">disabled</span> <span class="ow">or</span> <span class="ow">not</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__is_dtoverlay_enabled">
-<code class="descname">_ConfigTxt__is_dtoverlay_enabled</code><span class="sig-paren">(</span><em>dtoverlay</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__is_dtoverlay_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is DTOVERLAY is enabled</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if specified dtoverlay enabled</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__is_dtparam_enabled">
-<code class="descname">_ConfigTxt__is_dtparam_enabled</code><span class="sig-paren">(</span><em>dtparam</em>, <em>dtvalue</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.configtxt.ConfigTxt._ConfigTxt__is_dtparam_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Is DTPARAM is enabled</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if specified dtparam enabled</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.configs.configtxt.ConfigTxt.disable_audio">
 <code class="descname">disable_audio</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.configtxt.ConfigTxt.disable_audio" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disable audio support (bcm2835)</p>
@@ -1579,90 +1314,6 @@ Please note only results with subgroups are returned.</p>
 <dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf.CONF">
 <code class="descname">CONF</code><em class="property"> = '/etc/dhcpcd.conf'</em><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf.CONF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__cidr_to_netmask">
-<code class="descname">_DhcpcdConf__cidr_to_netmask</code><span class="sig-paren">(</span><em>cidr</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__cidr_to_netmask" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert cidr to netmask</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><a class="reference external" href="http://www.linuxquestions.org/questions/blog/bittner-195120/cidr-to-netmask-conversion-with-python-convert-short-netmask-to-long-dotted-format-3147/">http://www.linuxquestions.org/questions/blog/bittner-195120/cidr-to-netmask-conversion-with-python-convert-short-netmask-to-long-dotted-format-3147/</a></p>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cidr</strong> (<em>int</em>) – cidr value</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">netmask (ie 255.255.255.0)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__delete_fallback_interface">
-<code class="descname">_DhcpcdConf__delete_fallback_interface</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__delete_fallback_interface" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete fallback configuration for specified interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>dict</em>) – interface data as returned by get_configuration</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if interface is deleted, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__delete_static_interface">
-<code class="descname">_DhcpcdConf__delete_static_interface</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__delete_static_interface" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete new static interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>dict</em>) – interface data as returned by get_interface</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if interface is deleted, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__netmask_to_cidr">
-<code class="descname">_DhcpcdConf__netmask_to_cidr</code><span class="sig-paren">(</span><em>netmask</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf._DhcpcdConf__netmask_to_cidr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert netmask to cidr format</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">code from <a class="reference external" href="https://stackoverflow.com/a/43885814">https://stackoverflow.com/a/43885814</a></p>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>netmask</strong> (<em>string</em>) – netmask address</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">cidr value</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf.add_fallback_interface">
@@ -2037,87 +1688,6 @@ None: if interface is not configured</td>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.configs.etcmodules.EtcModules._EtcModules__disable_module">
-<code class="descname">_EtcModules__disable_module</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcmodules.EtcModules._EtcModules__disable_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module to disable</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Return True if module disabled</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.etcmodules.EtcModules._EtcModules__enable_module">
-<code class="descname">_EtcModules__enable_module</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcmodules.EtcModules._EtcModules__enable_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module to enable</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Return True if module enabled. False if module already enabled</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.etcmodules.EtcModules._EtcModules__get_entries">
-<code class="descname">_EtcModules__get_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcmodules.EtcModules._EtcModules__get_entries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all file entries</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">entry informations (empty if nothing found):<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="o">&lt;</span><span class="n">found</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="n">group</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">full</span> <span class="n">found</span> <span class="n">string</span> <span class="p">(</span><span class="n">usefull</span> <span class="n">to</span> <span class="n">replace</span><span class="p">)</span>
-       <span class="n">key</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">specified</span> <span class="n">key</span><span class="o">&gt;</span><span class="p">,</span>
-       <span class="n">value</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">found</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="o">&gt;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.etcmodules.EtcModules._EtcModules__is_module_enabled">
-<code class="descname">_EtcModules__is_module_enabled</code><span class="sig-paren">(</span><em>module_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcmodules.EtcModules._EtcModules__is_module_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if module is enabled in /etc/modules.
-It do not check if module is loaded! For that use Lsmod lib</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>module_name</strong> (<em>string</em>) – module name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if module is enabled</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.configs.etcmodules.EtcModules.disable_embedded_sound">
 <code class="descname">disable_embedded_sound</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcmodules.EtcModules.disable_embedded_sound" title="Permalink to this definition">¶</a></dt>
 <dd><p>DEPRECATED: use disable_module instead
@@ -2337,70 +1907,6 @@ infos about inet default: <a class="reference external" href="https://wiki.debia
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces._EtcNetworkInterfaces__append_option">
-<code class="descname">_EtcNetworkInterfaces__append_option</code><span class="sig-paren">(</span><em>option</em>, <em>lines</em>, <em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces._EtcNetworkInterfaces__append_option" title="Permalink to this definition">¶</a></dt>
-<dd><p>Append option line to specified list</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>option</strong> (<em>string</em>) – interface option (none=0|auto=1|hotplug=2)</li>
-<li><strong>lines</strong> (<em>list</em>) – list of lines</li>
-<li><strong>interface</strong> (<em>string</em>) – interface name</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces._EtcNetworkInterfaces__delete_dhcp_interface">
-<code class="descname">_EtcNetworkInterfaces__delete_dhcp_interface</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces._EtcNetworkInterfaces__delete_dhcp_interface" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete dhcp interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>dict</em>) – interface data as returned by get_configuration</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if interface deleted</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces._EtcNetworkInterfaces__delete_interface">
-<code class="descname">_EtcNetworkInterfaces__delete_interface</code><span class="sig-paren">(</span><em>interface</em>, <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces._EtcNetworkInterfaces__delete_interface" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete static or manual interface</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>interface</strong> (<em>dict</em>) – interface data as returned by get_configuration</li>
-<li><strong>mode</strong> (<em>string</em>) – type of configuration (static|manual)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if interface is deleted, False otherwise</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">bool</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingParameter</span></code></p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces.add_default_interface">
 <code class="descname">add_default_interface</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.etcnetworkinterfaces.EtcNetworkInterfaces.add_default_interface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add default interface</p>
@@ -2518,7 +2024,7 @@ None: if interface is not configured</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of configurated interfaces:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of configured interfaces:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">interface</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
         <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">interface</span> <span class="n">name</span><span class="p">,</span>
         <span class="n">mode</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">iface</span> <span class="n">mode</span><span class="p">,</span>
@@ -2842,30 +2348,6 @@ Used to have something to parse file in case of error</p>
 <dt id="cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG">
 <code class="descname">DEFAULT_CONFIG</code><em class="property"> = {'debug': {'debug_core': False, 'debug_modules': [], 'trace_enabled': False}, 'general': {'modules': [], 'updated': []}, 'rpc': {'rpc_cert': '', 'rpc_host': '0.0.0.0', 'rpc_key': '', 'rpc_port': 80}}</em><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf._CleepConf__close">
-<code class="descname">_CleepConf__close</code><span class="sig-paren">(</span><em>write=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf._CleepConf__close" title="Permalink to this definition">¶</a></dt>
-<dd><p>Close everything and write new content if forced</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf._CleepConf__open">
-<code class="descname">_CleepConf__open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf._CleepConf__open" title="Permalink to this definition">¶</a></dt>
-<dd><p>Open config file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">ConfigParser instance</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">ConfigParser</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code> – if file doesn’t exist</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.configs.cleepconf.CleepConf.as_dict">
@@ -3253,135 +2735,6 @@ This class is not thread safe due to self.CONF that can modified on the fly</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__add_network">
-<code class="descname">_WpaSupplicantConf__add_network</code><span class="sig-paren">(</span><em>config</em>, <em>interface=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__add_network" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add new entry based on configuration</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>config</strong> (<em>dict</em>) – configuration dict (see get_configuration)</li>
-<li><strong>interface</strong> (<em>string|None</em>) – if specified try to add network in specific interface wpa_supplicant.conf file</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if network added</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__check_wpa_supplicant_conf_existence">
-<code class="descname">_WpaSupplicantConf__check_wpa_supplicant_conf_existence</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__check_wpa_supplicant_conf_existence" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if wpa_supplicant conf file exists for specified interface.
-If not exists, create default one</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface name</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__get_configuration">
-<code class="descname">_WpaSupplicantConf__get_configuration</code><span class="sig-paren">(</span><em>config</em>, <em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__get_configuration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return networks found in conf file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>config</strong> (<em>string</em>) – config filepath to parse</li>
-<li><strong>interface</strong> (<em>string</em>) – interface that refers to specified file (used to store data)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>list of wireless configurations:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">network</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
-        <span class="n">group</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">full</span> <span class="n">search</span> <span class="n">result</span><span class="p">,</span>
-        <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">network</span> <span class="n">name</span><span class="p">,</span>
-        <span class="n">password</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">password</span><span class="p">,</span>
-        <span class="n">hidden</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">hidden</span><span class="p">,</span>
-        <span class="n">encryption</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">encryption</span> <span class="nb">type</span> <span class="p">(</span><span class="n">see</span> <span class="n">ENCRYPTION_TYPE_XXX</span><span class="p">),</span>
-        <span class="n">disabled</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">disabled</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__get_configuration_files">
-<code class="descname">_WpaSupplicantConf__get_configuration_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__get_configuration_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Scan /etc/wpa_supplicant directory to find interface specific confguration</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">interface and configuration file:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">interface</span><span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">config</span> <span class="n">path</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__load_country_codes">
-<code class="descname">_WpaSupplicantConf__load_country_codes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__load_country_codes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load country codes based on local files</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__update_network_disabled_flag">
-<code class="descname">_WpaSupplicantConf__update_network_disabled_flag</code><span class="sig-paren">(</span><em>network</em>, <em>disabled</em>, <em>interface=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf._WpaSupplicantConf__update_network_disabled_flag" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update specified network disabled flag</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>network</strong> (<em>string</em>) – network name (ssid)</li>
-<li><strong>disabled</strong> (<em>bool</em>) – disabled flag</li>
-<li><strong>interface</strong> (<em>string|None</em>) – if specified try to add network in specific interface wpa_supplicant.conf file</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if network flag updated</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.add_network">
 <code class="descname">add_network</code><span class="sig-paren">(</span><em>network</em>, <em>encryption</em>, <em>password</em>, <em>hidden=False</em>, <em>interface=None</em>, <em>encrypt_password=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.add_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add new network in config file
@@ -3547,7 +2900,23 @@ Password is automatically encrypted using wpa_passphrase</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of configurations per interface. If no config for interface, interface is named “default”</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of configurations per interface. If there is no specific config file, interface is named “default”:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">interface</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="n">network</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
+            <span class="n">group</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">full</span> <span class="n">search</span> <span class="n">result</span><span class="p">,</span>
+            <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">network</span> <span class="n">name</span><span class="p">,</span>
+            <span class="n">password</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">password</span><span class="p">,</span>
+            <span class="n">hidden</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">hidden</span><span class="p">,</span>
+            <span class="n">encryption</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">encryption</span> <span class="nb">type</span> <span class="p">(</span><span class="n">see</span> <span class="n">ENCRYPTION_TYPE_XXX</span><span class="p">),</span>
+            <span class="n">disabled</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">disabled</span>
+        <span class="p">},</span>
+        <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
 </tr>

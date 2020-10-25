@@ -332,112 +332,6 @@
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.alsa.Alsa._Alsa__amixer_command">
-<code class="descname">_Alsa__amixer_command</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa._Alsa__amixer_command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute amixer command and return formatted outputs</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>string</em>) – amixer command. No check is performed to make sure it is a amixer command</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.alsa.Alsa._Alsa__amixer_control_command">
-<code class="descname">_Alsa__amixer_control_command</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa._Alsa__amixer_control_command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute amixer control command and return formatted outputs</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>string</em>) – amixer command. No check is performed to make sure it is a amixer command</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">amixer output command:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">iface</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="nb">min</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="nb">max</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="n">step</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="n">values</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.alsa.Alsa._Alsa__command">
-<code class="descname">_Alsa__command</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa._Alsa__command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute specified command and return parsed results</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>string</em>) – command to execute</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict of outputs:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">card</span> <span class="nb">id</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="p">{</span>
-        <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">card</span> <span class="n">name</span>
-        <span class="n">devices</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span>
-            <span class="n">deviceid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="p">{</span>
-                <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">name</span>
-                <span class="n">cardid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">card</span> <span class="nb">id</span>
-                <span class="n">deviceid</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">device</span> <span class="nb">id</span>
-            <span class="p">},</span>
-            <span class="o">...</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.alsa.Alsa._Alsa__get_or_set_volume">
-<code class="descname">_Alsa__get_or_set_volume</code><span class="sig-paren">(</span><em>control</em>, <em>pattern</em>, <em>volume=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa._Alsa__get_or_set_volume" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get infos from amixer command, parse results and get volume value
-With volume specified set command is executed, otherwise it is get command</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>control</strong> (<em>string</em>) – amixer control to find</li>
-<li><strong>pattern</strong> (<em>string</em>) – pattern to use to extract float value from amixer result</li>
-<li><strong>volume</strong> (<em>int</em>) – volume percentage or None</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">volume value or None if error occured</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.alsa.Alsa.amixer_control">
 <code class="descname">amixer_control</code><span class="sig-paren">(</span><em>command</em>, <em>numid</em>, <em>value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.alsa.Alsa.amixer_control" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute amixer control</p>
@@ -725,12 +619,6 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.blkid.Blkid._Blkid__refresh">
-<code class="descname">_Blkid__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid._Blkid__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh data</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.blkid.Blkid.get_device">
 <code class="descname">get_device</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.blkid.Blkid.get_device" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get device</p>
@@ -855,12 +743,6 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.ifconfig.Ifconfig._Ifconfig__refresh">
-<code class="descname">_Ifconfig__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig._Ifconfig__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.ifconfig.Ifconfig.get_configurations">
 <code class="descname">get_configurations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig.get_configurations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns current network configuration</p>
@@ -973,12 +855,6 @@ Return wireless network interface infos.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.iw.Iw._Iw__refresh">
-<code class="descname">_Iw__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw._Iw__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.iw.Iw.get_adapters">
 <code class="descname">get_adapters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.get_adapters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all adapters with associated interface</p>
@@ -1050,12 +926,6 @@ Return wireless network interface infos.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.iwconfig.Iwconfig._Iwconfig__refresh">
-<code class="descname">_Iwconfig__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig._Iwconfig__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.get_interfaces">
 <code class="descname">get_interfaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.get_interfaces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all interfaces with wireless informations</p>
@@ -1120,12 +990,6 @@ Return wireless network interface infos.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.iwgetid.Iwgetid._Iwgetid__refresh">
-<code class="descname">_Iwgetid__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid._Iwgetid__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.iwgetid.Iwgetid.get_connections">
 <code class="descname">get_connections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwgetid.Iwgetid.get_connections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all wifi connections</p>
@@ -1175,20 +1039,6 @@ Return wireless network interface infos.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.iwlist.Iwlist._Iwlist__refresh">
-<code class="descname">_Iwlist__refresh</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist._Iwlist__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interface</strong> (<em>string</em>) – interface to scan</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.iwlist.Iwlist.get_networks">
 <code class="descname">get_networks</code><span class="sig-paren">(</span><em>interface</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwlist.Iwlist.get_networks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all wifi networks scanned</p>
@@ -1204,6 +1054,7 @@ Return wireless network interface infos.</p>
         <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">wifi</span> <span class="n">network</span> <span class="n">name</span>
         <span class="n">encryption</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">encryption</span> <span class="nb">type</span> <span class="p">(</span><span class="n">TODO</span><span class="p">)</span>
         <span class="n">signallevel</span> <span class="p">(</span><span class="nb">float</span><span class="p">):</span> <span class="n">wifi</span> <span class="n">signal</span> <span class="n">level</span>
+        <span class="n">frequencies</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">supported</span> <span class="n">frequencies</span>
     <span class="p">},</span>
     <span class="o">...</span>
 <span class="p">}</span>
@@ -1246,42 +1097,6 @@ Return wireless network interface infos.</p>
 <dt id="cleep.libs.commands.lsblk.Lsblk.CACHE_DURATION">
 <code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.lsblk.Lsblk._Lsblk__refresh">
-<code class="descname">_Lsblk__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsblk.Lsblk._Lsblk__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">partitions infos:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">drive</span> <span class="n">partition</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
-        <span class="n">partition</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
-            <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">partition</span> <span class="n">name</span>
-            <span class="n">major</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">major</span> <span class="n">number</span><span class="p">,</span>
-            <span class="n">minor</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">minor</span> <span class="n">number</span><span class="p">,</span>
-            <span class="n">size</span> <span class="p">(</span><span class="n">long</span><span class="p">):</span> <span class="n">partition</span> <span class="n">size</span><span class="p">,</span>
-            <span class="n">totalsize</span> <span class="p">(</span><span class="n">long</span><span class="p">):</span> <span class="n">drive</span> <span class="n">total</span> <span class="n">size</span><span class="p">,</span>
-            <span class="n">percent</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">partition</span> <span class="n">size</span> <span class="n">over</span> <span class="n">drive</span> <span class="n">total</span> <span class="n">size</span><span class="p">,</span>
-            <span class="n">readonly</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">partition</span> <span class="ow">is</span> <span class="n">readonly</span><span class="p">,</span>
-            <span class="n">mountpoint</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">mountpoint</span> <span class="n">name</span><span class="p">,</span>
-            <span class="n">partition</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">,</span>
-            <span class="n">removable</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">partition</span> <span class="ow">is</span> <span class="n">removable</span> <span class="p">(</span><span class="n">external</span> <span class="n">disk</span><span class="o">/</span><span class="n">usb</span> <span class="n">stick</span><span class="o">...</span><span class="p">)</span>
-            <span class="n">drivemodel</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">drive</span> <span class="n">model</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="o">...</span>
-    <span class="p">},</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.commands.lsblk.Lsblk.get_device_infos">
@@ -1363,12 +1178,6 @@ Return wireless network interface infos.</p>
 <dt id="cleep.libs.commands.lsmod.Lsmod.CACHE_DURATION">
 <code class="descname">CACHE_DURATION</code><em class="property"> = 2.0</em><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.lsmod.Lsmod._Lsmod__refresh">
-<code class="descname">_Lsmod__refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.lsmod.Lsmod._Lsmod__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh all data</p>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.commands.lsmod.Lsmod.get_loaded_modules">
@@ -1489,20 +1298,6 @@ Return wireless network interface infos.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.commands.udevadm.Udevadm._Udevadm__refresh">
-<code class="descname">_Udevadm__refresh</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm._Udevadm__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh data filling devices class member</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device</strong> (<em>string</em>) – device name</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.commands.udevadm.Udevadm.get_device_type">
 <code class="descname">get_device_type</code><span class="sig-paren">(</span><em>device</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.udevadm.Udevadm.get_device_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return specified device type</p>
@@ -1608,30 +1403,6 @@ Return wireless network interface infos.</p>
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATUS_ENABLED">
 <code class="descname">STATUS_ENABLED</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATUS_ENABLED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.commands.wpacli.Wpacli._Wpacli__command">
-<code class="descname">_Wpacli__command</code><span class="sig-paren">(</span><em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli._Wpacli__command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute wpa_cli command and parse result to check if command failed or not</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> (<em>string</em>) – command to execute</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">command result:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="nb">bool</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">command</span> <span class="n">succeed</span>
-    <span class="n">string</span><span class="p">:</span> <span class="n">command</span> <span class="n">output</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.add_network">

@@ -342,98 +342,6 @@ A debounce function waits to switch to readonly mode to reduce number of switche
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__disable_write">
-<code class="descname">_CleepFilesystem__disable_write</code><span class="sig-paren">(</span><em>context</em>, <em>root=True</em>, <em>boot=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__disable_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable write mode</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__enable_write">
-<code class="descname">_CleepFilesystem__enable_write</code><span class="sig-paren">(</span><em>root=True</em>, <em>boot=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__enable_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable write mode</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>root</strong> – enable write on root partition (efault true)</li>
-<li><strong>boot</strong> (<em>bool</em>) – enable write on boot partition (default false)</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__is_on_tmp">
-<code class="descname">_CleepFilesystem__is_on_tmp</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__is_on_tmp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if specified file path is on /tmp which is writable</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>string</em>) – path</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if on /tmp</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__is_readonly_filesystem">
-<code class="descname">_CleepFilesystem__is_readonly_filesystem</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__is_readonly_filesystem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if readonly is configured in OS</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if RO configured on OS</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__really_disable_write">
-<code class="descname">_CleepFilesystem__really_disable_write</code><span class="sig-paren">(</span><em>context</em>, <em>root=True</em>, <em>boot=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__really_disable_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function used in debounce timer</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__report_exception">
-<code class="descname">_CleepFilesystem__report_exception</code><span class="sig-paren">(</span><em>extra=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._CleepFilesystem__report_exception" title="Permalink to this definition">¶</a></dt>
-<dd><p>Report exception using crash report instance if configured</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem._get_counters">
-<code class="descname">_get_counters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem._get_counters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Useful during test to check if counters have awaited value</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">counters:<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">root</span> <span class="p">(</span><span class="nb">int</span><span class="p">),</span>
-    <span class="n">boot</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.cleepfilesystem.CleepFilesystem.close">
 <code class="descname">close</code><span class="sig-paren">(</span><em>fd</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepfilesystem.CleepFilesystem.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close file descriptor</p>
@@ -883,51 +791,6 @@ This class get releases from specified project and return content as dict</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.cleepgithub.CleepGithub._CleepGithub__get_all_releases">
-<code class="descname">_CleepGithub__get_all_releases</code><span class="sig-paren">(</span><em>owner</em>, <em>repository</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepgithub.CleepGithub._CleepGithub__get_all_releases" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get releases of specify project repository</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>owner</strong> (<em>string</em>) – name of owner</li>
-<li><strong>repository</strong> (<em>string</em>) – name of repository</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of releases. Format can be found here <a class="reference external" href="https://developer.github.com/v3/repos/releases/">https://developer.github.com/v3/repos/releases/</a></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Exception if error occured during request</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.cleepgithub.CleepGithub._CleepGithub__get_released_releases">
-<code class="descname">_CleepGithub__get_released_releases</code><span class="sig-paren">(</span><em>owner</em>, <em>repository</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepgithub.CleepGithub._CleepGithub__get_released_releases" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get released releases</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>owner</strong> (<em>string</em>) – name of owner</li>
-<li><strong>repository</strong> (<em>string</em>) – name of repository</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.cleepgithub.CleepGithub.get_api_rate">
 <code class="descname">get_api_rate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.cleepgithub.CleepGithub.get_api_rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get current api rate
@@ -1166,24 +1029,6 @@ Api requests are limited on free usage of github. This method returns current ra
 <p>Helper class to execute command lines.
 You can execute command right now using command method or after a certain amount of time using command_delayed</p>
 <dl class="method">
-<dt id="cleep.libs.internals.console.Console._Console__process_lines">
-<code class="descname">_Console__process_lines</code><span class="sig-paren">(</span><em>lines</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.Console._Console__process_lines" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove end of line char for given lines and convert lines to unicode</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lines</strong> (<em>list</em>) – list of lines</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>Results:</dt>
-<dd>list: input list of lines with eol removed</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.console.Console.command">
 <code class="descname">command</code><span class="sig-paren">(</span><em>command</em>, <em>timeout=2.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.Console.command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute specified command line with auto kill after timeout</p>
@@ -1273,31 +1118,6 @@ until end of it or if user explicitely requests to stop (or kill) it.</p>
 <p class="rubric">Notes</p>
 <p>Subprocess output async reading copied from <a class="reference external" href="https://stackoverflow.com/a/4896288">https://stackoverflow.com/a/4896288</a></p>
 <dl class="method">
-<dt id="cleep.libs.internals.console.EndlessConsole._EndlessConsole__enqueue_output">
-<code class="descname">_EndlessConsole__enqueue_output</code><span class="sig-paren">(</span><em>output</em>, <em>queue</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.EndlessConsole._EndlessConsole__enqueue_output" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.console.EndlessConsole._EndlessConsole__send_stds">
-<code class="descname">_EndlessConsole__send_stds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.EndlessConsole._EndlessConsole__send_stds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read queues and send outputs if available</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if something sent, False otherwise</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.console.EndlessConsole._EndlessConsole__stop">
-<code class="descname">_EndlessConsole__stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.EndlessConsole._EndlessConsole__stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop command line execution</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.console.EndlessConsole.get_start_time">
 <code class="descname">get_start_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.EndlessConsole.get_start_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return process start time</p>
@@ -1341,26 +1161,6 @@ until end of it or if user explicitely requests to stop (or kill) it.</p>
 <em class="property">class </em><code class="descname">CrashReport</code><span class="sig-paren">(</span><em>token</em>, <em>product</em>, <em>product_version</em>, <em>libs_version={}</em>, <em>debug=False</em>, <em>disabled_by_core=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.crashreport.CrashReport" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Crash report class</p>
-<dl class="method">
-<dt id="cleep.libs.internals.crashreport.CrashReport._CrashReport__filter_exception">
-<code class="descname">_CrashReport__filter_exception</code><span class="sig-paren">(</span><em>event</em>, <em>hint</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.crashreport.CrashReport._CrashReport__filter_exception" title="Permalink to this definition">¶</a></dt>
-<dd><p>Callback used to filter sent exceptions</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.crashreport.CrashReport._CrashReport__set_extra">
-<code class="descname">_CrashReport__set_extra</code><span class="sig-paren">(</span><em>scope</em>, <em>more_extra={}</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.crashreport.CrashReport._CrashReport__set_extra" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set extra data to specified Sentry scope (typically )</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scope</strong> – Sentry scope</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="method">
 <dt id="cleep.libs.internals.crashreport.CrashReport.add_module_version">
 <code class="descname">add_module_version</code><span class="sig-paren">(</span><em>module_name</em>, <em>module_version</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.crashreport.CrashReport.add_module_version" title="Permalink to this definition">¶</a></dt>
@@ -1489,54 +1289,6 @@ giving a possibilty to acquire the resource, release it and acquire it again if 
 <dt id="cleep.libs.internals.criticalresources.CriticalResources.RESOURCES_DIR">
 <code class="descname">RESOURCES_DIR</code><em class="property"> = '../../resources'</em><a class="headerlink" href="#cleep.libs.internals.criticalresources.CriticalResources.RESOURCES_DIR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__get_resource_class_name">
-<code class="descname">_CriticalResources__get_resource_class_name</code><span class="sig-paren">(</span><em>filename</em>, <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__get_resource_class_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Search for resource class name trying to match filename with item in module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> (<em>string</em>) – filename (without extension)</li>
-<li><strong>module</strong> (<em>module</em>) – python module</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__is_resource_referenced">
-<code class="descname">_CriticalResources__is_resource_referenced</code><span class="sig-paren">(</span><em>resource_name</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__is_resource_referenced" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if resource name is referenced</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource_name</strong> (<em>string</em>) – resource name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if resource is referenced, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__load_resources">
-<code class="descname">_CriticalResources__load_resources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__load_resources" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load existing resources</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__report_exception">
-<code class="descname">_CriticalResources__report_exception</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.criticalresources.CriticalResources._CriticalResources__report_exception" title="Permalink to this definition">¶</a></dt>
-<dd><p>Report exception using crash report instance if configured</p>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.criticalresources.CriticalResources.acquire_resource">
@@ -1728,43 +1480,6 @@ will release temporarly the resource and acquire it again automatically.</li>
 <dt id="cleep.libs.internals.download.Download.TMP_FILE_PREFIX">
 <code class="descname">TMP_FILE_PREFIX</code><em class="property"> = 'cleep_tmp'</em><a class="headerlink" href="#cleep.libs.internals.download.Download.TMP_FILE_PREFIX" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.download.Download._Download__send_download_end">
-<code class="descname">_Download__send_download_end</code><span class="sig-paren">(</span><em>status</em>, <em>filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.download.Download._Download__send_download_end" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call download end callback if configured</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>int</em>) – final download status</li>
-<li><strong>filepath</strong> (<em>string</em>) – downloaded local filepath or None if download failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.download.Download._Download__send_download_status">
-<code class="descname">_Download__send_download_status</code><span class="sig-paren">(</span><em>status</em>, <em>size</em>, <em>percent</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.download.Download._Download__send_download_status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call download status callback if configured</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>status</strong> (<em>int</em>) – current download status</li>
-<li><strong>size</strong> (<em>int</em>) – downloaded filesize (bytes)</li>
-<li><strong>percent</strong> (<em>int</em>) – percentage of download</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.download.Download.add_auth_bearer">
@@ -2119,24 +1834,6 @@ Call cancel instance function to stop current download</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.event.Event._check_params">
-<code class="descname">_check_params</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.event.Event._check_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check event parameters</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> (<em>dict</em>) – event parameters</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if params are valid, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.event.Event.get_chart_values">
 <code class="descname">get_chart_values</code><span class="sig-paren">(</span><em>params</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.event.Event.get_chart_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns chart values</p>
@@ -2246,51 +1943,6 @@ It is also used to check event content before posting them and make sure it is c
 <dt id="cleep.libs.internals.eventsbroker.EventsBroker.PYTHON_CLEEP_IMPORT_PATH">
 <code class="descname">PYTHON_CLEEP_IMPORT_PATH</code><em class="property"> = 'cleep.modules.'</em><a class="headerlink" href="#cleep.libs.internals.eventsbroker.EventsBroker.PYTHON_CLEEP_IMPORT_PATH" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__get_event_class_name">
-<code class="descname">_EventsBroker__get_event_class_name</code><span class="sig-paren">(</span><em>filename</em>, <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__get_event_class_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Search for event class name trying to match filename with item in module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> (<em>string</em>) – filename (without extension)</li>
-<li><strong>module</strong> (<em>module</em>) – python module</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__load_events">
-<code class="descname">_EventsBroker__load_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__load_events" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load existing events</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__load_events_from_modules_dir">
-<code class="descname">_EventsBroker__load_events_from_modules_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__load_events_from_modules_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load existing events from modules directory.
-Create an event instance (singleton) for each ones.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__save_event">
-<code class="descname">_EventsBroker__save_event</code><span class="sig-paren">(</span><em>class_</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.eventsbroker.EventsBroker._EventsBroker__save_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save event entry in internal members</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>class</strong> (<em>class</em>) – event class ready to be instanciated</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.eventsbroker.EventsBroker.configure">
@@ -2416,62 +2068,6 @@ This also reduces bus complexity.</p>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus._add_peer">
-<code class="descname">_add_peer</code><span class="sig-paren">(</span><em>peer_id</em>, <em>infos</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus._add_peer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save peer infos</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>peer_id</strong> (<em>string</em>) – peer identifier</li>
-<li><strong>infos</strong> (<em>dict</em>) – associated peer informations</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus._parse_headers">
-<code class="descname">_parse_headers</code><span class="sig-paren">(</span><em>headers</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus._parse_headers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parse peer connection header</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Must be implemented</p>
-</div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>headers</strong> (<em>dict</em>) – received headers from peer connection</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">headers dict with parsed data as needed (json=&gt;dict|list, ‘1’|’0’=&gt;True|False, ‘666’=&gt;int(666), …)</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus._remove_peer">
-<code class="descname">_remove_peer</code><span class="sig-paren">(</span><em>peer_id</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus._remove_peer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove peer</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>peer_id</strong> (<em>string</em>) – peer identifier</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict or None if peer not found</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="method">
 <dt id="cleep.libs.internals.externalbus.ExternalBus.broadcast_event">
 <code class="descname">broadcast_event</code><span class="sig-paren">(</span><em>event</em>, <em>params</em>, <em>device_id</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.broadcast_event" title="Permalink to this definition">¶</a></dt>
@@ -2663,154 +2259,6 @@ It’s useful to get reduced dict when you send message through external bus</p>
 <dt id="cleep.libs.internals.install.Install.STATUS_PROCESSING">
 <code class="descname">STATUS_PROCESSING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_PROCESSING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_archive">
-<code class="descname">_Install__callback_archive</code><span class="sig-paren">(</span><em>stdout</em>, <em>stderr</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_archive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deb install callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>stdout</strong> (<em>list</em>) – console stdout</li>
-<li><strong>stderr</strong> (<em>list</em>) – console stderr</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_deb">
-<code class="descname">_Install__callback_deb</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_deb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deb install callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>dict</em>) – status dict like returned by InstallDeb get_status function</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_end">
-<code class="descname">_Install__callback_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_end" title="Permalink to this definition">¶</a></dt>
-<dd><p>End of process callback</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_install_module">
-<code class="descname">_Install__callback_install_module</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_install_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Module install callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>dict</em>) – <p>module status:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">module</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">module</span> <span class="n">name</span>
-    <span class="n">status</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">module</span> <span class="n">process</span> <span class="n">status</span>
-    <span class="n">prescript</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span><span class="n">stderr</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">returncode</span><span class="p">}</span>
-    <span class="n">postscript</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span><span class="n">stderr</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">returncode</span><span class="p">}</span>
-    <span class="n">updateprocess</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">uninstall</span> <span class="n">triggered</span> <span class="n">by</span> <span class="n">module</span> <span class="n">update</span>
-    <span class="n">process</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="n">process</span> <span class="n">status</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_package">
-<code class="descname">_Install__callback_package</code><span class="sig-paren">(</span><em>stdout</em>, <em>stderr</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Package install callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>stdout</strong> (<em>list</em>) – console stdout</li>
-<li><strong>stderr</strong> (<em>list</em>) – console stderr</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_quiet">
-<code class="descname">_Install__callback_quiet</code><span class="sig-paren">(</span><em>stdout</em>, <em>stderr</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_quiet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Quiet output. Does nothing</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_uninstall_module">
-<code class="descname">_Install__callback_uninstall_module</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_uninstall_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Module uninstall callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>dict</em>) – <p>module status:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">module</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">module</span> <span class="n">name</span>
-    <span class="n">status</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">module</span> <span class="n">process</span> <span class="n">status</span>
-    <span class="n">prescript</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span><span class="n">stderr</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">returncode</span><span class="p">}</span>
-    <span class="n">postscript</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span><span class="n">stderr</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">returncode</span><span class="p">}</span>
-    <span class="n">updateprocess</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">uninstall</span> <span class="n">triggered</span> <span class="n">by</span> <span class="n">module</span> <span class="n">update</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__callback_update_module">
-<code class="descname">_Install__callback_update_module</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__callback_update_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Module update callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>dict</em>) – <p>module status:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">module</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">module</span> <span class="n">name</span>
-    <span class="n">status</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">module</span> <span class="n">process</span> <span class="n">status</span>
-    <span class="n">uninstall</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span><span class="n">status</span><span class="p">,</span> <span class="n">prescript</span><span class="p">,</span> <span class="n">postscript</span><span class="p">}</span>
-    <span class="n">install</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="p">{</span><span class="n">status</span><span class="p">,</span> <span class="n">prescript</span><span class="p">,</span> <span class="n">postscript</span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.install.Install._Install__reset_status">
-<code class="descname">_Install__reset_status</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install._Install__reset_status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset status</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>int</em>) – status to set (use self.STATUS_XXX)</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.install.Install.cancel">
@@ -3067,30 +2515,6 @@ Due to quantity of messages, stderr is mixed within stdout to keep message order
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.installdeb.InstallDeb._InstallDeb__callback_deb">
-<code class="descname">_InstallDeb__callback_deb</code><span class="sig-paren">(</span><em>stdout</em>, <em>stderr</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installdeb.InstallDeb._InstallDeb__callback_deb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deb install callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>stdout</strong> (<em>list</em>) – console stdout</li>
-<li><strong>stderr</strong> (<em>list</em>) – console stderr</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installdeb.InstallDeb._InstallDeb__callback_end">
-<code class="descname">_InstallDeb__callback_end</code><span class="sig-paren">(</span><em>return_code</em>, <em>killed</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installdeb.InstallDeb._InstallDeb__callback_end" title="Permalink to this definition">¶</a></dt>
-<dd><p>End of process callback</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.installdeb.InstallDeb.dry_run">
 <code class="descname">dry_run</code><span class="sig-paren">(</span><em>deb</em>, <em>status_callback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installdeb.InstallDeb.dry_run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to install deb archive executing dpkg with –dry-run option
@@ -3217,48 +2641,6 @@ This class executes preuninstall script, removes all installed files and execute
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.installmodule.UninstallModule._remove_installed_files">
-<code class="descname">_remove_installed_files</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UninstallModule._remove_installed_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove all installed module files</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<em>Context</em>) – install context</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if operation succeed</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.UninstallModule._run_script">
-<code class="descname">_run_script</code><span class="sig-paren">(</span><em>context</em>, <em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UninstallModule._run_script" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute preinst.sh script</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>context</strong> (<em>Context</em>) – install context</li>
-<li><strong>script</strong> (<em>string</em>) – script to execute (preinst.sh, postinst.sh, …)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if operation succeed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.installmodule.UninstallModule.get_status">
 <code class="descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UninstallModule.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return current status</p>
@@ -3369,108 +2751,6 @@ This class executes preuninstall script, removes all installed files and execute
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.installmodule.InstallModule._backup_scripts">
-<code class="descname">_backup_scripts</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule._backup_scripts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Backup uninstall scripts</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<em>Context</em>) – install context</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if operation succeed</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.InstallModule._copy_module_files">
-<code class="descname">_copy_module_files</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule._copy_module_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install module files</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<em>Context</em>) – install context</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if operation succeed</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.InstallModule._download_archive">
-<code class="descname">_download_archive</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule._download_archive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download module archive</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<em>Context</em>) – install context</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if download succeed</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.InstallModule._extract_archive">
-<code class="descname">_extract_archive</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule._extract_archive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extract module archive</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<em>Context</em>) – install context</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if operation succeed</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.InstallModule._rollback_install">
-<code class="descname">_rollback_install</code><span class="sig-paren">(</span><em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule._rollback_install" title="Permalink to this definition">¶</a></dt>
-<dd><p>Rollback installation, removing installed files</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.InstallModule._run_script">
-<code class="descname">_run_script</code><span class="sig-paren">(</span><em>context</em>, <em>script</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule._run_script" title="Permalink to this definition">¶</a></dt>
-<dd><p>Execute preinst.sh script</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>context</strong> (<em>Context</em>) – install context</li>
-<li><strong>script</strong> (<em>string</em>) – script to execute (preinst.sh, postinst.sh, …)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if operation succeed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.installmodule.InstallModule.cancel">
 <code class="descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.InstallModule.cancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cancel installation</p>
@@ -3550,26 +2830,6 @@ This class executes preuninstall script, removes all installed files and execute
 <dt id="cleep.libs.internals.installmodule.UpdateModule.STATUS_UPDATING">
 <code class="descname">STATUS_UPDATING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.installmodule.UpdateModule.STATUS_UPDATING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.UpdateModule._status_callback">
-<code class="descname">_status_callback</code><span class="sig-paren">(</span><em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UpdateModule._status_callback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install/Uninstall status callback</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>status</strong> (<em>dict</em>) – status returned by install/uninstall</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installmodule.UpdateModule._step">
-<code class="descname">_step</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UpdateModule._step" title="Permalink to this definition">¶</a></dt>
-<dd><p>Process step</p>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.installmodule.UpdateModule.get_status">
@@ -3671,84 +2931,6 @@ install deb package.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep._InstallCleep__download_callback">
-<code class="descname">_InstallCleep__download_callback</code><span class="sig-paren">(</span><em>status</em>, <em>filesize</em>, <em>percent</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep._InstallCleep__download_callback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download callback</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep._InstallCleep__download_checksum">
-<code class="descname">_InstallCleep__download_checksum</code><span class="sig-paren">(</span><em>download</em>, <em>url_checksum</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep._InstallCleep__download_checksum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download specified checksum file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>download</strong> (<a class="reference internal" href="#cleep.libs.internals.download.Download" title="cleep.libs.internals.download.Download"><em>Download</em></a>) – Download instance</li>
-<li><strong>url_checksum</strong> (<em>string</em>) – checksum file url</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">checkum file content, None if something failed</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep._InstallCleep__download_package">
-<code class="descname">_InstallCleep__download_package</code><span class="sig-paren">(</span><em>download</em>, <em>url_package</em>, <em>checksum</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep._InstallCleep__download_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download cleep packagee file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>download</strong> (<a class="reference internal" href="#cleep.libs.internals.download.Download" title="cleep.libs.internals.download.Download"><em>Download</em></a>) – Download instance</li>
-<li><strong>url_package</strong> (<em>string</em>) – deb package url</li>
-<li><strong>checksum</strong> (<em>string</em>) – checksum to use to validate download</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">downloaded package path or None if error occured</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep._InstallCleep__install_deb">
-<code class="descname">_InstallCleep__install_deb</code><span class="sig-paren">(</span><em>package_path</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep._InstallCleep__install_deb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install deb</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>package_path</strong> (<em>string</em>) – deb package path</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if installation succeed, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep._InstallCleep__reset">
-<code class="descname">_InstallCleep__reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep._InstallCleep__reset" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.installcleep.InstallCleep.get_status">
 <code class="descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return current status</p>
@@ -3809,27 +2991,6 @@ The process is non blocking. Follow install process status using get_status.</p>
 <p>Base ProfileFormatter class
 Used to format profile with specified event parameters</p>
 <dl class="method">
-<dt id="cleep.libs.internals.profileformatter.ProfileFormatter._fill_profile">
-<code class="descname">_fill_profile</code><span class="sig-paren">(</span><em>event_params</em>, <em>profile</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformatter.ProfileFormatter._fill_profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fll profile with event data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>event_params</strong> (<em>dict</em>) – event parameters</li>
-<li><strong>profile</strong> (<em>Profile</em>) – profile instance</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Profile instance filled with appropriate values</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.profileformatter.ProfileFormatter.format">
 <code class="descname">format</code><span class="sig-paren">(</span><em>event_params</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformatter.ProfileFormatter.format" title="Permalink to this definition">¶</a></dt>
 <dd><p>Format event</p>
@@ -3865,75 +3026,6 @@ It also ensures formatters use exiting events</p>
 <dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker.PYTHON_CLEEP_IMPORT_PATH">
 <code class="descname">PYTHON_CLEEP_IMPORT_PATH</code><em class="property"> = 'cleep.modules.'</em><a class="headerlink" href="#cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker.PYTHON_CLEEP_IMPORT_PATH" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__dump_formatters_content">
-<code class="descname">_ProfileFormattersBroker__dump_formatters_content</code><span class="sig-paren">(</span><em>formatters</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__dump_formatters_content" title="Permalink to this definition">¶</a></dt>
-<dd><p>Dump specified formatters content. Debug purpose only</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>formatters</strong> (<em>dict</em>) – dict of formatters</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__get_best_formatter">
-<code class="descname">_ProfileFormattersBroker__get_best_formatter</code><span class="sig-paren">(</span><em>module_name</em>, <em>module_formatters</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__get_best_formatter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return best formatters selecting firstly formatters provided by core modules then next available</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__get_formatter_class_name">
-<code class="descname">_ProfileFormattersBroker__get_formatter_class_name</code><span class="sig-paren">(</span><em>filename</em>, <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__get_formatter_class_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Search for formatter class name trying to match filename with item in module</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>filename</strong> (<em>string</em>) – filename (without extension)</li>
-<li><strong>module</strong> (<em>module</em>) – python module</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__load_formatters">
-<code class="descname">_ProfileFormattersBroker__load_formatters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._ProfileFormattersBroker__load_formatters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load all formatters available in current Cleep installation</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Exception if internal error occured</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._get_loaded_formatters">
-<code class="descname">_get_loaded_formatters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker._get_loaded_formatters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return list of loaded formatters (all foudn during application startup)
-This function is only useful for debug and test purposes</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict of formatters (see __loaded_formatters member description)</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.profileformattersbroker.ProfileFormattersBroker.configure">
@@ -4083,84 +3175,6 @@ This function is only useful for debug and test purposes</p>
 <dt id="cleep.libs.internals.readwrite.ReadWrite.STATUS_WRITE">
 <code class="descname">STATUS_WRITE</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.internals.readwrite.ReadWrite.STATUS_WRITE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.readwrite.ReadWrite._ReadWrite__disable_write">
-<code class="descname">_ReadWrite__disable_write</code><span class="sig-paren">(</span><em>partition</em>, <em>context</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.readwrite.ReadWrite._ReadWrite__disable_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable filesystem writings</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>partition</strong> (<em>string</em>) – partition to work on</li>
-<li><strong>context</strong> (<a class="reference internal" href="#cleep.libs.internals.readwrite.ReadWriteContext" title="cleep.libs.internals.readwrite.ReadWriteContext"><em>ReadWriteContext</em></a>) – write context</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if read enabled, False otherwise</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.readwrite.ReadWrite._ReadWrite__enable_write">
-<code class="descname">_ReadWrite__enable_write</code><span class="sig-paren">(</span><em>partition</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.readwrite.ReadWrite._ReadWrite__enable_write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable filesystem writing</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>partition</strong> (<em>string</em>) – partition to work on</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if write enabled, False otherwise</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.readwrite.ReadWrite._ReadWrite__get_opened_files_for_writing">
-<code class="descname">_ReadWrite__get_opened_files_for_writing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.readwrite.ReadWrite._ReadWrite__get_opened_files_for_writing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return opened files for writing for current program</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.readwrite.ReadWrite._ReadWrite__is_cleep_iso">
-<code class="descname">_ReadWrite__is_cleep_iso</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.readwrite.ReadWrite._ReadWrite__is_cleep_iso" title="Permalink to this definition">¶</a></dt>
-<dd><p>Detect if cleep is running on cleep iso</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if it’s cleep iso</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="cleep.libs.internals.readwrite.ReadWrite._ReadWrite__refresh">
-<code class="descname">_ReadWrite__refresh</code><span class="sig-paren">(</span><em>partition</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.readwrite.ReadWrite._ReadWrite__refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>partition</strong> (<em>string</em>) – partition to work on</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
 
 <dl class="method">
 <dt id="cleep.libs.internals.readwrite.ReadWrite.disable_write_on_boot">
@@ -4341,39 +3355,6 @@ It implements to_dict and __str__ functions</p>
 <p>Approximated calculation of sunrise and sunset datetimes. Adapted from:
 <a class="reference external" href="https://stackoverflow.com/questions/19615350/calculate-sunrise-and-sunset-times-for-a-given-gps-coordinate-within-postgresql">https://stackoverflow.com/questions/19615350/calculate-sunrise-and-sunset-times-for-a-given-gps-coordinate-within-postgresql</a></p>
 <dl class="method">
-<dt id="cleep.libs.internals.sun.Sun._calc_sun_time">
-<code class="descname">_calc_sun_time</code><span class="sig-paren">(</span><em>date</em>, <em>is_rise_time=True</em>, <em>zenith=90.8</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.sun.Sun._calc_sun_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate sunrise or sunset date.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>date</strong> (<em>datetime</em>) – reference date</li>
-<li><strong>is_rise_time</strong> (<em>bool</em>) – True if you want to calculate sunrise time.</li>
-<li><strong>zenith</strong> (<em>float</em>) – sun reference zenith</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">UTC sunset or sunrise datetime</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">datetime</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Exception when there is no sunrise and sunset on given location and date</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="cleep.libs.internals.sun.Sun._force_range">
-<em class="property">static </em><code class="descname">_force_range</code><span class="sig-paren">(</span><em>v</em>, <em>max</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.sun.Sun._force_range" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="cleep.libs.internals.sun.Sun.get_local_sunrise_time">
 <code class="descname">get_local_sunrise_time</code><span class="sig-paren">(</span><em>date=None</em>, <em>local_time_zone=tzlocal()</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.sun.Sun.get_local_sunrise_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get sunrise time for local or custom time zone.</p>
@@ -4531,12 +3512,6 @@ Alias to get_local_sunset_time for current date</p>
 <p>Run a task asynchronously.</p>
 <p>If interval is specified task is executed periodically.
 If interval is None or 0 task is executed immediately and only once</p>
-<dl class="method">
-<dt id="cleep.libs.internals.task.Task._Task__run">
-<code class="descname">_Task__run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.task.Task._Task__run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run the task</p>
-</dd></dl>
-
 <dl class="method">
 <dt id="cleep.libs.internals.task.Task.is_running">
 <code class="descname">is_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.task.Task.is_running" title="Permalink to this definition">¶</a></dt>

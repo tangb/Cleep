@@ -1,52 +1,33 @@
 .wy-nav-side {
     background: #90a4ae !important;
 }
-/*.wy-side-nav-search {
+.wy-side-nav-search {
     background: #607d8b !important;
-}*/
-/*.rst-content dl:not(.docutils) dt {
+}
+.rst-content dl:not(.docutils) dt {
     color: #d32f2f !important;
     background: #ffcdd2 !important;
     border-top: solid 3px #b71c1c !important;
-}*/
-/*.rst-content dl:not(.docutils) dl dt {
+ }
+.rst-content dl:not(.docutils) dl dt {
     border: none !important;
     border-left: solid 3px #d32f2f !important;
     background: #eceff1 !important;
     color: #607d8b !important;
-}*/
-
-.py.class>dt:first-child {
-    color: #d32f2f !important;
-    background: #ffcdd2 !important;
-    border-top: solid 3px #b71c1c !important;
 }
-
-.py.method>dt:first-child {
-    border-left: solid 3px #b71c1c !important;
-}
-
-.py.attribute>dt:first-child {
-    border-left: none !important;
-}
-
-p.caption>.caption-text, .icon.icon-home, .version {
-    color: #333333 !important;
-}
-
-a:hover {
+a:visited, a:hover {
     color: #d32f2f;
 }
-
-a, a:visited {
+a {
     color: #000000;
 }
-/*a:visited.icon.icon-home, a.icon.icon-home {
+a:visited.icon.icon-home, a.icon.icon-home {
     color: #FFFFFF !important;
-}*/
-/*a:hover.icon.icon-home {
+}
+a:hover.icon.icon-home {
     color: #d32f2f;
-}*/
-/*.wy-menu-vertical header,.wy-menu-vertical p.caption {
+}
+.wy-menu-vertical header,.wy-menu-vertical p.caption {
     color: #000000;
-}*/
+}
+    
