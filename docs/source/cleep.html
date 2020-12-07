@@ -278,6 +278,16 @@ Finally it returns command response to message originator.</p>
 <code class="sig-name descname">CORE_SYNC_TIMEOUT</code><em class="property"> = 60.0</em><a class="headerlink" href="#cleep.bus.BusClient.CORE_SYNC_TIMEOUT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt id="cleep.bus.BusClient.PARAM_COMMAND_SENDER">
+<code class="sig-name descname">PARAM_COMMAND_SENDER</code><em class="property"> = 'command_sender'</em><a class="headerlink" href="#cleep.bus.BusClient.PARAM_COMMAND_SENDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.bus.BusClient.PARAM_MANUAL_RESPONSE">
+<code class="sig-name descname">PARAM_MANUAL_RESPONSE</code><em class="property"> = 'manual_response'</em><a class="headerlink" href="#cleep.bus.BusClient.PARAM_MANUAL_RESPONSE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt id="cleep.bus.BusClient.push">
 <code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">3.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.push" title="Permalink to this definition">¶</a></dt>
@@ -292,10 +302,10 @@ without result, but command is sent.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>MessageResponse as dict or None if no response awaited (event or broadcast)</p>
+<dd class="field-even"><p>message response instance</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference internal" href="#cleep.common.MessageResponse" title="cleep.common.MessageResponse">MessageResponse</a></p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference internal" href="#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if request is not a MessageRequest instance.</p>
@@ -332,10 +342,31 @@ without result, but command is sent.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>MessageResponse as dict or None if no response waited</p>
+<dd class="field-even"><p>message response instance</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference internal" href="#cleep.common.MessageResponse" title="cleep.common.MessageResponse">MessageResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.bus.BusClient.send_command_from_request">
+<code class="sig-name descname">send_command_from_request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">3.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_command_from_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Directly push message to bus.</p>
+<p>Use this function instead of send_command to fill more data in message like peer infos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message request</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – change default timeout if you wish. Default is 3 seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>message response instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cleep.common.MessageResponse" title="cleep.common.MessageResponse">MessageResponse</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -353,26 +384,17 @@ without result, but command is sent.</p>
 <li><p><strong>to</strong> (<em>string</em>) – event recipient. If not specified, event will be broadcasted.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>event always returns None.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.bus.BusClient.send_external_event">
-<code class="sig-name descname">send_external_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">peer_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_external_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Helper function to push to all modules an event received from external bus</p>
+<dt id="cleep.bus.BusClient.send_event_from_request">
+<code class="sig-name descname">send_event_from_request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.send_event_from_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Directly push event message request to bus.</p>
+<p>Use this function instead of send_command to fill more data in message like peer infos.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<em>string</em>) – event name.</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – event parameters.</p></li>
-<li><p><strong>peer_infos</strong> (<em>dict</em>) – infos about peer that sends the event</p></li>
-</ul>
+<dd class="field-odd"><p><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message request</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>event always returns None.</p>
@@ -429,9 +451,12 @@ Only broadcasted messages can be sent before all clients have subscribed (during
 <dl class="py method">
 <dt id="cleep.bus.MessageBus.app_configured">
 <code class="sig-name descname">app_configured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.app_configured" title="Permalink to this definition">¶</a></dt>
-<dd><p>Say to message bus application is configured and ready to run.
-/!This way of proceed is dangerous if clients always broadcast messages, the bus may always stay
+<dd><p>Say to message bus application is configured and ready to run.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This way of proceed is dangerous if clients always broadcast messages, the bus may always stay
 blocked in “app not configured” state. But in small system like cleep, it should be fine.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -467,7 +492,8 @@ blocked in “app not configured” state. But in small system like cleep, it sh
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">message</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">MessageRequest</span> <span class="k">as</span> <span class="nb">dict</span>
     <span class="n">event</span> <span class="p">(</span><span class="n">Event</span><span class="p">):</span> <span class="n">sync</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">no</span> <span class="n">response</span> <span class="n">awaited</span> <span class="p">(</span><span class="n">broadcast</span><span class="p">,</span> <span class="n">event</span> <span class="n">message</span><span class="p">)</span>
-    <span class="n">response</span> <span class="p">(</span><span class="n">MessageResponse</span><span class="p">):</span> <span class="n">request</span> <span class="n">response</span> <span class="ow">or</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">no</span> <span class="n">response</span>
+    <span class="n">response</span> <span class="p">(</span><span class="n">MessageResponse</span><span class="p">):</span> <span class="n">message</span> <span class="n">response</span> <span class="n">instance</span>
+    <span class="n">auto_response</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">command</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">bus</span><span class="o">.</span> <span class="n">If</span> <span class="kc">False</span> <span class="n">user</span> <span class="n">must</span> <span class="n">send</span> <span class="n">response</span> <span class="n">by</span> <span class="n">himself</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -506,17 +532,21 @@ without result, but command is sent.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>message response
-None: if no response awaited (request is an event or a broadcast command or if timeout is None)</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>MessageResponse or None if no response awaited (request is an event or a broadcast command or if</dt><dd><p>timeout is None)</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p>any</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference internal" href="#cleep.exception.InvalidParameter" title="cleep.exception.InvalidParameter"><strong>InvalidParameter</strong></a> – if request is not a MessageRequest instance.</p></li>
 <li><p><a class="reference internal" href="#cleep.exception.NoResponse" title="cleep.exception.NoResponse"><strong>NoResponse</strong></a> – if no response is received from module.</p></li>
 <li><p><a class="reference internal" href="#cleep.exception.InvalidModule" title="cleep.exception.InvalidModule"><strong>InvalidModule</strong></a> – if specified recipient is unknown.</p></li>
+<li><p><strong>NotReady</strong> – if trying to push message while Cleep is not ready</p></li>
 </ul>
 </dd>
 </dl>
@@ -624,7 +654,7 @@ None: if no response awaited (request is an event or a broadcast command or if t
 
 <dl class="py class">
 <dt id="cleep.common.MessageRequest">
-<em class="property">class </em><code class="sig-name descname">MessageRequest</code><a class="headerlink" href="#cleep.common.MessageRequest" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MessageRequest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">event</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">to</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Object that holds message request</p>
 <p>A message request is composed of:</p>
@@ -644,15 +674,51 @@ None: if no response awaited (request is an event or a broadcast command or if t
 <div><ul class="simple">
 <li><p>an event name</p></li>
 <li><p>event parameters</p></li>
-<li><p>core_event flag to say if event is a core event (and may not be pushed away from device)</p></li>
+<li><p>propagate flag to say if event can be propagated out of the device</p></li>
 <li><p>a device id</p></li>
 <li><p>a startup flag that indicates this event was sent during cleep startup</p></li>
-<li><p>peer infos if message comes from external device</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
+<p>Attribute peer_infos is filled when message comes from oustide. This field must also be filled when
+message is intented to be sent to outside.</p>
+<dl class="simple">
+<dt>Members:</dt><dd><p>command (string): command name
+event (string): event name
+propagate (bool): True if event can be propagated out of the device [event only]
+params (dict): list of event or command parameters
+to (string): message module recipient
+sender (string): message sender [command only]
+device_id (string): internal virtual device identifier [event only]
+peer_infos (PeerInfos): peer informations. Must be filled if message comes from outside the device</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>A message cannot be a command and an event, priority to command if both are specified.</p>
+<dl class="py method">
+<dt id="cleep.common.MessageRequest.fill_from_dict">
+<code class="sig-name descname">fill_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.fill_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill instance from other request</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>dict</em>) – message request infos</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.common.MessageRequest.fill_from_request">
+<code class="sig-name descname">fill_from_request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.fill_from_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill instance from other request</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>request</strong> (<a class="reference internal" href="#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message request instance</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="cleep.common.MessageRequest.is_broadcast">
 <code class="sig-name descname">is_broadcast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_broadcast" title="Permalink to this definition">¶</a></dt>
@@ -660,6 +726,20 @@ None: if no response awaited (request is an event or a broadcast command or if t
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True if the request is broadcast</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.common.MessageRequest.is_command">
+<code class="sig-name descname">is_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.is_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if message is a command. If not it is an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if message is a command, otherwise it is an event</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>bool</p>
@@ -683,10 +763,11 @@ None: if no response awaited (request is an event or a broadcast command or if t
 
 <dl class="py method">
 <dt id="cleep.common.MessageRequest.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">startup</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.to_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">startup</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">external_sender</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageRequest.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert message request to dict object</p>
 <dl class="simple">
-<dt>Params:</dt><dd><p>startup (bool): True if the message is startup message</p>
+<dt>Params:</dt><dd><p>startup (bool): True if the message is startup message
+external_sender (string): specify module name that handles message from external bus</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -700,7 +781,7 @@ None: if no response awaited (request is an event or a broadcast command or if t
 
 <dl class="py class">
 <dt id="cleep.common.MessageResponse">
-<em class="property">class </em><code class="sig-name descname">MessageResponse</code><a class="headerlink" href="#cleep.common.MessageResponse" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MessageResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">message</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">broadcast</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Object that holds message response</p>
 <p>A response is composed of:</p>
@@ -712,9 +793,66 @@ None: if no response awaited (request is an event or a broadcast command or if t
 </ul>
 </div></blockquote>
 <dl class="py method">
+<dt id="cleep.common.MessageResponse.fill_from_dict">
+<code class="sig-name descname">fill_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse.fill_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill from dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>response</strong> (<em>dict</em>) – response as dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.common.MessageResponse.fill_from_response">
+<code class="sig-name descname">fill_from_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse.fill_from_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill from other response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>response</strong> (<a class="reference internal" href="#cleep.common.MessageResponse" title="cleep.common.MessageResponse"><em>MessageResponse</em></a>) – message response instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="cleep.common.MessageResponse.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.MessageResponse.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return message response</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="cleep.common.PeerInfos">
+<em class="property">class </em><code class="sig-name descname">PeerInfos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ident</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hostname</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ip</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">80</span></em>, <em class="sig-param"><span class="n">ssl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">macs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cleepdesktop</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">extra</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.PeerInfos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Stores peer informations</p>
+<dl class="py method">
+<dt id="cleep.common.PeerInfos.fill_from_dict">
+<code class="sig-name descname">fill_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">peer_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.PeerInfos.fill_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill infos from dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>peer_infos</strong> (<em>dict</em>) – peer informations</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.common.PeerInfos.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">with_extra</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.common.PeerInfos.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return peer infos as dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>with_extra</strong> (<em>bool</em>) – add extra data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>peer infos</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -828,6 +966,44 @@ None: if no response awaited (request is an event or a broadcast command or if t
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.core.Cleep.send_command_to_peer">
+<code class="sig-name descname">send_command_to_peer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">to</span></em>, <em class="sig-param"><span class="n">peer_uuid</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.send_command_to_peer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send command to specified peer through external bus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>string</em>) – command name.</p></li>
+<li><p><strong>to</strong> (<em>string</em>) – command recipient. If None the command is broadcasted but you’ll get no reponse in return.</p></li>
+<li><p><strong>peer_uuid</strong> (<em>string</em>) – peer uuid</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – command parameters. Default None</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – timeout. Default 5 seconds</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>message response instance</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cleep.common.MessageResponse" title="cleep.common.MessageResponse">MessageResponse</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.core.Cleep.send_event_to_peer">
+<code class="sig-name descname">send_event_to_peer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">peer_uuid</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.send_event_to_peer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send event to specified peer through external bus</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> (<em>string</em>) – event name</p></li>
+<li><p><strong>peer_uuid</strong> (<em>string</em>) – peer uuid</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – event parameters. Default None</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -1400,6 +1576,14 @@ See CleepResource for more information.</p>
 <dt id="cleep.inventory.Inventory.reload_modules">
 <code class="sig-name descname">reload_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.reload_modules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reload modules refreshing only not installed modules</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.inventory.Inventory.rpc_wrapper">
+<code class="sig-name descname">rpc_wrapper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">route</span></em>, <em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.inventory.Inventory.rpc_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rpc wrapper is called by rpc server when default / POST route is called.
+Inventory get all loaded CleepRpcWrapperModule modules and push the bottle request object.
+See bottle documentation for request object description <a class="reference external" href="https://bottlepy.org/docs/dev/tutorial.html#request-data">https://bottlepy.org/docs/dev/tutorial.html#request-data</a></p>
 </dd></dl>
 
 <dl class="py method">

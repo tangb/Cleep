@@ -706,10 +706,8 @@ After timeout command is killed so use timeout to record specific duration.</p>
 <em class="property">class </em><code class="sig-name descname">Ifconfig</code><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Command /sbin/ifconfig</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p>Command ifconfig parsing is replaced by netifaces library</p>
-</div>
 <dl class="py attribute">
 <dt id="cleep.libs.commands.ifconfig.Ifconfig.CACHE_DURATION">
 <code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.ifconfig.Ifconfig.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
@@ -917,8 +915,11 @@ Return wireless network interface infos.</p>
 <dl class="py method">
 <dt id="cleep.libs.commands.iwconfig.Iwconfig.set_network_to_connect_to">
 <code class="sig-name descname">set_network_to_connect_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em>, <em class="sig-param"><span class="n">network</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iwconfig.Iwconfig.set_network_to_connect_to" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connect interface to specified network
-/!May not work as expected</p>
+<dd><p>Connect interface to specified network</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>May not work as expected, so please don’t use it</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1269,10 +1270,8 @@ Return wireless network interface infos.</p>
 <em class="property">class </em><code class="sig-name descname">Wpacli</code><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
 <p>Command /sbin/wpa_cli helper</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p>Man page <a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_cli">https://www.freebsd.org/cgi/man.cgi?wpa_cli</a></p>
-</div>
 <dl class="py attribute">
 <dt id="cleep.libs.commands.wpacli.Wpacli.STATES">
 <code class="sig-name descname">STATES</code><em class="property"> = ['DISCONNECTED', 'INTERFACE_DISABLED', 'INACTIVE', 'SCANNING', 'AUTHENTICATING', 'ASSOCIATING', 'ASSOCIATED', '4WAY_HANDSHAKE', 'GROUP_HANDSHAKE', 'COMPLETED']</em><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.STATES" title="Permalink to this definition">¶</a></dt>
@@ -1352,10 +1351,8 @@ Return wireless network interface infos.</p>
 <dt id="cleep.libs.commands.wpacli.Wpacli.add_network">
 <code class="sig-name descname">add_network</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span></em>, <em class="sig-param"><span class="n">encryption</span></em>, <em class="sig-param"><span class="n">password</span></em>, <em class="sig-param"><span class="n">hidden</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.add_network" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start specified interface</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf(5">https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf(5</a>)</p>
-</div>
+<p class="rubric">Notes</p>
+<p><a class="reference external" href="https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf%285%29">https://www.freebsd.org/cgi/man.cgi?wpa_supplicant.conf%285%29</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1429,17 +1426,25 @@ Return wireless network interface infos.</p>
 
 <dl class="py method">
 <dt id="cleep.libs.commands.wpacli.Wpacli.get_status">
-<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.get_status" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.wpacli.Wpacli.get_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return interface status</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface to get status</p>
+<dd class="field-odd"><p><strong>interface_name</strong> (<em>string</em>) – interface name to get status on</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>network and state info</p>
+<dd class="field-even"><p><p>wifi interface status:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">connected</span> <span class="n">network</span> <span class="n">name</span>
+    <span class="n">state</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">state</span> <span class="n">info</span> <span class="p">(</span><span class="n">see</span> <span class="n">STATE_XXX</span><span class="p">)</span>
+    <span class="n">ipaddress</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">ip</span> <span class="n">address</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>tuple (string, string)</p>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>

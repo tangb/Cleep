@@ -419,6 +419,20 @@ keeping original one clean.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="cleep.libs.tests.session.TestSession.assert_event_called_with">
+<code class="sig-name descname">assert_event_called_with</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_name</span></em>, <em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.assert_event_called_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert event called with</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>string</em>) – event name</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – event parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="cleep.libs.tests.session.TestSession.clean">
 <code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.tests.session.TestSession.clean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clean all stuff.
@@ -585,7 +599,7 @@ keeping original one clean.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>command_name</strong> (<em>string</em>) – command name</p></li>
-<li><p><strong>data</strong> (<em>any</em>) – data to return as command result</p></li>
+<li><p><strong>data</strong> (<em>any</em>) – command result</p></li>
 <li><p><strong>fail</strong> (<em>bool</em>) – set True to simulate command failure</p></li>
 <li><p><strong>no_response</strong> (<em>bool</em>) – set True to simulate command no response</p></li>
 </ul>

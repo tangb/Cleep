@@ -1232,10 +1232,8 @@ Please note only results with subgroups are returned.</p>
 <em class="property">class </em><code class="sig-name descname">DhcpcdConf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">backup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.libs.configs.config.Config" title="cleep.libs.configs.config.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.configs.config.Config</span></code></a></p>
 <p>Helper class to update and read /etc/dhcpcd.conf file.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p>see <a class="reference external" href="https://wiki.archlinux.org/index.php/dhcpcd">https://wiki.archlinux.org/index.php/dhcpcd</a></p>
-</div>
 <dl class="py attribute">
 <dt id="cleep.libs.configs.dhcpcdconf.DhcpcdConf.CONF">
 <code class="sig-name descname">CONF</code><em class="property"> = '/etc/dhcpcd.conf'</em><a class="headerlink" href="#cleep.libs.configs.dhcpcdconf.DhcpcdConf.CONF" title="Permalink to this definition">¶</a></dt>
@@ -1343,7 +1341,7 @@ None: if interface is not configured</p>
         <span class="n">group</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">regexp</span> <span class="n">group</span>
         <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">interface</span> <span class="n">name</span>
         <span class="n">netmask</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">netmask</span>
-        <span class="n">fallback</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">interface</span> <span class="ow">is</span> <span class="n">fallback</span> <span class="n">one</span>
+        <span class="n">fallback</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">fallback</span> <span class="n">configuration</span> <span class="n">name</span> <span class="k">if</span> <span class="nb">any</span><span class="p">,</span> <span class="kc">None</span> <span class="n">otherwise</span>
         <span class="n">ip_address</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">configured</span> <span class="n">ip</span> <span class="n">address</span>
         <span class="n">gateway</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">gateway</span> <span class="n">ip</span> <span class="n">address</span>
         <span class="n">dns_address</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">dns</span> <span class="n">ip</span> <span class="n">address</span>
@@ -2503,10 +2501,8 @@ Used to have something to parse file in case of error</p>
 <dd><p>Bases: <a class="reference internal" href="#cleep.libs.configs.config.Config" title="cleep.libs.configs.config.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.configs.config.Config</span></code></a></p>
 <p>Helper class to update and read /etc/wpa_supplicant/wpa_supplicant.conf file
 This class is not thread safe due to self.CONF that can modified on the fly</p>
-<dl class="simple">
-<dt>Infos:</dt><dd><p><a class="reference external" href="https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf">https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf</a></p>
-</dd>
-</dl>
+<p class="rubric">Notes</p>
+<p><a class="reference external" href="https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf">https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf</a></p>
 <dl class="py attribute">
 <dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.CONF">
 <code class="sig-name descname">CONF</code><em class="property"> = '/etc/wpa_supplicant/wpa_supplicant.conf'</em><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.CONF" title="Permalink to this definition">¶</a></dt>
@@ -2725,7 +2721,7 @@ Password is automatically encrypted using wpa_passphrase</p>
 <dl class="py method">
 <dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country">
 <code class="sig-name descname">set_country</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country" title="Permalink to this definition">¶</a></dt>
-<dd><p>Configure country in wpa_supplicant conf file</p>
+<dd><p>Configure country in all wpa_supplicant conf files</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>country</strong> (<em>string</em>) – country name to set</p>

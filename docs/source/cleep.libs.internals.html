@@ -953,6 +953,8 @@ You can execute command right now using command method or after a certain amount
 <dt id="cleep.libs.internals.console.Console.command">
 <code class="sig-name descname">command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">2.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.Console.command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute specified command line with auto kill after timeout</p>
+<p class="rubric">Notes</p>
+<p>This function is blocking</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -989,7 +991,8 @@ You can execute command right now using command method or after a certain amount
 <li><p><strong>command</strong> (<em>string</em>) – command to execute</p></li>
 <li><p><strong>delay</strong> (<em>int</em>) – time to wait before executing command (milliseconds)</p></li>
 <li><p><strong>timeout</strong> (<em>float</em>) – timeout before killing command</p></li>
-<li><p><strong>callback</strong> (<em>function</em>) – function called when command is over. Callback will received command result as single function parameter</p></li>
+<li><p><strong>callback</strong> (<em>function</em>) – function called when command is over. Callback will received command
+result as single function parameter</p></li>
 </ul>
 </dd>
 </dl>
@@ -1653,17 +1656,12 @@ Call cancel instance function to stop current download</p>
 <span id="cleep-libs-internals-event-module"></span><h1>cleep.libs.internals.event module<a class="headerlink" href="#module-cleep.libs.internals.event" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="cleep.libs.internals.event.Event">
-<em class="property">class </em><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bus</span></em>, <em class="sig-param"><span class="n">formatters_broker</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.event.Event" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.event.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base event class</p>
 <dl class="py attribute">
 <dt id="cleep.libs.internals.event.Event.EVENT_CHARTABLE">
 <code class="sig-name descname">EVENT_CHARTABLE</code><em class="property"> = False</em><a class="headerlink" href="#cleep.libs.internals.event.Event.EVENT_CHARTABLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="cleep.libs.internals.event.Event.EVENT_CORE">
-<code class="sig-name descname">EVENT_CORE</code><em class="property"> = False</em><a class="headerlink" href="#cleep.libs.internals.event.Event.EVENT_CORE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -1674,6 +1672,11 @@ Call cancel instance function to stop current download</p>
 <dl class="py attribute">
 <dt id="cleep.libs.internals.event.Event.EVENT_PARAMS">
 <code class="sig-name descname">EVENT_PARAMS</code><em class="property"> = []</em><a class="headerlink" href="#cleep.libs.internals.event.Event.EVENT_PARAMS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.internals.event.Event.EVENT_PROPAGATE">
+<code class="sig-name descname">EVENT_PROPAGATE</code><em class="property"> = False</em><a class="headerlink" href="#cleep.libs.internals.event.Event.EVENT_PROPAGATE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1733,11 +1736,25 @@ Call cancel instance function to stop current download</p>
 <li><p><strong>render</strong> (<em>bool</em>) – also propagate event to renderer. False to disable it</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if event sent successfully</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception if parameters are invalid</strong> – </p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.event.Event.send_to_peer">
+<code class="sig-name descname">send_to_peer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">peer_uuid</span></em>, <em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">device_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.event.Event.send_to_peer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push event to peer through external bus</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>peer_uuid</strong> (<em>string</em>) – peer uuid</p></li>
+<li><p><strong>params</strong> (<em>dict</em>) – event parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception if parameters are invalid</strong> – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -1750,7 +1767,7 @@ Call cancel instance function to stop current download</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>renderer_name</strong> (<em>string</em>) – renderer name</p></li>
-<li><p><strong>renderable</strong> (<em>bool</em>) – True to render event for specified renderer</p></li>
+<li><p><strong>renderable</strong> (<em>bool</em>) – True to render event for specified renderer, False to disable rendering</p></li>
 </ul>
 </dd>
 </dl>
@@ -1893,43 +1910,23 @@ This also reduces bus complexity.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="cleep.libs.internals.externalbus.ExternalBus.COMMAND_RESPONSE_EVENT">
+<code class="sig-name descname">COMMAND_RESPONSE_EVENT</code><em class="property"> = 'external.command.response'</em><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.COMMAND_RESPONSE_EVENT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus.broadcast_event">
-<code class="sig-name descname">broadcast_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">device_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.broadcast_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>broadcast event message to all connected peers</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Must be implemented</p>
-</div>
+<dt id="cleep.libs.internals.externalbus.ExternalBus.on_message_received">
+<code class="sig-name descname">on_message_received</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">peer_id</span></em>, <em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.on_message_received" title="Permalink to this definition">¶</a></dt>
+<dd><p>On message received event</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<em>string</em>) – event name</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – event parameters</p></li>
-<li><p><strong>device_id</strong> (<em>uuid</em>) – device identifier that emits event</p></li>
+<li><p><strong>peer_id</strong> (<em>string</em>) – peer identifier</p></li>
+<li><p><strong>message</strong> (<a class="reference internal" href="cleep.html#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – request message</p></li>
 </ul>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus.get_peer_infos">
-<code class="sig-name descname">get_peer_infos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">peer_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.get_peer_infos" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return peer infos</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>peer_id</strong> (<em>string</em>) – peer identifier</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict or None if peer not found</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus.get_peers">
-<code class="sig-name descname">get_peers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.get_peers" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return connected peers</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1953,77 +1950,16 @@ This also reduces bus complexity.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.externalbus.ExternalBus.send_event">
-<code class="sig-name descname">send_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">params</span></em>, <em class="sig-param"><span class="n">device_id</span></em>, <em class="sig-param"><span class="n">peer_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.send_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Send event message to specified peer</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Must be implemented</p>
-</div>
+<dt id="cleep.libs.internals.externalbus.ExternalBus.send_message">
+<code class="sig-name descname">send_message</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="n">manual_response</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBus.send_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send message (broadcast or to recipient) to outside</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> (<em>string</em>) – event name</p></li>
-<li><p><strong>params</strong> (<em>dict</em>) – event parameters</p></li>
-<li><p><strong>device_id</strong> (<em>uuid</em>) – device identifier that emits event</p></li>
-<li><p><strong>peer_id</strong> (<em>string</em>) – message recipient</p></li>
+<li><p><strong>message</strong> (<a class="reference internal" href="cleep.html#cleep.common.MessageRequest" title="cleep.common.MessageRequest"><em>MessageRequest</em></a>) – message request instance</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – command timeout</p></li>
+<li><p><strong>manual_response</strong> (<em>function</em>) – function to call to send back command response</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="cleep.libs.internals.externalbus.ExternalBusMessage">
-<em class="property">class </em><code class="sig-name descname">ExternalBusMessage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">peer_infos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBusMessage" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Handle ExternalBus message data</p>
-<dl class="py method">
-<dt id="cleep.libs.internals.externalbus.ExternalBusMessage.to_dict">
-<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBusMessage.to_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build dict with class content</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>members on a dict:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
-    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">identifier</span>
-    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="n">to</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">message</span> <span class="n">recipient</span>
-    <span class="n">peers_macs</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">peers</span> <span class="n">mac</span> <span class="n">addresses</span>
-    <span class="n">peer_hostname</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">peer</span> <span class="n">hostname</span>
-    <span class="n">peer_ip</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">current</span> <span class="n">peer</span> <span class="n">ip</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.externalbus.ExternalBusMessage.to_reduced_dict">
-<code class="sig-name descname">to_reduced_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.externalbus.ExternalBusMessage.to_reduced_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build dict with minimum class content.
-It’s useful to get reduced dict when you send message through external bus</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>minimum members on dict:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
-    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">identifier</span>
-    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span> <span class="p">(</span><span class="n">can</span> <span class="n">be</span> <span class="kc">None</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2049,11 +1985,6 @@ It’s useful to get reduced dict when you send message through external bus</p>
 </ul>
 </div></blockquote>
 <dl class="py attribute">
-<dt id="cleep.libs.internals.install.Install.STATUS_CANCELED">
-<code class="sig-name descname">STATUS_CANCELED</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_CANCELED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt id="cleep.libs.internals.install.Install.STATUS_DONE">
 <code class="sig-name descname">STATUS_DONE</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_DONE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2072,12 +2003,6 @@ It’s useful to get reduced dict when you send message through external bus</p>
 <dt id="cleep.libs.internals.install.Install.STATUS_PROCESSING">
 <code class="sig-name descname">STATUS_PROCESSING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_PROCESSING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.cancel">
-<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.cancel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Cancel current install</p>
-</dd></dl>
 
 <dl class="py method">
 <dt id="cleep.libs.internals.install.Install.get_status">
@@ -2113,7 +2038,7 @@ It’s useful to get reduced dict when you send message through external bus</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed</p>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2123,37 +2048,34 @@ It’s useful to get reduced dict when you send message through external bus</p>
 
 <dl class="py method">
 <dt id="cleep.libs.internals.install.Install.install_deb">
-<code class="sig-name descname">install_deb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deb</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_deb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install .deb file using dpkg
-Cannot be canceled once launched</p>
+<code class="sig-name descname">install_deb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deb_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_deb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install .deb file using dpkg</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if install succeed or None if non blocking</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>deb_path</strong> (<em>string</em>) – path to deb package</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="cleep.libs.internals.install.Install.install_module">
-<code class="sig-name descname">install_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">module_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">install_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">module_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Install specified module</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This function does not handle filesystem because process could be async.
-So take care to enable/disable writings before/after calling it.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>module</strong> (<em>string</em>) – module name to install</p></li>
+<li><p><strong>module_name</strong> (<em>string</em>) – module name to install</p></li>
 <li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module installed or None if non blocking</p>
+<dd class="field-even"><p>True if module installed (in blocking mode only)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2170,7 +2092,7 @@ So take care to enable/disable writings before/after calling it.</p>
 <dd class="field-odd"><p><strong>package_name</strong> (<em>string</em>) – package name to install</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed</p>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2186,7 +2108,7 @@ So take care to enable/disable writings before/after calling it.</p>
 
 <dl class="py method">
 <dt id="cleep.libs.internals.install.Install.uninstall_module">
-<code class="sig-name descname">uninstall_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">module_infos</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.uninstall_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uninstall_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">module_infos</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.uninstall_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uninstall specified module</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2196,13 +2118,13 @@ So take care to enable/disable writings before calling it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>module</strong> (<em>string</em>) – module name to uninstall</p></li>
+<li><p><strong>module_name</strong> (<em>string</em>) – module name to uninstall</p></li>
 <li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
 <li><p><strong>force</strong> (<em>bool</em>) – uninstall module and continue if error occured</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module uninstalled or None if non blocking</p>
+<dd class="field-even"><p>True if module uninstalled (in blocking mode only)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2222,7 +2144,7 @@ So take care to enable/disable writings before calling it.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed</p>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2232,7 +2154,7 @@ So take care to enable/disable writings before calling it.</p>
 
 <dl class="py method">
 <dt id="cleep.libs.internals.install.Install.update_module">
-<code class="sig-name descname">update_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">module_infos</span></em>, <em class="sig-param"><span class="n">force_uninstall</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.update_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">new_module_infos</span></em>, <em class="sig-param"><span class="n">force_uninstall</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.update_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update specified module
 An update executes consecutively uninstall and install action</p>
 <div class="admonition warning">
@@ -2243,13 +2165,13 @@ So take care to enable/disable writings before calling it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>module</strong> (<em>string</em>) – module name</p></li>
-<li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
+<li><p><strong>module_name</strong> (<em>string</em>) – module name</p></li>
+<li><p><strong>new_modules_infos</strong> (<em>dict</em>) – module infos as reported in modules.json</p></li>
 <li><p><strong>force_uninstall</strong> (<em>bool</em>) – force module uninstall even if error occured</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module updated or None if non blocking</p>
+<dd class="field-even"><p>True if module updated (in blocking mode only)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2581,7 +2503,7 @@ This class executes preuninstall script, removes all installed files and execute
 
 <dl class="py class">
 <dt id="cleep.libs.internals.installmodule.UpdateModule">
-<em class="property">class </em><code class="sig-name descname">UpdateModule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">current_module_infos</span></em>, <em class="sig-param"><span class="n">new_module_infos</span></em>, <em class="sig-param"><span class="n">force_uninstall</span></em>, <em class="sig-param"><span class="n">status_callback</span></em>, <em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">crash_report</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UpdateModule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">UpdateModule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">new_module_infos</span></em>, <em class="sig-param"><span class="n">force_uninstall</span></em>, <em class="sig-param"><span class="n">status_callback</span></em>, <em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">crash_report</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installmodule.UpdateModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
 <p>Update CleepOS module</p>
 <dl class="py attribute">
@@ -3232,14 +3154,14 @@ Alias to get_local_sunset_time for current date</p>
 <span id="cleep-libs-internals-task-module"></span><h1>cleep.libs.internals.task module<a class="headerlink" href="#module-cleep.libs.internals.task" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="cleep.libs.internals.task.CountTask">
-<em class="property">class </em><code class="sig-name descname">CountTask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">task</span></em>, <em class="sig-param"><span class="n">logger</span></em>, <em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">task_args</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">task_kwargs</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.task.CountTask" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">CountTask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">task</span></em>, <em class="sig-param"><span class="n">logger</span></em>, <em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">task_args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">task_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.task.CountTask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.libs.internals.task.Task" title="cleep.libs.internals.task.Task"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.task.Task</span></code></a></p>
 <p>Run task X times</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="cleep.libs.internals.task.Task">
-<em class="property">class </em><code class="sig-name descname">Task</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">task</span></em>, <em class="sig-param"><span class="n">logger</span></em>, <em class="sig-param"><span class="n">task_args</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">task_kwargs</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">end_callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.task.Task" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Task</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interval</span></em>, <em class="sig-param"><span class="n">task</span></em>, <em class="sig-param"><span class="n">logger</span></em>, <em class="sig-param"><span class="n">task_args</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">task_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_callback</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.task.Task" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Run a task asynchronously.</p>
 <p>If interval is specified task is executed periodically.
@@ -3282,6 +3204,25 @@ If interval is None or 0 task is executed immediately and only once</p>
 <div class="section" id="module-cleep.libs.internals.tools">
 <span id="cleep-libs-internals-tools-module"></span><h1>cleep.libs.internals.tools module<a class="headerlink" href="#module-cleep.libs.internals.tools" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
+<dt id="cleep.libs.internals.tools.cidr_to_netmask">
+<code class="sig-name descname">cidr_to_netmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cidr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.cidr_to_netmask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert cidr to netmask</p>
+<p class="rubric">Notes</p>
+<p><a class="reference external" href="http://www.linuxquestions.org/questions/blog/bittner-195120/cidr-to-netmask-conversion-with-python-convert-short-netmask-to-long-dotted-format-3147/">http://www.linuxquestions.org/questions/blog/bittner-195120/cidr-to-netmask-conversion-with-python-convert-short-netmask-to-long-dotted-format-3147/</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>cidr</strong> (<em>int</em>) – cidr value</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>netmask (ie 255.255.255.0)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="cleep.libs.internals.tools.compare_versions">
 <code class="sig-name descname">compare_versions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">old_version</span></em>, <em class="sig-param"><span class="n">new_version</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.compare_versions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare specified version and return True if new version is strictly greater than old one</p>
@@ -3305,10 +3246,8 @@ If interval is None or 0 task is executed immediately and only once</p>
 <dt id="cleep.libs.internals.tools.dbm_to_percent">
 <code class="sig-name descname">dbm_to_percent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dbm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.dbm_to_percent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert dbm signal level to percentage</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p>Article here <a class="reference external" href="https://www.adriangranados.com/blog/dbm-to-percent-conversion">https://www.adriangranados.com/blog/dbm-to-percent-conversion</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>dbm</strong> (<em>int</em>) – dbm value</p>
@@ -3346,10 +3285,8 @@ If interval is None or 0 task is executed immediately and only once</p>
 <dt id="cleep.libs.internals.tools.full_split_path">
 <code class="sig-name descname">full_split_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.full_split_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split path completely /home/test/test.txt =&gt; [‘/’, ‘home’, ‘test’, ‘test.py’]</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p>code from <a class="reference external" href="https://www.safaribooksonline.com/library/view/python-cookbook/0596001673/ch04s16.html">https://www.safaribooksonline.com/library/view/python-cookbook/0596001673/ch04s16.html</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>list of path parts</p>
@@ -3364,10 +3301,8 @@ If interval is None or 0 task is executed immediately and only once</p>
 <dt id="cleep.libs.internals.tools.hr_bytes">
 <code class="sig-name descname">hr_bytes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.hr_bytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Human readable bytes value</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p><a class="reference external" href="http://code.activestate.com/recipes/578019">http://code.activestate.com/recipes/578019</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – bytes</p>
@@ -3385,10 +3320,8 @@ If interval is None or 0 task is executed immediately and only once</p>
 <dt id="cleep.libs.internals.tools.hr_uptime">
 <code class="sig-name descname">hr_uptime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uptime</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.hr_uptime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Human readable uptime (in days/hours/minutes/seconds)</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p><a class="reference external" href="http://unix.stackexchange.com/a/27014">http://unix.stackexchange.com/a/27014</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>uptime</strong> (<em>int</em>) – uptime value</p>
@@ -3439,25 +3372,44 @@ Credits <a class="reference external" href="https://gist.github.com/numberoverze
 </dd></dl>
 
 <dl class="py function">
+<dt id="cleep.libs.internals.tools.netmask_to_cidr">
+<code class="sig-name descname">netmask_to_cidr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">netmask</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.netmask_to_cidr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert netmask to cidr format</p>
+<p class="rubric">Notes</p>
+<p>code from <a class="reference external" href="https://stackoverflow.com/a/43885814">https://stackoverflow.com/a/43885814</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netmask</strong> (<em>string</em>) – netmask address</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>cidr value</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="cleep.libs.internals.tools.raspberry_pi_infos">
 <code class="sig-name descname">raspberry_pi_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.raspberry_pi_infos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns infos about current raspberry pi board</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p><a class="reference external" href="https://elinux.org/RPi_HardwareHistory#Board_Revision_History">https://elinux.org/RPi_HardwareHistory#Board_Revision_History</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><p>raspberry pi board infos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">date</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">release</span> <span class="n">date</span>
-    <span class="n">model</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">model</span>
+    <span class="n">model</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">raspberry</span> <span class="n">pi</span> <span class="n">model</span>
     <span class="n">pcbrevision</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">PCB</span> <span class="n">revision</span>
+    <span class="n">ethernet</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">ethernet</span> <span class="ow">is</span> <span class="n">natively</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span>
+    <span class="n">wireless</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">wifi</span> <span class="ow">is</span> <span class="n">natively</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span><span class="p">,</span>
+    <span class="n">audio</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">audio</span> <span class="ow">is</span> <span class="n">natively</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span>
+    <span class="n">gpiopins</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">number</span> <span class="n">of</span> <span class="n">pins</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span>
     <span class="n">memory</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">memory</span> <span class="n">amount</span>
-    <span class="n">notes</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">extra</span> <span class="n">infos</span> <span class="n">about</span> <span class="n">raspberry</span> <span class="n">pi</span>
-    <span class="n">ethernet</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">natively</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span>
-    <span class="n">wireless</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">natively</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span>
-    <span class="n">audio</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">natively</span> <span class="n">available</span> <span class="n">on</span> <span class="n">board</span>
+    <span class="n">notes</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">notes</span> <span class="n">on</span> <span class="n">board</span>
+    <span class="n">revision</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">raspberry</span> <span class="n">pi</span> <span class="n">revision</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -3474,10 +3426,8 @@ Credits <a class="reference external" href="https://gist.github.com/numberoverze
 <code class="sig-name descname">wpa_passphrase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ssid</span></em>, <em class="sig-param"><span class="n">password</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.tools.wpa_passphrase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Python implementation of wpa_passphrase linux utility
 It generates wpa_passphrase for wifi network connection</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="rubric">Notes</p>
 <p>Copied from <a class="reference external" href="https://github.com/julianofischer/python-wpa-psk-rawkey-gen/blob/master/rawkey-generator.py">https://github.com/julianofischer/python-wpa-psk-rawkey-gen/blob/master/rawkey-generator.py</a></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
