@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="_static/_static/cleep.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
@@ -19,7 +24,9 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -31,12 +38,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/cleep.css" type="text/css" />
-  <link rel="stylesheet" href="_static/_static/cleep.css" type="text/css" />
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -52,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Cleep core API
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Cleep core API
           
 
           
@@ -82,6 +83,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -199,6 +201,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -237,7 +240,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Index</li>
     
@@ -1117,6 +1120,8 @@
       </ul></li>
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG">DEFAULT_CONFIG (CleepConf attribute)</a>
 </li>
+      <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.DEFAULT_CONTENT">DEFAULT_CONTENT (WpaSupplicantConf attribute)</a>
+</li>
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.cleepwificonf.CleepWifiConf.delete">delete() (CleepWifiConf method)</a>
 
       <ul>
@@ -1333,8 +1338,6 @@
 </li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.event.Event.EVENT_PROPAGATE">EVENT_PROPAGATE (Event attribute)</a>
 </li>
-      <li><a href="source/cleep.html#cleep.core.Cleep.event_received">event_received() (Cleep method)</a>
-</li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.eventsbroker.EventsBroker">EventsBroker (class in cleep.libs.internals.eventsbroker)</a>
 </li>
       <li><a href="source/cleep.html#cleep.common.ExecutionStep">ExecutionStep (class in cleep.common)</a>
@@ -1468,6 +1471,10 @@
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.config.Config.get_content">get_content() (Config method)</a>
 </li>
       <li><a href="source/cleep.libs.tests.html#cleep.libs.tests.lib.FileDescriptorMock.get_content_hashes">get_content_hashes() (FileDescriptorMock method)</a>
+</li>
+      <li><a href="source/cleep.libs.drivers.html#cleep.libs.drivers.audiodriver.AudioDriver.get_control_numid">get_control_numid() (AudioDriver method)</a>
+</li>
+      <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.alsa.Alsa.get_controls">get_controls() (Alsa method)</a>
 </li>
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.etcasoundconf.EtcAsoundConf.get_default_ctl_section">get_default_ctl_section() (EtcAsoundConf method)</a>
 </li>
@@ -1619,6 +1626,8 @@
 </li>
       <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.alsa.Alsa.get_selected_device">get_selected_device() (Alsa method)</a>
 </li>
+      <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.alsa.Alsa.get_simple_controls">get_simple_controls() (Alsa method)</a>
+</li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.console.EndlessConsole.get_start_time">get_start_time() (EndlessConsole method)</a>
 </li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.install.Install.get_status">get_status() (Install method)</a>
@@ -1665,12 +1674,16 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.iwlist.Iwlist.has_error">has_error() (Iwlist method)</a>
+      <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.has_config">has_config() (WpaSupplicantConf method)</a>
 </li>
-      <li><a href="source/cleep.html#cleep.common.CATEGORIES.HOMEAUTOMATION">HOMEAUTOMATION (CATEGORIES attribute)</a>
+      <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.has_country">has_country() (WpaSupplicantConf method)</a>
+</li>
+      <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.iwlist.Iwlist.has_error">has_error() (Iwlist method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/cleep.html#cleep.common.CATEGORIES.HOMEAUTOMATION">HOMEAUTOMATION (CATEGORIES attribute)</a>
+</li>
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.hostname.Hostname">Hostname (class in cleep.libs.configs.hostname)</a>
 </li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.tools.hr_bytes">hr_bytes() (in module cleep.libs.internals.tools)</a>
@@ -2108,6 +2121,8 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/cleep.html#cleep.core.Cleep.on_event">on_event() (Cleep method)</a>
+</li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.externalbus.ExternalBus.on_message_received">on_message_received() (ExternalBus method)</a>
 </li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.cleepfilesystem.CleepFilesystem.open">open() (CleepFilesystem method)</a>
@@ -2316,6 +2331,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.alsa.Alsa.save">save() (Alsa method)</a>
 </li>
+      <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.save_default_config">save_default_config() (WpaSupplicantConf method)</a>
+</li>
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.etcasoundconf.EtcAsoundConf.save_default_file">save_default_file() (EtcAsoundConf method)</a>
 </li>
       <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.wpacli.Wpacli.scan_networks">scan_networks() (Wpacli method)</a>
@@ -2343,6 +2360,8 @@
       <li><a href="source/cleep.html#cleep.common.CATEGORIES.SERVICE">SERVICE (CATEGORIES attribute)</a>
 </li>
       <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country">set_country() (WpaSupplicantConf method)</a>
+</li>
+      <li><a href="source/cleep.libs.configs.html#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country_alpha2">set_country_alpha2() (WpaSupplicantConf method)</a>
 </li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.cleepfilesystem.CleepFilesystem.set_crash_report">set_crash_report() (CleepFilesystem method)</a>
 
@@ -2440,10 +2459,10 @@
       </ul></li>
       <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.wpacli.Wpacli.STATUS_CURRENT">STATUS_CURRENT (Wpacli attribute)</a>
 </li>
-      <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.wpacli.Wpacli.STATUS_DISABLED">STATUS_DISABLED (Wpacli attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="source/cleep.libs.commands.html#cleep.libs.commands.wpacli.Wpacli.STATUS_DISABLED">STATUS_DISABLED (Wpacli attribute)</a>
+</li>
       <li><a href="source/cleep.libs.internals.html#cleep.libs.internals.download.Download.STATUS_DONE">STATUS_DONE (Download attribute)</a>
 
       <ul>
@@ -2719,11 +2738,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020 Tanguy Bonneau
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2734,7 +2761,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

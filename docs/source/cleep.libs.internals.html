@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
@@ -19,7 +24,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,12 +38,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cleep.libs.tests.lib module" href="cleep.libs.tests.html" />
@@ -54,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Cleep core API
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Cleep core API
           
 
           
@@ -84,6 +85,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -201,6 +203,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -239,7 +242,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="modules.html">cleep</a> &raquo;</li>
         
@@ -886,7 +889,7 @@ Api requests are limited on free usage of github. This method returns current ra
 <p>Create console with advanced feature like find function to match pattern on stdout</p>
 <dl class="py method">
 <dt id="cleep.libs.internals.console.AdvancedConsole.find">
-<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">40</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">2.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.AdvancedConsole.find" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">command</em>, <em class="sig-param">pattern</em>, <em class="sig-param">options=&lt;RegexFlag.UNICODE|MULTILINE: 40&gt;</em>, <em class="sig-param">timeout=2.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.AdvancedConsole.find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all pattern matches in command stdout. Found order is preserved</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -915,7 +918,7 @@ Api requests are limited on free usage of github. This method returns current ra
 
 <dl class="py method">
 <dt id="cleep.libs.internals.console.AdvancedConsole.find_in_string">
-<code class="sig-name descname">find_in_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">40</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.AdvancedConsole.find_in_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_in_string</code><span class="sig-paren">(</span><em class="sig-param">string</em>, <em class="sig-param">pattern</em>, <em class="sig-param">options=&lt;RegexFlag.UNICODE|MULTILINE: 40&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.console.AdvancedConsole.find_in_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all pattern matches in specified string. Found order is respected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3457,11 +3460,19 @@ It generates wpa_passphrase for wifi network connection</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020 Tanguy Bonneau
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -3472,7 +3483,6 @@ It generates wpa_passphrase for wifi network connection</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

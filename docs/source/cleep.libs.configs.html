@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
@@ -19,7 +24,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,12 +38,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cleep.libs.drivers.audiodriver module" href="cleep.libs.drivers.html" />
@@ -54,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Cleep core API
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Cleep core API
           
 
           
@@ -84,6 +85,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -201,6 +203,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -239,7 +242,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="modules.html">cleep</a> &raquo;</li>
         
@@ -270,13 +273,14 @@
 <dt id="cleep.libs.configs.asoundrc.Asoundrc">
 <em class="property">class </em><code class="sig-name descname">Asoundrc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.asoundrc.Asoundrc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.libs.configs.config.Config" title="cleep.libs.configs.config.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.configs.config.Config</span></code></a></p>
-<p>DEPRECATED: use EtcAsoundConf instead
-Handles .asoundrc file from connected account</p>
+<p>Handles .asoundrc file from connected account</p>
 <dl class="simple">
 <dt>It handles:</dt><dd><ul class="simple">
 <li><p>default playback device configuration</p></li>
 <li><p>default capture device configuration</p></li>
 </ul>
+</dd>
+<dt>Deprecated:</dt><dd><p>This library is deprecated and will be removed. Please use EtcAsoundConf instead.</p>
 </dd>
 </dl>
 <dl class="py attribute">
@@ -768,7 +772,7 @@ For debug and test purpose only</p>
 
 <dl class="py method">
 <dt id="cleep.libs.configs.config.Config.find">
-<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">40</span></em>, <em class="sig-param"><span class="n">remove_none</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config.find" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">options=&lt;RegexFlag.UNICODE|MULTILINE: 40&gt;</em>, <em class="sig-param">remove_none=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config.find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all pattern matches in config files. Found order is respected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -796,7 +800,7 @@ For debug and test purpose only</p>
 
 <dl class="py method">
 <dt id="cleep.libs.configs.config.Config.find_in_string">
-<code class="sig-name descname">find_in_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">content</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">40</span></em>, <em class="sig-param"><span class="n">remove_none</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config.find_in_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_in_string</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">content</em>, <em class="sig-param">options=&lt;RegexFlag.UNICODE|MULTILINE: 40&gt;</em>, <em class="sig-param">remove_none=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.config.Config.find_in_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all pattern matches in specified string. Found order is respected.
 Please note only results with subgroups are returned.</p>
 <dl class="field-list simple">
@@ -2101,7 +2105,7 @@ None: if interface is not configured</p>
 
 <dl class="py attribute">
 <dt id="cleep.libs.configs.modulesjson.ModulesJson.REMOTE_URL">
-<code class="sig-name descname">REMOTE_URL</code><em class="property"> = 'https://raw.githubusercontent.com/tangb/cleep/master/modules.json'</em><a class="headerlink" href="#cleep.libs.configs.modulesjson.ModulesJson.REMOTE_URL" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">REMOTE_URL</code><em class="property"> = 'https://raw.githubusercontent.com/tangb/cleep-apps/main/modules.json'</em><a class="headerlink" href="#cleep.libs.configs.modulesjson.ModulesJson.REMOTE_URL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -2499,8 +2503,11 @@ Used to have something to parse file in case of error</p>
 <dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf">
 <em class="property">class </em><code class="sig-name descname">WpaSupplicantConf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">backup</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cleep.libs.configs.config.Config" title="cleep.libs.configs.config.Config"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.configs.config.Config</span></code></a></p>
-<p>Helper class to update and read /etc/wpa_supplicant/wpa_supplicant.conf file
-This class is not thread safe due to self.CONF that can modified on the fly</p>
+<p>Helper class to update and read /etc/wpa_supplicant/wpa_supplicant.conf file</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This class is not thread safe due to self.CONF that can be modified on the fly</p>
+</div>
 <p class="rubric">Notes</p>
 <p><a class="reference external" href="https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf">https://w1.fi/cgit/hostap/plain/wpa_supplicant/wpa_supplicant.conf</a></p>
 <dl class="py attribute">
@@ -2516,6 +2523,11 @@ This class is not thread safe due to self.CONF that can modified on the fly</p>
 <dl class="py attribute">
 <dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.DEFAULT_CONF">
 <code class="sig-name descname">DEFAULT_CONF</code><em class="property"> = '/etc/wpa_supplicant/wpa_supplicant.conf'</em><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.DEFAULT_CONF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.DEFAULT_CONTENT">
+<code class="sig-name descname">DEFAULT_CONTENT</code><em class="property"> = 'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev\nupdate_config=1\n'</em><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.DEFAULT_CONTENT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -2675,11 +2687,21 @@ Password is automatically encrypted using wpa_passphrase</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>network</strong> (<em>string</em>) – network name</p></li>
-<li><p><strong>interface</strong> (<em>string|None</em>) – if specified try to add network in specific interface wpa_supplicant.conf file</p></li>
+<li><p><strong>interface</strong> (<em>string</em>) – interface name. If not specified return config from default wpa_supplicant.conf file</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>network config, None if network is not found</p>
+<dd class="field-even"><p><p>network config, None if network is not found:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">network</span> <span class="n">name</span><span class="p">,</span>
+    <span class="n">encryption</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">encryption</span> <span class="nb">type</span> <span class="p">(</span><span class="n">see</span> <span class="n">ENCRYPTION_TYPE_XXX</span><span class="p">),</span>
+    <span class="n">password</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">password</span><span class="p">,</span>
+    <span class="n">hidden</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">hidden</span><span class="p">,</span>
+    <span class="n">disabled</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">disabled</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>dict</p>
@@ -2697,7 +2719,6 @@ Password is automatically encrypted using wpa_passphrase</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="n">interface</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">network</span> <span class="n">name</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
-            <span class="n">group</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">full</span> <span class="n">search</span> <span class="n">result</span><span class="p">,</span>
             <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">network</span> <span class="n">name</span><span class="p">,</span>
             <span class="n">password</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">password</span><span class="p">,</span>
             <span class="n">hidden</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">network</span> <span class="ow">is</span> <span class="n">hidden</span><span class="p">,</span>
@@ -2719,12 +2740,84 @@ Password is automatically encrypted using wpa_passphrase</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.has_config">
+<code class="sig-name descname">has_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.has_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if specified interface has config</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface name. If not specified check default wpa_supplicant.conf file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if wpa supplicant config file exists</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.has_country">
+<code class="sig-name descname">has_country</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.has_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if wpa_supplication conf file contains country info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface name. If not specified check default wpa_supplicant.conf file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if country is configured</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.save_default_config">
+<code class="sig-name descname">save_default_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.save_default_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save default wpa_supplicant_&lt;interface&gt;.conf for specified interface. If no interface specified, default file
+wpa_supplicant.conf will be generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>string</em>) – interface name. If not specified use default wpa_supplicant.conf file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if config file written successfully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country">
 <code class="sig-name descname">set_country</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">country</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configure country in all wpa_supplicant conf files</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>country</strong> (<em>string</em>) – country name to set</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Exception if country code is invalid</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country_alpha2">
+<code class="sig-name descname">set_country_alpha2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.wpasupplicantconf.WpaSupplicantConf.set_country_alpha2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure country in all wpa_supplicant conf files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the preferred method compare to set_country function because alpha2 codes are normalized by
+iso3166-1 while country label not. Using set_country could raises an exception if your specified
+country does not exactly match the correct value.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>alpha2</strong> (<em>string</em>) – country alpha2 code</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>Exception if country code is invalid</strong> – </p>
@@ -2791,11 +2884,19 @@ Password is automatically encrypted using wpa_passphrase</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020 Tanguy Bonneau
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2806,7 +2907,6 @@ Password is automatically encrypted using wpa_passphrase</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

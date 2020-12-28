@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
@@ -19,7 +24,9 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,12 +38,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/cleep.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/_static/cleep.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cleep.libs package" href="cleep.libs.html" />
@@ -54,7 +55,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Cleep core API
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Cleep core API
           
 
           
@@ -84,6 +85,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -201,6 +203,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -239,7 +242,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="modules.html">cleep</a> &raquo;</li>
         
@@ -451,12 +454,7 @@ Only broadcasted messages can be sent before all clients have subscribed (during
 <dl class="py method">
 <dt id="cleep.bus.MessageBus.app_configured">
 <code class="sig-name descname">app_configured</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus.app_configured" title="Permalink to this definition">¶</a></dt>
-<dd><p>Say to message bus application is configured and ready to run.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This way of proceed is dangerous if clients always broadcast messages, the bus may always stay
-blocked in “app not configured” state. But in small system like cleep, it should be fine.</p>
-</div>
+<dd><p>Set internal bus flag to say application is ready and messages can be processed</p>
 </dd></dl>
 
 <dl class="py method">
@@ -887,31 +885,6 @@ external_sender (string): specify module name that handles message from external
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="cleep.core.Cleep.event_received">
-<code class="sig-name descname">event_received</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.event_received" title="Permalink to this definition">¶</a></dt>
-<dd><p>Event message received</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Implement this function to handle event on your module</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<em>dict</em>) – <p>MessageRequest as dict with event values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
-    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span>
-    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">that</span> <span class="n">emits</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span>
-    <span class="n">sender</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">sender</span>
-    <span class="n">startup</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">startup</span> <span class="n">event</span> <span class="n">flag</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="cleep.core.Cleep.get_module_commands">
 <code class="sig-name descname">get_module_commands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.get_module_commands" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return available module commands.</p>
@@ -966,6 +939,31 @@ external_sender (string): specify module name that handles message from external
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.core.Cleep.on_event">
+<code class="sig-name descname">on_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.core.Cleep.on_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event message received</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Implement this function to handle event on your module</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>dict</em>) – <p>MessageRequest as dict with event values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">event</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">name</span>
+    <span class="n">params</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">event</span> <span class="n">parameters</span>
+    <span class="n">device_id</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">that</span> <span class="n">emits</span> <span class="n">event</span> <span class="ow">or</span> <span class="kc">None</span>
+    <span class="n">sender</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">event</span> <span class="n">sender</span>
+    <span class="n">startup</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="n">startup</span> <span class="n">event</span> <span class="n">flag</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1646,11 +1644,19 @@ See bottle documentation for request object description <a class="reference exte
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020 Tanguy Bonneau
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1661,7 +1667,6 @@ See bottle documentation for request object description <a class="reference exte
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
