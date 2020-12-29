@@ -4,17 +4,18 @@
 .wy-side-nav-search {
     background: #607d8b !important;
 }
-.rst-content dl:not(.docutils) dt {
-    color: #d32f2f !important;
-    background: #ffcdd2 !important;
-    border-top: solid 3px #b71c1c !important;
- }
-.rst-content dl:not(.docutils) dl dt {
+
+.rst-content .py.attribute {
+    background: #eceff1 !important;
+}
+
+.rst-content .py.method {
     border: none !important;
     border-left: solid 3px #d32f2f !important;
     background: #eceff1 !important;
     color: #607d8b !important;
 }
+
 a:visited, a:hover {
     color: #d32f2f;
 }
@@ -32,5 +33,11 @@ a:hover.icon.icon-home {
 }
 a.reference.internal.current {
     color: #D32F2F;
+}
+a.reference.internal {
+    color: #000000;
+}
+a:visited.reference.internal {
+    color: #000000;
 }
 
