@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cleep.libs.commands.alsa module &mdash; Cleep core API 0.0.21 documentation</title>
+  <title>cleep.libs.commands.alsa module &mdash; Cleep core API 0.0.22 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.0.21
+                0.0.22
               </div>
             
           
@@ -111,13 +111,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.ip">cleep.libs.commands.ip module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.rfkill">cleep.libs.commands.rfkill module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
 </ul>
@@ -125,6 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html">cleep.libs.configs.asoundrc module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
@@ -137,7 +140,6 @@
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
 </ul>
 </li>
@@ -159,10 +161,10 @@
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
@@ -831,32 +833,34 @@ It also uses /sbin/ip command</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-cleep.libs.commands.iw">
-<span id="cleep-libs-commands-iw-module"></span><h1>cleep.libs.commands.iw module<a class="headerlink" href="#module-cleep.libs.commands.iw" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-cleep.libs.commands.ip">
+<span id="cleep-libs-commands-ip-module"></span><h1>cleep.libs.commands.ip module<a class="headerlink" href="#module-cleep.libs.commands.ip" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="cleep.libs.commands.iw.Iw">
-<em class="property">class </em><code class="sig-name descname">Iw</code><a class="headerlink" href="#cleep.libs.commands.iw.Iw" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.commands.ip.Ip">
+<em class="property">class </em><code class="sig-name descname">Ip</code><a class="headerlink" href="#cleep.libs.commands.ip.Ip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
-<p>Command /sbin/iw helper.
-Return wireless network interface infos.</p>
+<p>Command /sbin/ip helper.</p>
 <dl class="py attribute">
-<dt id="cleep.libs.commands.iw.Iw.CACHE_DURATION">
-<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.iw.Iw.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.commands.ip.Ip.CACHE_DURATION">
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.ip.Ip.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.commands.iw.Iw.get_adapters">
-<code class="sig-name descname">get_adapters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.get_adapters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all adapters with associated interface</p>
+<dt id="cleep.libs.commands.ip.Ip.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ip.Ip.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get network status</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>list of adapters and connected network:</p>
+<dd class="field-odd"><p><p>network status by interfaces:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">adapter</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
-        <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">associated</span> <span class="n">interface</span> <span class="n">name</span>
-        <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">connected</span> <span class="n">network</span>
-    <span class="p">},</span>
-    <span class="o">...</span>
+    <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
+        <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">interface</span> <span class="n">name</span>
+        <span class="n">ipv4</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">ipv4</span> <span class="n">address</span>
+        <span class="n">netmask</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">netmask</span>
+        <span class="n">ipv6</span> <span class="s1">&#39;string): ipv6 address</span>
+        <span class="n">prefixlen</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">ipv6</span> <span class="n">prefix</span> <span class="n">length</span>
+        <span class="n">mac</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">mac</span> <span class="n">address</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -869,15 +873,36 @@ Return wireless network interface infos.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.commands.iw.Iw.is_installed">
-<code class="sig-name descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.is_installed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if iw command is installed</p>
+<dt id="cleep.libs.commands.ip.Ip.is_installed">
+<code class="sig-name descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ip.Ip.is_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if ip command is installed</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True is installed</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.ip.Ip.restart_interface">
+<code class="sig-name descname">restart_interface</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">interface_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.ip.Ip.restart_interface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restart specified interface</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function has 5 seconds sleep so make sure to set appropriate timeout if any</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>interface_name</strong> (<em>string</em>) – interface name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if interface restarted successfully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1069,6 +1094,60 @@ Return wireless network interface infos.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-cleep.libs.commands.iw">
+<span id="cleep-libs-commands-iw-module"></span><h1>cleep.libs.commands.iw module<a class="headerlink" href="#module-cleep.libs.commands.iw" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="cleep.libs.commands.iw.Iw">
+<em class="property">class </em><code class="sig-name descname">Iw</code><a class="headerlink" href="#cleep.libs.commands.iw.Iw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.AdvancedConsole" title="cleep.libs.internals.console.AdvancedConsole"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.AdvancedConsole</span></code></a></p>
+<p>Command /sbin/iw helper.
+Return wireless network interface infos.</p>
+<dl class="py attribute">
+<dt id="cleep.libs.commands.iw.Iw.CACHE_DURATION">
+<code class="sig-name descname">CACHE_DURATION</code><em class="property"> = 5.0</em><a class="headerlink" href="#cleep.libs.commands.iw.Iw.CACHE_DURATION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.iw.Iw.get_adapters">
+<code class="sig-name descname">get_adapters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.get_adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all adapters with associated interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>list of adapters and connected network:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">adapter</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="p">{</span>
+        <span class="n">interface</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">associated</span> <span class="n">interface</span> <span class="n">name</span>
+        <span class="n">network</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">connected</span> <span class="n">network</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.iw.Iw.is_installed">
+<code class="sig-name descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.iw.Iw.is_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if iw command is installed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True is installed</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-cleep.libs.commands.lsblk">
 <span id="cleep-libs-commands-lsblk-module"></span><h1>cleep.libs.commands.lsblk module<a class="headerlink" href="#module-cleep.libs.commands.lsblk" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
@@ -1219,6 +1298,140 @@ Return wireless network interface infos.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if module unloaded successfully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.libs.commands.rfkill">
+<span id="cleep-libs-commands-rfkill-module"></span><h1>cleep.libs.commands.rfkill module<a class="headerlink" href="#module-cleep.libs.commands.rfkill" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="cleep.libs.commands.rfkill.Rfkill">
+<em class="property">class </em><code class="sig-name descname">Rfkill</code><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cleep.libs.internals.html#cleep.libs.internals.console.Console" title="cleep.libs.internals.console.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">cleep.libs.internals.console.Console</span></code></a></p>
+<p>Command /usr/sbin/rfkill helper</p>
+<dl class="py attribute">
+<dt id="cleep.libs.commands.rfkill.Rfkill.COMMAND_BLOCK">
+<code class="sig-name descname">COMMAND_BLOCK</code><em class="property"> = 'block'</em><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.COMMAND_BLOCK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.commands.rfkill.Rfkill.COMMAND_UNBLOCK">
+<code class="sig-name descname">COMMAND_UNBLOCK</code><em class="property"> = 'unblock'</em><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.COMMAND_UNBLOCK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.commands.rfkill.Rfkill.FLAG_BLOCKED">
+<code class="sig-name descname">FLAG_BLOCKED</code><em class="property"> = 'blocked'</em><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.FLAG_BLOCKED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.commands.rfkill.Rfkill.FLAG_UNBLOCKED">
+<code class="sig-name descname">FLAG_UNBLOCKED</code><em class="property"> = 'unblocked'</em><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.FLAG_UNBLOCKED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.commands.rfkill.Rfkill.TYPE_BLUETOOTH">
+<code class="sig-name descname">TYPE_BLUETOOTH</code><em class="property"> = 'bluetooth'</em><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.TYPE_BLUETOOTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.commands.rfkill.Rfkill.TYPE_WIFI">
+<code class="sig-name descname">TYPE_WIFI</code><em class="property"> = 'wlan'</em><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.TYPE_WIFI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.rfkill.Rfkill.block_device">
+<code class="sig-name descname">block_device</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">device_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.block_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block specified device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>int</em>) – device id as returned by get_xxx_infos function. If None specified block all devices</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.rfkill.Rfkill.get_bluetooth_infos">
+<code class="sig-name descname">get_bluetooth_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.get_bluetooth_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns bluetooth infos if any</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>bluetooth infos or None if no bluetooth adapter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">name</span>
+    <span class="nb">id</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">rfkill</span> <span class="n">device</span> <span class="nb">id</span>
+    <span class="n">desc</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">description</span>
+    <span class="n">blocked</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="n">blocked</span> <span class="p">(</span><span class="n">hard</span> <span class="ow">or</span> <span class="n">soft</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.rfkill.Rfkill.get_wifi_infos">
+<code class="sig-name descname">get_wifi_infos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.get_wifi_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns wifi infos if any</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>wifi infos or None if no wireless adapter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="n">device</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">name</span>
+    <span class="nb">id</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">rfkill</span> <span class="n">device</span> <span class="nb">id</span>
+    <span class="n">desc</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">device</span> <span class="n">description</span>
+    <span class="n">blocked</span> <span class="p">(</span><span class="nb">bool</span><span class="p">):</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="n">blocked</span> <span class="p">(</span><span class="n">hard</span> <span class="ow">or</span> <span class="n">soft</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.rfkill.Rfkill.is_installed">
+<code class="sig-name descname">is_installed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.is_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if rfkill is installed or not in the system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if rfkill command exists, False otherwise</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.commands.rfkill.Rfkill.unblock_device">
+<code class="sig-name descname">unblock_device</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">device_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.commands.rfkill.Rfkill.unblock_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unblock specified device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>device_id</strong> (<em>int</em>) – device id as returned by get_xxx_infos function. If None specified, unblock all devices</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if command succeed</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>

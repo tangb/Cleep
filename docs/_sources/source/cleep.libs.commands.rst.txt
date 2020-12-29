@@ -30,10 +30,10 @@ cleep.libs.commands.ifupdown module
    :undoc-members:
    :show-inheritance:
 
-cleep.libs.commands.iw module
--------------------------------
+cleep.libs.commands.ip module
+-------------------------------------
 
-.. automodule:: cleep.libs.commands.iw
+.. automodule:: cleep.libs.commands.ip
    :members:
    :undoc-members:
    :show-inheritance:
@@ -62,6 +62,14 @@ cleep.libs.commands.iwlist module
    :undoc-members:
    :show-inheritance:
 
+cleep.libs.commands.iw module
+-------------------------------
+
+.. automodule:: cleep.libs.commands.iw
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 cleep.libs.commands.lsblk module
 ----------------------------------
 
@@ -82,6 +90,14 @@ cleep.libs.commands.modprobe module
 -------------------------------------
 
 .. automodule:: cleep.libs.commands.modprobe
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cleep.libs.commands.rfkill module
+-------------------------------------
+
+.. automodule:: cleep.libs.commands.rfkill
    :members:
    :undoc-members:
    :show-inheritance:

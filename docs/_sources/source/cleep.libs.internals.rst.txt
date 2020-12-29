@@ -94,10 +94,10 @@ cleep.libs.internals.externalbus module
    :undoc-members:
    :show-inheritance:
 
-cleep.libs.internals.install module
--------------------------------------
+cleep.libs.internals.installcleep module
+--------------------------------------------
 
-.. automodule:: cleep.libs.internals.install
+.. automodule:: cleep.libs.internals.installcleep
    :members:
    :undoc-members:
    :show-inheritance:
@@ -118,10 +118,10 @@ cleep.libs.internals.installmodule module
    :undoc-members:
    :show-inheritance:
 
-cleep.libs.internals.installcleep module
---------------------------------------------
+cleep.libs.internals.install module
+-------------------------------------
 
-.. automodule:: cleep.libs.internals.installcleep
+.. automodule:: cleep.libs.internals.install
    :members:
    :undoc-members:
    :show-inheritance:

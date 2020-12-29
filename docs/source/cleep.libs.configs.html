@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cleep.libs.configs.asoundrc module &mdash; Cleep core API 0.0.21 documentation</title>
+  <title>cleep.libs.configs.asoundrc module &mdash; Cleep core API 0.0.22 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.0.21
+                0.0.22
               </div>
             
           
@@ -111,13 +111,15 @@
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ip">cleep.libs.commands.ip module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.rfkill">cleep.libs.commands.rfkill module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
 </ul>
@@ -125,6 +127,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">cleep.libs.configs.asoundrc module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
@@ -137,7 +140,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
 </ul>
 </li>
@@ -159,10 +161,10 @@
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.internals.html#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
@@ -440,6 +442,322 @@ Please be aware that no verification is done</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Return True if module unblacklisted</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cleep.libs.configs.cleepconf">
+<span id="cleep-libs-configs-cleepconf-module"></span><h1>cleep.libs.configs.cleepconf module<a class="headerlink" href="#module-cleep.libs.configs.cleepconf" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="cleep.libs.configs.cleepconf.CleepConf">
+<em class="property">class </em><code class="sig-name descname">CleepConf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class to update and read values from /etc/cleep/cleep.conf file</p>
+<dl class="py attribute">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.CONF">
+<code class="sig-name descname">CONF</code><em class="property"> = '/etc/cleep/cleep.conf'</em><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.CONF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG">
+<code class="sig-name descname">DEFAULT_CONFIG</code><em class="property"> = {'debug': {'debug_core': False, 'debug_modules': [], 'trace_enabled': False}, 'general': {'modules': [], 'updated': []}, 'rpc': {'rpc_cert': '', 'rpc_host': '0.0.0.0', 'rpc_key': '', 'rpc_port': 80}}</em><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.as_dict">
+<code class="sig-name descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all config content as dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>config content</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.check">
+<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check configuration file content, adding missing section or options</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.clear_updated_modules">
+<code class="sig-name descname">clear_updated_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.clear_updated_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erase updated module list from config</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.disable_core_debug">
+<code class="sig-name descname">disable_core_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.disable_core_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable core debug</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.disable_module_debug">
+<code class="sig-name descname">disable_module_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.disable_module_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable module debug</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to disable</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module debug disabled</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.disable_trace">
+<code class="sig-name descname">disable_trace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.disable_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disable trace logging mode</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.enable_core_debug">
+<code class="sig-name descname">enable_core_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.enable_core_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable core debug</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.enable_module_debug">
+<code class="sig-name descname">enable_module_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.enable_module_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable module debug</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to debug</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module debug enabled</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.enable_trace">
+<code class="sig-name descname">enable_trace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.enable_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable trace logging mode</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.get_rpc_config">
+<code class="sig-name descname">get_rpc_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.get_rpc_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get rpc configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>rpc host and port values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">host</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
+    <span class="n">port</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.get_rpc_security">
+<code class="sig-name descname">get_rpc_security</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.get_rpc_security" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get rpc security configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>cert and key values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+    <span class="n">cert</span><span class="p">,</span>
+    <span class="n">key</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.install_module">
+<code class="sig-name descname">install_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.install_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add module to list of modules to load at startup</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to load</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module installed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.is_core_debugged">
+<code class="sig-name descname">is_core_debugged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_core_debugged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return core debug status</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if core debug enabled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.is_module_debugged">
+<code class="sig-name descname">is_module_debugged</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_module_debugged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if module debug is enabled</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module debug is enabled, False if disabled</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.is_module_installed">
+<code class="sig-name descname">is_module_installed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_module_installed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if specified module is installed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module is installed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.is_module_updated">
+<code class="sig-name descname">is_module_updated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_module_updated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if specified module is installed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to check</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module is installed</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.is_trace_enabled">
+<code class="sig-name descname">is_trace_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_trace_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return trace status</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if trace enabled</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.set_rpc_config">
+<code class="sig-name descname">set_rpc_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">port</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.set_rpc_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set rpc configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>string</em>) – rpc server host value</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – rpc server port value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if rpc config saved</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.set_rpc_security">
+<code class="sig-name descname">set_rpc_security</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cert</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.set_rpc_security" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set rpc security configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cert</strong> (<em>string</em>) – certificate file path</p></li>
+<li><p><strong>key</strong> (<em>string</em>) – key file path</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if values saved successfully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.uninstall_module">
+<code class="sig-name descname">uninstall_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.uninstall_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove module from list of loaded modules</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to uninstall</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module uninstalled</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.configs.cleepconf.CleepConf.update_module">
+<code class="sig-name descname">update_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.update_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add module name in updated config list item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to set as updated</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if operation succeed</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>bool</p>
@@ -2174,322 +2492,6 @@ Used to have something to parse file in case of error</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>Exception if error occured</strong> – </p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="module-cleep.libs.configs.cleepconf">
-<span id="cleep-libs-configs-cleepconf-module"></span><h1>cleep.libs.configs.cleepconf module<a class="headerlink" href="#module-cleep.libs.configs.cleepconf" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="cleep.libs.configs.cleepconf.CleepConf">
-<em class="property">class </em><code class="sig-name descname">CleepConf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Helper class to update and read values from /etc/cleep/cleep.conf file</p>
-<dl class="py attribute">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.CONF">
-<code class="sig-name descname">CONF</code><em class="property"> = '/etc/cleep/cleep.conf'</em><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.CONF" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG">
-<code class="sig-name descname">DEFAULT_CONFIG</code><em class="property"> = {'debug': {'debug_core': False, 'debug_modules': [], 'trace_enabled': False}, 'general': {'modules': [], 'updated': []}, 'rpc': {'rpc_cert': '', 'rpc_host': '0.0.0.0', 'rpc_key': '', 'rpc_port': 80}}</em><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.DEFAULT_CONFIG" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.as_dict">
-<code class="sig-name descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.as_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return all config content as dict</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>config content</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.check">
-<code class="sig-name descname">check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.check" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check configuration file content, adding missing section or options</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.clear_updated_modules">
-<code class="sig-name descname">clear_updated_modules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.clear_updated_modules" title="Permalink to this definition">¶</a></dt>
-<dd><p>Erase updated module list from config</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.disable_core_debug">
-<code class="sig-name descname">disable_core_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.disable_core_debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable core debug</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.disable_module_debug">
-<code class="sig-name descname">disable_module_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.disable_module_debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable module debug</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to disable</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module debug disabled</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.disable_trace">
-<code class="sig-name descname">disable_trace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.disable_trace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disable trace logging mode</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.enable_core_debug">
-<code class="sig-name descname">enable_core_debug</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.enable_core_debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable core debug</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.enable_module_debug">
-<code class="sig-name descname">enable_module_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.enable_module_debug" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable module debug</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to debug</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module debug enabled</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.enable_trace">
-<code class="sig-name descname">enable_trace</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.enable_trace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable trace logging mode</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.get_rpc_config">
-<code class="sig-name descname">get_rpc_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.get_rpc_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get rpc configuration</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>rpc host and port values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">host</span> <span class="p">(</span><span class="n">string</span><span class="p">),</span>
-    <span class="n">port</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.get_rpc_security">
-<code class="sig-name descname">get_rpc_security</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.get_rpc_security" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get rpc security configuration</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>cert and key values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
-    <span class="n">cert</span><span class="p">,</span>
-    <span class="n">key</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.install_module">
-<code class="sig-name descname">install_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.install_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add module to list of modules to load at startup</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to load</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module installed</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.is_core_debugged">
-<code class="sig-name descname">is_core_debugged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_core_debugged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return core debug status</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if core debug enabled</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.is_module_debugged">
-<code class="sig-name descname">is_module_debugged</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_module_debugged" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if module debug is enabled</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to check</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module debug is enabled, False if disabled</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.is_module_installed">
-<code class="sig-name descname">is_module_installed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_module_installed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if specified module is installed</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to check</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module is installed</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.is_module_updated">
-<code class="sig-name descname">is_module_updated</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_module_updated" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if specified module is installed</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to check</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module is installed</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.is_trace_enabled">
-<code class="sig-name descname">is_trace_enabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.is_trace_enabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return trace status</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if trace enabled</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.set_rpc_config">
-<code class="sig-name descname">set_rpc_config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">port</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.set_rpc_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set rpc configuration</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>host</strong> (<em>string</em>) – rpc server host value</p></li>
-<li><p><strong>port</strong> (<em>int</em>) – rpc server port value</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if rpc config saved</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.set_rpc_security">
-<code class="sig-name descname">set_rpc_security</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cert</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.set_rpc_security" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set rpc security configuration</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cert</strong> (<em>string</em>) – certificate file path</p></li>
-<li><p><strong>key</strong> (<em>string</em>) – key file path</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if values saved successfully</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.uninstall_module">
-<code class="sig-name descname">uninstall_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.uninstall_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove module from list of loaded modules</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to uninstall</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module uninstalled</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.configs.cleepconf.CleepConf.update_module">
-<code class="sig-name descname">update_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.configs.cleepconf.CleepConf.update_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add module name in updated config list item</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>module</strong> (<em>string</em>) – module name to set as updated</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if operation succeed</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>

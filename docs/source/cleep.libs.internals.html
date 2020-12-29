@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cleep.libs.internals.cleepbackup module &mdash; Cleep core API 0.0.21 documentation</title>
+  <title>cleep.libs.internals.cleepbackup module &mdash; Cleep core API 0.0.22 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.0.21
+                0.0.22
               </div>
             
           
@@ -111,13 +111,15 @@
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.blkid">cleep.libs.commands.blkid module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifconfig">cleep.libs.commands.ifconfig module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ifupdown">cleep.libs.commands.ifupdown module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.ip">cleep.libs.commands.ip module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwconfig">cleep.libs.commands.iwconfig module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwgetid">cleep.libs.commands.iwgetid module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iwlist">cleep.libs.commands.iwlist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.iw">cleep.libs.commands.iw module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsblk">cleep.libs.commands.lsblk module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.lsmod">cleep.libs.commands.lsmod module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.modprobe">cleep.libs.commands.modprobe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.rfkill">cleep.libs.commands.rfkill module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.udevadm">cleep.libs.commands.udevadm module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.commands.html#module-cleep.libs.commands.wpacli">cleep.libs.commands.wpacli module</a></li>
 </ul>
@@ -125,6 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="cleep.libs.html#cleep-libs-configs">cleep.libs.configs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html">cleep.libs.configs.asoundrc module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepaudio">cleep.libs.configs.cleepaudio module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepwificonf">cleep.libs.configs.cleepwificonf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdline">cleep.libs.configs.cmdline module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cmdlinetxt">cleep.libs.configs.cmdlinetxt module</a></li>
@@ -137,7 +140,6 @@
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.fstab">cleep.libs.configs.fstab module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.hostname">cleep.libs.configs.hostname module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.modulesjson">cleep.libs.configs.modulesjson module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.cleepconf">cleep.libs.configs.cleepconf module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cleep.libs.configs.html#module-cleep.libs.configs.wpasupplicantconf">cleep.libs.configs.wpasupplicantconf module</a></li>
 </ul>
 </li>
@@ -159,10 +161,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.event">cleep.libs.internals.event module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.eventsbroker">cleep.libs.internals.eventsbroker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.externalbus">cleep.libs.internals.externalbus module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.installdeb">cleep.libs.internals.installdeb module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.installmodule">cleep.libs.internals.installmodule module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.installcleep">cleep.libs.internals.installcleep module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.install">cleep.libs.internals.install module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.profileformatter">cleep.libs.internals.profileformatter module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.profileformattersbroker">cleep.libs.internals.profileformattersbroker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-cleep.libs.internals.readwrite">cleep.libs.internals.readwrite module</a></li>
@@ -1970,54 +1972,67 @@ This also reduces bus complexity.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-cleep.libs.internals.install">
-<span id="cleep-libs-internals-install-module"></span><h1>cleep.libs.internals.install module<a class="headerlink" href="#module-cleep.libs.internals.install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-cleep.libs.internals.installcleep">
+<span id="cleep-libs-internals-installcleep-module"></span><h1>cleep.libs.internals.installcleep module<a class="headerlink" href="#module-cleep.libs.internals.installcleep" title="Permalink to this headline">¶</a></h1>
+<dl class="py exception">
+<dt id="cleep.libs.internals.installcleep.ForcedException">
+<em class="property">exception </em><code class="sig-name descname">ForcedException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.ForcedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
 <dl class="py class">
-<dt id="cleep.libs.internals.install.Install">
-<em class="property">class </em><code class="sig-name descname">Install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">crash_report</span></em>, <em class="sig-param"><span class="n">status_callback</span></em>, <em class="sig-param"><span class="n">blocking</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Install helper</p>
-<p>This class helps you to install different kind of things:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>deb files using dpkg</p></li>
-<li><p>tar.gz using tar</p></li>
-<li><p>zip using unzip</p></li>
-<li><p>Cleep module install/uninstall/update (ok class name is not correct ;) )</p></li>
-<li><p>system packages install/uninst using apt-get command</p></li>
-</ul>
-</div></blockquote>
+<dt id="cleep.libs.internals.installcleep.InstallCleep">
+<em class="property">class </em><code class="sig-name descname">InstallCleep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">crash_report</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gevent.threading.Thread</span></code></p>
+<p>Install cleep update
+This class download latest package from cleep repository, dry run deb install and finally
+install deb package.</p>
 <dl class="py attribute">
-<dt id="cleep.libs.internals.install.Install.STATUS_DONE">
-<code class="sig-name descname">STATUS_DONE</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_DONE" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DEB">
+<code class="sig-name descname">STATUS_ERROR_DEB</code><em class="property"> = 6</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DEB" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="cleep.libs.internals.install.Install.STATUS_ERROR">
-<code class="sig-name descname">STATUS_ERROR</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_ERROR" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_CHECKSUM">
+<code class="sig-name descname">STATUS_ERROR_DOWNLOAD_CHECKSUM</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_CHECKSUM" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="cleep.libs.internals.install.Install.STATUS_IDLE">
-<code class="sig-name descname">STATUS_IDLE</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_IDLE" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_PACKAGE">
+<code class="sig-name descname">STATUS_ERROR_DOWNLOAD_PACKAGE</code><em class="property"> = 5</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_PACKAGE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="cleep.libs.internals.install.Install.STATUS_PROCESSING">
-<code class="sig-name descname">STATUS_PROCESSING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_PROCESSING" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_INTERNAL">
+<code class="sig-name descname">STATUS_ERROR_INTERNAL</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_INTERNAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_IDLE">
+<code class="sig-name descname">STATUS_IDLE</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_IDLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATED">
+<code class="sig-name descname">STATUS_UPDATED</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATING">
+<code class="sig-name descname">STATUS_UPDATING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.install.Install.get_status">
-<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.get_status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return current installation status</p>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current status</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>status:</p>
+<dd class="field-odd"><p><p>update status:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">status</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">current</span> <span class="n">status</span>
-    <span class="n">stdout</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">messages</span> <span class="n">received</span> <span class="n">on</span> <span class="n">console</span>
-    <span class="n">stderr</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">messages</span> <span class="n">received</span> <span class="n">on</span> <span class="n">stderr</span>
+    <span class="n">progress</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">progress</span> <span class="n">percentage</span>
+    <span class="n">status</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">see</span> <span class="n">STATUS_XXX</span> <span class="k">for</span> <span class="n">available</span> <span class="n">codes</span>
+    <span class="n">deb</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">deb</span> <span class="n">status</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2030,156 +2045,25 @@ This also reduces bus complexity.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.install.Install.install_archive">
-<code class="sig-name descname">install_archive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">archive</span></em>, <em class="sig-param"><span class="n">install_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_archive" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install archive (.tar.gz, .zip) to specified install path</p>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.install">
+<code class="sig-name descname">install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_package</span></em>, <em class="sig-param"><span class="n">url_checksum</span></em>, <em class="sig-param"><span class="n">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launch installation.
+The process is non blocking. Follow install process status using get_status.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>archive</strong> (<em>string</em>) – archive full path</p></li>
-<li><p><strong>install_path</strong> (<em>string</em>) – installation fullpath directory</p></li>
+<li><p><strong>url_package</strong> (<em>string</em>) – url of Cleep deb package</p></li>
+<li><p><strong>url_checksum</strong> (<em>string</em>) – url of checksum</p></li>
+<li><p><strong>callback</strong> (<em>function</em>) – status callback</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.install.Install.install_deb">
-<code class="sig-name descname">install_deb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deb_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_deb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install .deb file using dpkg</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>deb_path</strong> (<em>string</em>) – path to deb package</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.install_module">
-<code class="sig-name descname">install_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">module_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install specified module</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>module_name</strong> (<em>string</em>) – module name to install</p></li>
-<li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module installed (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.install_system_package">
-<code class="sig-name descname">install_system_package</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">package_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_system_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install package using aptitude</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>package_name</strong> (<em>string</em>) – package name to install</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.refresh_system_packages">
-<code class="sig-name descname">refresh_system_packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.refresh_system_packages" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh sytem packages list</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.uninstall_module">
-<code class="sig-name descname">uninstall_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">module_infos</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.uninstall_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Uninstall specified module</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This function does not handle filesystem because process could be async.
-So take care to enable/disable writings before calling it.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>module_name</strong> (<em>string</em>) – module name to uninstall</p></li>
-<li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
-<li><p><strong>force</strong> (<em>bool</em>) – uninstall module and continue if error occured</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module uninstalled (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.uninstall_system_package">
-<code class="sig-name descname">uninstall_system_package</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">package_name</span></em>, <em class="sig-param"><span class="n">purge</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.uninstall_system_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Install package using aptitude</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>package_name</strong> (<em>string</em>) – package name to install</p></li>
-<li><p><strong>purge</strong> (<em>bool</em>) – purge package (remove config files)</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="cleep.libs.internals.install.Install.update_module">
-<code class="sig-name descname">update_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">new_module_infos</span></em>, <em class="sig-param"><span class="n">force_uninstall</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.update_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Update specified module
-An update executes consecutively uninstall and install action</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This function does not handle filesystem because process could be async.
-So take care to enable/disable writings before calling it.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>module_name</strong> (<em>string</em>) – module name</p></li>
-<li><p><strong>new_modules_infos</strong> (<em>dict</em>) – module infos as reported in modules.json</p></li>
-<li><p><strong>force_uninstall</strong> (<em>bool</em>) – force module uninstall even if error occured</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if module updated (in blocking mode only)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
+<dt id="cleep.libs.internals.installcleep.InstallCleep.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run update</p>
 </dd></dl>
 
 </dd></dl>
@@ -2575,67 +2459,54 @@ This class executes preuninstall script, removes all installed files and execute
 </dd></dl>
 
 </div>
-<div class="section" id="module-cleep.libs.internals.installcleep">
-<span id="cleep-libs-internals-installcleep-module"></span><h1>cleep.libs.internals.installcleep module<a class="headerlink" href="#module-cleep.libs.internals.installcleep" title="Permalink to this headline">¶</a></h1>
-<dl class="py exception">
-<dt id="cleep.libs.internals.installcleep.ForcedException">
-<em class="property">exception </em><code class="sig-name descname">ForcedException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.ForcedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
+<div class="section" id="module-cleep.libs.internals.install">
+<span id="cleep-libs-internals-install-module"></span><h1>cleep.libs.internals.install module<a class="headerlink" href="#module-cleep.libs.internals.install" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="cleep.libs.internals.installcleep.InstallCleep">
-<em class="property">class </em><code class="sig-name descname">InstallCleep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">crash_report</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gevent.threading.Thread</span></code></p>
-<p>Install cleep update
-This class download latest package from cleep repository, dry run deb install and finally
-install deb package.</p>
+<dt id="cleep.libs.internals.install.Install">
+<em class="property">class </em><code class="sig-name descname">Install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cleep_filesystem</span></em>, <em class="sig-param"><span class="n">crash_report</span></em>, <em class="sig-param"><span class="n">status_callback</span></em>, <em class="sig-param"><span class="n">blocking</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Install helper</p>
+<p>This class helps you to install different kind of things:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>deb files using dpkg</p></li>
+<li><p>tar.gz using tar</p></li>
+<li><p>zip using unzip</p></li>
+<li><p>Cleep module install/uninstall/update (ok class name is not correct ;) )</p></li>
+<li><p>system packages install/uninst using apt-get command</p></li>
+</ul>
+</div></blockquote>
 <dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DEB">
-<code class="sig-name descname">STATUS_ERROR_DEB</code><em class="property"> = 6</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DEB" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.install.Install.STATUS_DONE">
+<code class="sig-name descname">STATUS_DONE</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_DONE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_CHECKSUM">
-<code class="sig-name descname">STATUS_ERROR_DOWNLOAD_CHECKSUM</code><em class="property"> = 4</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_CHECKSUM" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.install.Install.STATUS_ERROR">
+<code class="sig-name descname">STATUS_ERROR</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_ERROR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_PACKAGE">
-<code class="sig-name descname">STATUS_ERROR_DOWNLOAD_PACKAGE</code><em class="property"> = 5</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_DOWNLOAD_PACKAGE" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.install.Install.STATUS_IDLE">
+<code class="sig-name descname">STATUS_IDLE</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_IDLE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_INTERNAL">
-<code class="sig-name descname">STATUS_ERROR_INTERNAL</code><em class="property"> = 3</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_ERROR_INTERNAL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_IDLE">
-<code class="sig-name descname">STATUS_IDLE</code><em class="property"> = 0</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_IDLE" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATED">
-<code class="sig-name descname">STATUS_UPDATED</code><em class="property"> = 2</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATED" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATING">
-<code class="sig-name descname">STATUS_UPDATING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.STATUS_UPDATING" title="Permalink to this definition">¶</a></dt>
+<dt id="cleep.libs.internals.install.Install.STATUS_PROCESSING">
+<code class="sig-name descname">STATUS_PROCESSING</code><em class="property"> = 1</em><a class="headerlink" href="#cleep.libs.internals.install.Install.STATUS_PROCESSING" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.get_status">
-<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.get_status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return current status</p>
+<dt id="cleep.libs.internals.install.Install.get_status">
+<code class="sig-name descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return current installation status</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>update status:</p>
+<dd class="field-odd"><p><p>status:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="n">progress</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">progress</span> <span class="n">percentage</span>
-    <span class="n">status</span> <span class="p">(</span><span class="nb">int</span><span class="p">):</span> <span class="n">see</span> <span class="n">STATUS_XXX</span> <span class="k">for</span> <span class="n">available</span> <span class="n">codes</span>
-    <span class="n">deb</span> <span class="p">(</span><span class="nb">dict</span><span class="p">):</span> <span class="n">deb</span> <span class="n">status</span> <span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">returncode</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span>
+    <span class="n">status</span> <span class="p">(</span><span class="n">string</span><span class="p">):</span> <span class="n">current</span> <span class="n">status</span>
+    <span class="n">stdout</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">messages</span> <span class="n">received</span> <span class="n">on</span> <span class="n">console</span>
+    <span class="n">stderr</span> <span class="p">(</span><span class="nb">list</span><span class="p">):</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">messages</span> <span class="n">received</span> <span class="n">on</span> <span class="n">stderr</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -2648,25 +2519,156 @@ install deb package.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.install">
-<code class="sig-name descname">install</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_package</span></em>, <em class="sig-param"><span class="n">url_checksum</span></em>, <em class="sig-param"><span class="n">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.install" title="Permalink to this definition">¶</a></dt>
-<dd><p>Launch installation.
-The process is non blocking. Follow install process status using get_status.</p>
+<dt id="cleep.libs.internals.install.Install.install_archive">
+<code class="sig-name descname">install_archive</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">archive</span></em>, <em class="sig-param"><span class="n">install_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install archive (.tar.gz, .zip) to specified install path</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>url_package</strong> (<em>string</em>) – url of Cleep deb package</p></li>
-<li><p><strong>url_checksum</strong> (<em>string</em>) – url of checksum</p></li>
-<li><p><strong>callback</strong> (<em>function</em>) – status callback</p></li>
+<li><p><strong>archive</strong> (<em>string</em>) – archive full path</p></li>
+<li><p><strong>install_path</strong> (<em>string</em>) – installation fullpath directory</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="cleep.libs.internals.installcleep.InstallCleep.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.installcleep.InstallCleep.run" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run update</p>
+<dt id="cleep.libs.internals.install.Install.install_deb">
+<code class="sig-name descname">install_deb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deb_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_deb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install .deb file using dpkg</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>deb_path</strong> (<em>string</em>) – path to deb package</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.install.Install.install_module">
+<code class="sig-name descname">install_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">module_infos</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install specified module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>module_name</strong> (<em>string</em>) – module name to install</p></li>
+<li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module installed (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.install.Install.install_system_package">
+<code class="sig-name descname">install_system_package</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">package_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.install_system_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install package using aptitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>package_name</strong> (<em>string</em>) – package name to install</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.install.Install.refresh_system_packages">
+<code class="sig-name descname">refresh_system_packages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.refresh_system_packages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh sytem packages list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.install.Install.uninstall_module">
+<code class="sig-name descname">uninstall_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">module_infos</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.uninstall_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uninstall specified module</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function does not handle filesystem because process could be async.
+So take care to enable/disable writings before calling it.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>module_name</strong> (<em>string</em>) – module name to uninstall</p></li>
+<li><p><strong>modules_infos</strong> (<em>dict</em>) – module infos reported in modules.json</p></li>
+<li><p><strong>force</strong> (<em>bool</em>) – uninstall module and continue if error occured</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module uninstalled (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.install.Install.uninstall_system_package">
+<code class="sig-name descname">uninstall_system_package</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">package_name</span></em>, <em class="sig-param"><span class="n">purge</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.uninstall_system_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install package using aptitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>package_name</strong> (<em>string</em>) – package name to install</p></li>
+<li><p><strong>purge</strong> (<em>bool</em>) – purge package (remove config files)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if install succeed (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cleep.libs.internals.install.Install.update_module">
+<code class="sig-name descname">update_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span></em>, <em class="sig-param"><span class="n">new_module_infos</span></em>, <em class="sig-param"><span class="n">force_uninstall</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.libs.internals.install.Install.update_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update specified module
+An update executes consecutively uninstall and install action</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function does not handle filesystem because process could be async.
+So take care to enable/disable writings before calling it.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>module_name</strong> (<em>string</em>) – module name</p></li>
+<li><p><strong>new_modules_infos</strong> (<em>dict</em>) – module infos as reported in modules.json</p></li>
+<li><p><strong>force_uninstall</strong> (<em>bool</em>) – force module uninstall even if error occured</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if module updated (in blocking mode only)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

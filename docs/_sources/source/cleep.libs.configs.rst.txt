@@ -14,6 +14,14 @@ cleep.libs.configs.cleepaudio module
    :undoc-members:
    :show-inheritance:
 
+cleep.libs.configs.cleepconf module
+-----------------------------------------
+
+.. automodule:: cleep.libs.configs.cleepconf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 cleep.libs.configs.cleepwificonf module
 -----------------------------------------
 
@@ -106,14 +114,6 @@ cleep.libs.configs.modulesjson module
 ---------------------------------------
 
 .. automodule:: cleep.libs.configs.modulesjson
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-cleep.libs.configs.cleepconf module
----------------------------------------
-
-.. automodule:: cleep.libs.configs.cleepconf
    :members:
    :undoc-members:
    :show-inheritance:
