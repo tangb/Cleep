@@ -322,15 +322,16 @@ without result, but command is sent.</p>
 <dt id="cleep.bus.BusClient.run">
 <code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.BusClient.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bus reading process.</p>
-<dl class="simple">
-<dt>Process cycle life:</dt><dd><ul class="simple">
-<li><p>configure module</p></li>
-<li><p>wait for all modules configured</p></li>
-<li><p>run async start function</p></li>
-<li><p>infinite loop on message bus (custom process can run on each loop)</p></li>
-</ul>
-</dd>
-</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Process cycle life:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">configure</span> <span class="n">module</span>
+<span class="o">-</span> <span class="n">wait</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">modules</span> <span class="n">configured</span>
+<span class="o">-</span> <span class="n">run</span> <span class="k">async</span> <span class="n">start</span> <span class="n">function</span>
+<span class="o">-</span> <span class="n">infinite</span> <span class="n">loop</span> <span class="n">on</span> <span class="n">message</span> <span class="n">bus</span> <span class="p">(</span><span class="n">custom</span> <span class="n">process</span> <span class="n">can</span> <span class="n">run</span> <span class="n">on</span> <span class="n">each</span> <span class="n">loop</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -421,6 +422,11 @@ without result, but command is sent.</p>
 <dt id="cleep.bus.MessageBus">
 <em class="property">class </em><code class="sig-name descname">MessageBus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">crash_report</span></em>, <em class="sig-param"><span class="n">debug_enabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cleep.bus.MessageBus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Message bus. Used to send messages to subscribed clients.</p>
+<p>A pushed message can have recipient to directly send message to specific client. In that case
+a response is awaited. If there is no response before end of timeout, an exception is throwed.
+A message without recipient is broadcasted to all subscribers. No response is awaited.</p>
+<p>Only broadcasted messages can be sent before all clients have subscribed (during init phase)</p>
 <dl class="py attribute">
 <dt id="cleep.bus.MessageBus.DEQUE_MAX_LEN">
 <code class="sig-name descname">DEQUE_MAX_LEN</code><em class="property"> = 100</em><a class="headerlink" href="#cleep.bus.MessageBus.DEQUE_MAX_LEN" title="Permalink to this definition">¶</a></dt>
@@ -434,13 +440,7 @@ without result, but command is sent.</p>
 <dl class="py attribute">
 <dt id="cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME">
 <code class="sig-name descname">SUBSCRIPTION_LIFETIME</code><em class="property"> = 600</em><a class="headerlink" href="#cleep.bus.MessageBus.SUBSCRIPTION_LIFETIME" title="Permalink to this definition">¶</a></dt>
-<dd><p>Message bus
-Used to send messages to subscribed clients
-A pushed message can have recipient to directly send message to specific client. In that case
-a response is awaited. If there is no response before end of timeout, an exception is throwed.
-A message without recipient is broadcasted to all subscribers. No response is awaited.
-Only broadcasted messages can be sent before all clients have subscribed (during init phase)</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="cleep.bus.MessageBus.add_subscription">

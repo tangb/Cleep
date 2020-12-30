@@ -5,11 +5,18 @@
     background: #607d8b !important;
 }
 
-.rst-content .py.attribute {
+.rst-content dl.py.class > dt {
+    border: none !important;
+    border-top: solid 3px #d32f2f !important;
+    background: #ffcdd2 !important;
+    color: #607d8b !important;
+}
+
+.rst-content dl.py.attribute {
     background: #eceff1 !important;
 }
 
-.rst-content .py.method {
+.rst-content dl.py.method > dt {
     border: none !important;
     border-left: solid 3px #d32f2f !important;
     background: #eceff1 !important;
